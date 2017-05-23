@@ -1,4 +1,4 @@
-angular.module('**********NAME HERE*************', ['ui.router'])
+angular.module('tutorialSite', ['ui.router'])
 .config(function($urlRouterProvider, $stateProvider){
     
 
