@@ -5,6 +5,8 @@ const config = require('./../config.js');
 
 const app = module.exports = express();
 
+app.use(express.static(__dirname + './../dist'));
+
 var massiveInstance = massive.connectSync({
     connectionString: config.connectionString
 });
