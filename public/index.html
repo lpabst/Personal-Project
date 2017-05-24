@@ -17,7 +17,7 @@
             <div class='line'></div>
         </div>
 
-        <div class='cross' ng-click='showMobileMenu()' ng-show='mobileMenu'>X</div>
+        <div class='cross' ng-click='hideMobileMenu()' ng-show='mobileMenu'>X</div>
 
         <section class='mobileMenu' ng-if='mobileMenu'>
             <ul class='mobile_nav'>
@@ -41,12 +41,12 @@
     <header class='desktop_header'>
         <ul class='desktop_nav'>
             <a ui-sref='home'>
-                <li>Home</li>
+                <li>HOME</li>
             </a>
-            <li ng-click='showTutorialPages()'>Learn</li>
+            <li ng-click='showTutorialPages()'>LEARN</li>
 
             <a ui-sref='contact'>
-                <li>Contact</li>
+                <li>CONTACT</li>
             </a>
         </ul>
     </header>
