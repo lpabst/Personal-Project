@@ -47,6 +47,47 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.desktop_header {
+  width: 100%;
+  height: 72px;
+  color: #556;
+  position: relative;
+  background: gray;
+  display: none; }
+  @media (min-width: 700px) {
+    .desktop_header {
+      display: block; } }
+  .desktop_header .desktop_nav {
+    width: 40%;
+    height: 72px;
+    position: absolute;
+    right: 3%;
+    line-height: 72px;
+    border: 1px solid black; }
+    .desktop_header .desktop_nav li {
+      width: 30%;
+      height: 72px;
+      margin: 0 1% 0 1%;
+      text-align: center;
+      border: 1px solid black;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer; }
+      @media (min-width: 1000px) {
+        .desktop_header .desktop_nav li {
+          font-size: 18px; } }
+    .desktop_header .desktop_nav a {
+      text-decoration: none;
+      color: #556; }
+
+.mobile_header {
+  width: 100%;
+  height: 60px;
+  background: red; }
+  @media (min-width: 700px) {
+    .mobile_header {
+      display: none; } }
 
 
 

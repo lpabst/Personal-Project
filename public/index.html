@@ -40,20 +40,13 @@
     
     <header class='desktop_header'>
         <ul class='desktop_nav'>
-            <a ui-sref='movieSearch'>
-                <li>Search</li>
+            <a ui-sref='home'>
+                <li>Home</li>
             </a>
-            |
-            <a ui-sref='specificMovie'>
-                <li>Info</li>
-            </a>
-            |
-            <a ui-sref='movieQuotes'>
-                <li>Quotes</li>
-            </a>
-            |
-            <a ui-sref='about'>
-                <li>About</li>
+            <li ng-click='showTutorialPages()'>Learn</li>
+
+            <a ui-sref='contact'>
+                <li>Contact</li>
             </a>
         </ul>
     </header>
