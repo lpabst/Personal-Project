@@ -162,4 +162,15 @@ table {
   position: relative;
   background: lightblue; }
 
+.home_top_section {
+  width: 100%;
+  background: url("./img/programming1.jpeg");
+  position: relative; }
+
+.home_intro_container {
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 120px; }
+
 
