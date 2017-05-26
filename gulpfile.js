@@ -8,6 +8,7 @@ var paths = {
 	jsSource: ['public/**/*.js'],
 	sassSource: ['public/**/*.scss'],
 	copySource: ['public/**/*.html', 'public/**/*.css'],
+	imgSource: ['public/img/**/*.*'],
 	server: ['server/index.js']
 };
 
@@ -36,11 +37,17 @@ gulp.task('copy', function() {
 		.pipe(gulp.dest('./dist'));
 });
 
-gulp.task('build', ['js', 'sass', 'copy']);
+gulp.task('pics', function(){
+    gulp.src(paths.imgSource)
+        .pipe(gulp.dest('./dist/img'))
+});
+
+gulp.task('build', ['js', 'sass', 'pics', 'copy']);
 
 gulp.task('watch', function() {
 	gulp.watch(paths.jsSource, ['js']);
 	gulp.watch(paths.sassSource, ['sass']);
+    gulp.watch(paths.imgSource, ['pics']);
 	gulp.watch(paths.copySource, ['copy']);
 });
 
