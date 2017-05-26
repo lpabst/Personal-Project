@@ -170,47 +170,98 @@ table {
     width: 80%;
     position: absolute;
     left: 10%;
-    top: 120px;
-    color: white; }
+    top: 160px;
+    color: #eee;
+    font-size: 22px;
+    font-weight: bold; }
     .home_top_section .home_intro_container h3 {
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center; }
-    .home_top_section .home_intro_container p {
-      font-size: 16px; }
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px; }
+      @media (min-width: 700px) {
+        .home_top_section .home_intro_container h3 {
+          font-size: 35px; } }
+    @media (min-width: 700px) {
+      .home_top_section .home_intro_container {
+        top: 220px;
+        font-size: 25px; } }
 
 .home_middle_section {
   width: 100%;
-  height: 300px;
+  height: 400px;
   position: relative; }
   .home_middle_section .home_start_pic {
-    width: 50%;
-    height: 300px;
+    width: 100%;
+    height: 400px;
     background: url("./img/programming2.jpg") center no-repeat;
     background-size: cover;
     position: absolute;
-    left: 0; }
+    left: 0;
+    color: #401;
+    padding: 80px 40px 0 40px;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_middle_section .home_start_pic h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_middle_section .home_start_pic {
+        width: 50%; }
+        .home_middle_section .home_start_pic .home_start_words {
+          display: none; } }
   .home_middle_section .home_start_container {
     width: 50%;
-    height: 300px;
+    height: 400px;
     position: absolute;
-    right: 0; }
+    right: 0;
+    display: none;
+    padding: 100px 40px 0 40px;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_middle_section .home_start_container h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_middle_section .home_start_container {
+        display: block; } }
 
 .home_bottom_section {
   width: 100%;
-  height: 300px;
+  height: 400px;
   position: relative; }
   .home_bottom_section .home_experience_container {
     width: 50%;
-    height: 300px;
+    height: 400px;
     position: absolute;
-    left: 0; }
+    left: 0;
+    display: none;
+    padding: 100px 40px 0 40px;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_bottom_section .home_experience_container h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_bottom_section .home_experience_container {
+        display: block; } }
   .home_bottom_section .home_experience_pic {
-    width: 50%;
-    height: 300px;
+    width: 100%;
+    height: 400px;
     background: url("./img/programming3.jpg") center no-repeat;
     background-size: cover;
     position: absolute;
-    right: 0; }
+    right: 0;
+    color: #004;
+    padding: 80px 40px 0 40px;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_bottom_section .home_experience_pic h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_bottom_section .home_experience_pic {
+        width: 50%; }
+        .home_bottom_section .home_experience_pic .home_experience_words {
+          display: none; } }
 
 
