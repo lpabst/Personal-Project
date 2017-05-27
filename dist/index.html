@@ -21,17 +21,12 @@
 
         <section class='mobileMenu' ng-if='mobileMenu'>
             <ul class='mobile_nav'>
-                <a ui-sref='movieSearch'>
-                    <li ng-click='showMobileMenu()'>Search</li>
+                <a ui-sref='home'>
+                    <li ng-click='showMobileMenu()'>HOME</li>
                 </a>
-                <a ui-sref='specificMovie'>
-                    <li ng-click='showMobileMenu()'>Info</li>
-                </a>
-                <a ui-sref='movieQuotes'>
-                    <li ng-click='showMobileMenu()'>Quotes</li>
-                </a>
-                <a ui-sref='about'>
-                    <li ng-click='showMobileMenu()'>About</li>
+                <li ng-click='showMobileMenu()'>LEARN</li>
+                <a ui-sref='contact'>
+                    <li ng-click='showMobileMenu()'>CONTACT</li>
                 </a>
             </ul>
         </section>
@@ -40,13 +35,32 @@
     
     <header class='desktop_header'>
         <ul class='desktop_nav'>
-            <a ui-sref='home'>
+            <a ui-sref='home' ng-click='hideLearnSubheader()'>
                 <li>HOME</li>
             </a>
-            <li ng-click='showTutorialPages()'>LEARN</li>
-
-            <a ui-sref='contact'>
+            <li ng-click='showLearnSubheader = !showLearnSubheader'>LEARN</li>
+            <a ui-sref='contact' ng-click='hideLearnSubheader()'>
                 <li>CONTACT</li>
+            </a>
+        </ul>
+    </header>
+
+    <header class='learn_subheader' ng-show='showLearnSubheader'>
+        <ul>
+            <a ui-sref='angular' ng-click='showLearnSubheader = !showLearnSubheader'>
+                <li>ANGULAR</li>
+            </a>
+            <a ui-sref='css' ng-click='showLearnSubheader = !showLearnSubheader'>
+                <li>CSS</li>
+            </a>
+            <a ui-sref='greensock' ng-click='showLearnSubheader = !showLearnSubheader'>
+                <li>GREENSOCK</li>
+            </a>
+            <a ui-sref='jquery' ng-click='showLearnSubheader = !showLearnSubheader'>
+                <li>JQUERY</li>
+            </a>
+            <a ui-sref='javascript' ng-click='showLearnSubheader = !showLearnSubheader'>
+                <li>JAVASCRIPT</li>
             </a>
         </ul>
     </header>

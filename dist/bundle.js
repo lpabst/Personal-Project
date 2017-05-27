@@ -61,6 +61,7 @@ angular.module('tutorialSite').service('headersService', ["$http", function($htt
 angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope){
 
     $scope.mobileMenu = false;
+    $scope.showLearnSubheader = false;
 
     $scope.showMobileMenu = function(){
         $scope.mobileMenu = true;
@@ -70,26 +71,31 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
         $scope.mobileMenu = false;
     }
 
+    $scope.hideLearnSubheader = function() {
+        $scope.showLearnSubheader = false;
+    }
+
     function changeHeaderCss(){
         var dHeader = $('.desktop_header');
+        var learnHeader = $('.learn_subheader');
         if (this.scrollY > 50){
             dHeader.css({
                 "width": "100%",
-                'position': 'fixed',
                 'left': '0',
                 'top': '0',
                 'border-radius': '0'
             });
-            $('.desktop_nav').css('right', '2.3%');
+            $('.desktop_nav').css('right', '6.8%');
+            learnHeader.css('top', '68px');
         }else{
             dHeader.css({
                 "width": "94%",
-                'position': 'absolute',
                 'left': '3%',
                 'top': '20px',
                 'border-radius': '6px'
             });
-            $('.desktop_nav').css('right', '0%');
+            $('.desktop_nav').css('right', '5%');
+            learnHeader.css('top', 'calc(3% + 68px)');
         }
     }
     
