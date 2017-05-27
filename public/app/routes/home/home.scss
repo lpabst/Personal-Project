@@ -16,7 +16,7 @@
         width: 80%;
         position: absolute;
         left: 10%;
-        top: 160px;
+        top: 120px;
         color: #eee;
         font-size: 22px;
         font-weight: bold;
@@ -36,7 +36,6 @@
         }
 
         @media(min-width: 500px){
-            top: 120px;
             font-size: 20px;
         }
 
@@ -167,6 +166,7 @@
         position: relative;
         padding: 5px 0 0 5px;
         color: #eee;
+        cursor: pointer;
         font-size: 20px;
         font-weight: bold;
         transition: all 0.5s;
