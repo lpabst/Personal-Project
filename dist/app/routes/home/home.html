@@ -35,30 +35,9 @@
     </section>
 
     <section class='home_tech_container'>
-        <div class='angular' ui-sref='angular'>
-            <img src='./img/angular.jpeg'>
-            <p>AngularJS is a structural 
-                framework for dynamic web apps.</p>
-        </div>
-        <div class='css' ui-sref='css'>
-            <img src='./img/css.jpeg'>
-            <p>"Cascading Style Sheet." Cascading style sheets 
-                are used to format the layout of Web pages</p>
-        </div>
-        <div class='greensock' ui-sref='greensock'>
-            <img src='./img/greensock.png'>
-            <p>GreenSock is a suite of JavaScript
-                tools for high-performance HTML5 animations</p>
-        </div>
-        <div class='jquery' ui-sref='jquery'>
-            <img src='./img/jquery.jpeg'>
-            <p>jQuery is a fast, small, and 
-                feature-rich JavaScript library</p>
-        </div>
-        <div class='vanilla_js' ui-sref='javascript'>
-            <img src='./img/js.jpeg'>
-            <p>JavaScript is a programming language commonly 
-                used in web development</p>
+        <div ng-repeat="item in techInfo" ui-sref='{{ item.route }}'>
+            <img ng-src='{{ item.img }}'>
+            <p>{{ item.desc }}</p>
         </div>
         <p>&copy Loren Pabst 2017</p>
     </section>
