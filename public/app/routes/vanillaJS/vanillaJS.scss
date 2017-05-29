@@ -1,0 +1,42 @@
+
+.js_container{
+    width: 100%;
+    position: relative;
+}
+
+.js_container_backdrop{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: url('./img/js_intro.jpeg')right no-repeat;
+    background-size: cover;
+    z-index: -5;
+}
+
+.js_main{
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 100px;
+    background: #bbb;
+    padding-left: 11%;
+
+    .js_intro_header{
+        width: 80%;
+        background: red;
+
+    }
+
+    .test{
+        width: 80%;
+        height: 600px;
+        background: green;
+    }
+
+    .test2{
+        width: 80%;
+        height: 800px;
+        background: blue;
+    }
+
+}

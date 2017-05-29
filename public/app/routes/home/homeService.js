@@ -16,9 +16,10 @@ angular.module('tutorialSite').service('homeService', function($http){
         }, 
         {
             header: 'How Much Experience Do I Need?',
-            content: `These tutorials are meant to be an easy introduction to many different
-                languages. A basic understanding of HTML, CSS, and Javascript should
-                be enough to get you started on any of these languages.`
+            content: `These tutorials are meant to be an easy introduction to the animations
+                that can be performed with many different web development languages. A basic 
+                understanding of HTML, CSS, and Javascript should be enough to get you 
+                started on any of these tutorials!`
         }
     ];
 
