@@ -183,30 +183,45 @@ table {
         background: #fff;
         color: black; }
 
+
 .contact_container {
   width: 100%;
   position: relative;
-  background: #aaa; }
+  background: linear-gradient(to bottom right, #aaa, #222); }
 
 .contact_main_section {
   width: 100%;
   height: 100vh;
   position: relative; }
   .contact_main_section .contact_info {
-    width: 90%;
-    height: 80px;
+    width: 180px;
+    height: 70px;
     position: absolute;
-    top: 80px;
-    left: 5%;
-    background: lightblue; }
+    top: 280px;
+    left: calc(50% - 90px);
+    background: #eee;
+    border-radius: 6px;
+    text-align: center;
+    padding-top: 18px;
+    letter-spacing: 6px; }
+    .contact_main_section .contact_info a {
+      text-decoration: none;
+      color: black; }
   .contact_main_section img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 6px;
     position: absolute;
-    top: 170px;
-    left: 50px; }
-
+    top: 80px;
+    left: calc(50% - 90px); }
+  .contact_main_section p {
+    width: 80%;
+    position: absolute;
+    top: 360px;
+    left: 11%;
+    color: white;
+    font-weight: bold;
+    font-size: 18px; }
 
 
 
