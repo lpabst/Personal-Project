@@ -79,10 +79,14 @@
             left: 10px;
         }
 
-        img{
+        .js_example1_code{
             width: 60%;
             height: 200px;
             margin-top: 60px;
+            background: #333;
+            color: lightseagreen;
+            padding: 10px 0 0 10px;
+            overflow: scroll;
         }
 
         p{

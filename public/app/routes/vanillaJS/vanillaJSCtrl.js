@@ -7,7 +7,6 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', function($scope){
         }else{
             box1.style.background = 'red';
         }
-        
     })
 
 

@@ -21,7 +21,16 @@
         <div class='js_first_animation'>
             <h2>Click Events - Change Color</h2>
             <div id='js_examplebox1'>Click Me!</div>
-            <img src='./img/example1.png'>
+            <div class='js_example1_code'>
+                <code>var box1 = document.getElementById('js_examplebox1');</code>
+                <br><code>box1.addEventListener('click', function (){</code>
+                <br>&emsp;<code>if (box1.style.background == 'red'){</code>
+                <br>&emsp;&emsp;<code>box1.style.background = 'blue';</code>
+                <br>&emsp;<code>}else{</code>
+                <br>&emsp;&emsp;<code>box1.style.background = 'red';</code>
+                <br>&emsp;<code>}</code>
+                <br><code>})</code>
+            </div>
             <p id='js_first_top_p'>Here we have a simple function that checks the current
                 background color when the box is clicked. If the current
                 color is red, it changes it to blue. Otherwise, it changes
@@ -29,8 +38,7 @@
             <p>Use - document.getElementById - to select the 
             element that will be used to trigger the event.</p>
             <p>Use - .addEventListener() - to describe which type of event
-                you want to 'listen' for. In this case, I listen for the
-                click, so I typed .addEventListener('click', function(){})</p>
+                you want to 'listen' for.</p>
         </div>
 
         <div class='test2'>

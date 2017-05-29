@@ -499,10 +499,14 @@ table {
       padding-top: 11px;
       position: absolute;
       left: 10px; }
-    .js_main .js_first_animation img {
+    .js_main .js_first_animation .js_example1_code {
       width: 60%;
       height: 200px;
-      margin-top: 60px; }
+      margin-top: 60px;
+      background: #333;
+      color: lightseagreen;
+      padding: 10px 0 0 10px;
+      overflow: scroll; }
     .js_main .js_first_animation p {
       margin-top: 5px; }
   .js_main .test2 {
