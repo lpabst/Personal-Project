@@ -55,17 +55,18 @@ $headerBackground: #fff;
 }
 
 .learn_subheader{
-    width: 100%;
+    width: 94%;
     height: 60px;
     position: fixed;
-    top: calc(3% + 68px);
+    left: 3%;
+    top: 88px;
     z-index: 155;
 
     ul{
-        width: 142px;
+        width: 20%;
         height: 200px;
         position: absolute;
-        right: 19%;
+        right: calc(26% - 10vw);
         background: white;
         text-align: center;
         display: flex;
@@ -81,6 +82,10 @@ $headerBackground: #fff;
         a:hover{
             text-decoration: underline;
             color: #333;
+        }
+
+        @media(min-width: 1000px){
+            right: calc(23% - 10vw);
         }
     }
 
