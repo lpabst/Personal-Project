@@ -187,7 +187,6 @@ table {
         background: #fff;
         color: black; }
 
-
 .contact_container {
   width: 100%;
   position: relative;
@@ -272,6 +271,7 @@ table {
     .contact_main_section .large {
       margin-top: 24px;
       transform: scale(2); } }
+
 
 
 
@@ -401,12 +401,10 @@ table {
     border-radius: 6px;
     background: #333;
     margin-bottom: 6px;
-    position: relative;
     padding: 5px 0 0 5px;
+    position: relative;
     color: #eee;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
     transition: all 0.5s;
     -webkit-transition: all 0.5s; }
     .home_tech_container div img {
@@ -416,7 +414,13 @@ table {
     .home_tech_container div p {
       position: absolute;
       left: 100px;
-      top: 34px; }
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 17px;
+      margin-right: 5px;
+      text-align: left; }
     @media (min-width: 900px) {
       .home_tech_container div {
         width: 48%;
