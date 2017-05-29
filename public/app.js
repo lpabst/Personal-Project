@@ -36,7 +36,7 @@ $stateProvider
     .state('javascript', {
         url: '/javascript',
         templateUrl: './app/routes/vanillaJS/vanillaJS.html',
-        controller: 'javascriptCtrl',
+        controller: 'vanillaJSCtrl',
     })
 
 

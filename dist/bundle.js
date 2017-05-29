@@ -36,7 +36,7 @@ $stateProvider
     .state('javascript', {
         url: '/javascript',
         templateUrl: './app/routes/vanillaJS/vanillaJS.html',
-        controller: 'javascriptCtrl',
+        controller: 'vanillaJSCtrl',
     })
 
 
@@ -107,7 +107,6 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
 
 }]);
-
 
 angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
 
@@ -210,3 +209,30 @@ angular.module('tutorialSite').service('homeService', ["$http", function($http){
 
 
 }]);
+angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
+
+    var box1 = document.getElementById('js_examplebox1');
+    box1.addEventListener('click', function (){
+        if (box1.style.background == 'red'){
+            box1.style.background = 'blue';
+        }else{
+            box1.style.background = 'red';
+        }
+        
+    })
+
+
+
+
+
+
+
+
+
+}])
+
+
+
+
+
+

@@ -449,19 +449,62 @@ table {
   z-index: -5; }
 
 .js_main {
-  width: 90%;
-  position: absolute;
-  left: 5%;
-  top: 100px;
-  background: #bbb;
-  padding-left: 11%; }
+  width: 100%;
+  background: #ccc;
+  padding: 120px 0 0 11%; }
+  .js_main h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .js_main p {
+    font-size: 17px;
+    margin-bottom: 4px; }
+  .js_main a {
+    text-decoration: none;
+    color: black; }
+  @media (min-width: 1000px) {
+    .js_main {
+      position: absolute;
+      width: 86%;
+      top: 100px;
+      padding-top: 40px;
+      left: 7%;
+      background: linear-gradient(to right, #ccc, #eee); } }
   .js_main .js_intro_header {
-    width: 80%;
-    background: red; }
-  .js_main .test {
-    width: 80%;
-    height: 600px;
-    background: green; }
+    width: 88%;
+    margin-bottom: 40px; }
+    .js_main .js_intro_header div {
+      margin-top: 6px;
+      width: 150px;
+      height: 40px;
+      border-radius: 5px;
+      background: linear-gradient(to right, #b29f94, #603813);
+      font-weight: bold;
+      text-align: center;
+      padding-top: 12px;
+      cursor: pointer;
+      box-shadow: 3px 3px 5px; }
+  .js_main .js_first_animation {
+    width: 86%;
+    margin-bottom: 40px;
+    position: relative; }
+    .js_main .js_first_animation #js_examplebox1 {
+      width: 100px;
+      height: 40px;
+      background: blue;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      padding-top: 11px;
+      position: absolute;
+      left: 10px; }
+    .js_main .js_first_animation img {
+      width: 60%;
+      height: 200px;
+      margin-top: 60px; }
+    .js_main .js_first_animation p {
+      margin-top: 5px; }
   .js_main .test2 {
     width: 80%;
     height: 800px;
