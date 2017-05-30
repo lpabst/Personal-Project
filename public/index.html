@@ -23,13 +23,23 @@
         <section class='mobileMenu' ng-if='mobileMenu'>
             <ul class='mobile_nav'>
                 <a ui-sref='home'>
-                    <li ng-click='showMobileMenu()'>HOME</li>
+                    <li ng-click='hideMobileMenu()'>HOME</li>
                 </a>
-                <li ng-click='showMobileMenu()'>LEARN</li>
+                <li ng-click='showLearnSubMenu()'>LEARN</li>
                 <a ui-sref='contact'>
-                    <li ng-click='showMobileMenu()'>CONTACT</li>
+                    <li ng-click='hideMobileMenu()'>CONTACT</li>
                 </a>
             </ul>
+
+            <div class='learn_submenu_mobile'>
+                <ul>
+                    <li ui-sref='angular' ng-click='hideMobileMenu()'>ANGULAR</li>
+                    <li ui-sref='css' ng-click='hideMobileMenu()'>CSS</li>
+                    <li ui-sref='greensock' ng-click='hideMobileMenu()'>GREENSOCK</li>
+                    <li ui-sref='jquery' ng-click='hideMobileMenu()'>JQUERY</li>
+                    <li ui-sref='javascript' ng-click='hideMobileMenu()'>JAVASCRIPT</li>
+                </ul>
+            </div>
         </section>
 
     </header>
@@ -67,7 +77,7 @@
     </header>
 
     <ui-view>
-        <!--Content Here-->
+        <!--Routed Content Here-->
     </ui-view>
 
     <script

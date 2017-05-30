@@ -1,7 +1,8 @@
 angular.module('tutorialSite').controller('mainCtrl', function($scope){
 
     $scope.mobileMenu = false;
-    $scope.showLearnSubheader = false;
+    $scope.showLearnSubheader = false; //desktop learn submenu
+    var learnSubMenu = false; //mobile learn submenu
 
     $scope.showMobileMenu = function(){
         $scope.mobileMenu = true;
@@ -9,12 +10,33 @@ angular.module('tutorialSite').controller('mainCtrl', function($scope){
 
     $scope.hideMobileMenu = function(){
         $scope.mobileMenu = false;
+        learnSubMenu = false;
     }
 
     $scope.hideLearnSubheader = function() {
         $scope.showLearnSubheader = false;
     }
 
+//slides out the mobile learn submenu
+    $scope.showLearnSubMenu = function(){
+        if (!learnSubMenu){
+            $('.learn_submenu_mobile').css({
+                'left': '200px',
+                'height': '260px'
+            });
+            learnSubMenu = true;
+        }else{
+            $('.learn_submenu_mobile').css({
+                'left': '0px',
+                'height': '0px'
+            });
+            learnSubMenu = false;
+        }
+
+    }
+
+//when the page is scrolled down, the desktop header fills the top
+//of the page
     function changeHeaderCss(){
         var dHeader = $('.desktop_header');
         var learnHeader = $('.learn_subheader');

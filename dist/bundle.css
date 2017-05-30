@@ -57,7 +57,8 @@ table {
   border-radius: 6px;
   z-index: 50;
   background: #fff;
-  display: none; }
+  display: none;
+  transition: all 0.5s; }
   @media (min-width: 700px) {
     .desktop_header {
       display: block; } }
@@ -186,6 +187,31 @@ table {
         font-size: 20px;
         background: #fff;
         color: black; }
+    .mobile_header .mobileMenu .learn_submenu_mobile {
+      width: 140px;
+      background: #eee;
+      height: 0px;
+      padding-top: 30px;
+      position: absolute;
+      overflow: hidden;
+      left: 0px;
+      transition: all 1.2s; }
+      .mobile_header .mobileMenu .learn_submenu_mobile ul {
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        text-align: center;
+        font-weight: bold;
+        border-left: 2px solid gray;
+        overflow: hidden; }
+        .mobile_header .mobileMenu .learn_submenu_mobile ul li {
+          height: 34px;
+          line-height: 34px;
+          cursor: pointer; }
+        .mobile_header .mobileMenu .learn_submenu_mobile ul li:hover {
+          background: white;
+          transform: scale(1.1); }
 
 
 .contact_container {
@@ -272,6 +298,7 @@ table {
     .contact_main_section .large {
       margin-top: 24px;
       transform: scale(2); } }
+
 
 
 .home_container {
@@ -433,7 +460,6 @@ table {
     text-align: center;
     font-weight: bold;
     font-size: 13px; }
-
 
 
 .js_container {

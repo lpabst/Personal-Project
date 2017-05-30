@@ -61,7 +61,8 @@ angular.module('tutorialSite').service('headersService', ["$http", function($htt
 angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope){
 
     $scope.mobileMenu = false;
-    $scope.showLearnSubheader = false;
+    $scope.showLearnSubheader = false; //desktop learn submenu
+    var learnSubMenu = false; //mobile learn submenu
 
     $scope.showMobileMenu = function(){
         $scope.mobileMenu = true;
@@ -69,12 +70,33 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
     $scope.hideMobileMenu = function(){
         $scope.mobileMenu = false;
+        learnSubMenu = false;
     }
 
     $scope.hideLearnSubheader = function() {
         $scope.showLearnSubheader = false;
     }
 
+//slides out the mobile learn submenu
+    $scope.showLearnSubMenu = function(){
+        if (!learnSubMenu){
+            $('.learn_submenu_mobile').css({
+                'left': '200px',
+                'height': '260px'
+            });
+            learnSubMenu = true;
+        }else{
+            $('.learn_submenu_mobile').css({
+                'left': '0px',
+                'height': '0px'
+            });
+            learnSubMenu = false;
+        }
+
+    }
+
+//when the page is scrolled down, the desktop header fills the top
+//of the page
     function changeHeaderCss(){
         var dHeader = $('.desktop_header');
         var learnHeader = $('.learn_subheader');
@@ -107,6 +129,52 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
 
 }]);
+
+angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
+
+    var box1 = document.getElementById('js_box1');
+    var box2 = document.getElementById('js_box2');
+    var box3 = document.getElementById('js_box3');
+    var box4 = document.getElementById('js_box4');
+    var input = document.getElementById('js_input');
+    var submitBtn = document.getElementById('js_submit');
+
+    box1.addEventListener('click', function (){
+        if (box1.style.background == 'red'){
+            box1.style.background = 'blue';
+        }else{
+            box1.style.background = 'red';
+        }
+    });
+
+    box2.addEventListener('mouseover', function(){
+        box2.style.position = 'absolute';
+        box2.style.left = '50%';
+    });
+
+    box3.addEventListener('mouseover', function(){
+        box3.style.position = 'absolute';
+        if (box3.style.left == '50%'){
+            box3.style.left = '10px';
+        }else{
+            box3.style.left = '50%';
+        }
+    });
+
+    submitBtn.addEventListener('click', function(){
+        box4.innerText = input.value;
+    });
+
+
+
+
+}])
+
+
+
+
+
+
 
 angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
 
@@ -209,48 +277,3 @@ angular.module('tutorialSite').service('homeService', ["$http", function($http){
 
 
 }]);
-angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
-
-    var box1 = document.getElementById('js_box1');
-    var box2 = document.getElementById('js_box2');
-    var box3 = document.getElementById('js_box3');
-    var box4 = document.getElementById('js_box4');
-    var input = document.getElementById('js_input');
-    var submitBtn = document.getElementById('js_submit');
-
-    box1.addEventListener('click', function (){
-        if (box1.style.background == 'red'){
-            box1.style.background = 'blue';
-        }else{
-            box1.style.background = 'red';
-        }
-    });
-
-    box2.addEventListener('mouseover', function(){
-        box2.style.position = 'absolute';
-        box2.style.left = '50%';
-    });
-
-    box3.addEventListener('mouseover', function(){
-        box3.style.position = 'absolute';
-        if (box3.style.left == '50%'){
-            box3.style.left = '10px';
-        }else{
-            box3.style.left = '50%';
-        }
-    });
-
-    submitBtn.addEventListener('click', function(){
-        box4.innerText = input.value;
-    });
-
-
-
-
-}])
-
-
-
-
-
-
