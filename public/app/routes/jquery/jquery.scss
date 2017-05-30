@@ -27,7 +27,7 @@
 .jquery_animation_wrapper{
     width: 90%;
     position: relative;
-    padding-top: 20px;
+    padding-top: 30px;
 
     h2{
         font-size: 24px;
@@ -50,6 +50,7 @@
     img{
         max-width: 90%;
         margin-top: 10px;
+        display: block;
     }
 
     p{
@@ -59,4 +60,59 @@
 
 #jquery_box1{
     background: #eae;
+}
+
+#jquery_box2{
+    background: #4ee;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.jquery_carousel_frame{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+
+    ul{
+        position: absolute;
+        left: 0px;
+        width: 500%;
+        transition: all 1s ease-in-out;
+
+        li{
+            display: inline-block;
+            width: 20%;
+            line-height: 300px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            background: #222;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+    }
+
+    .jquery_carousel_buttons{
+        width: 60px;
+        height: 30px;
+        line-height: 25px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        background: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .prev{
+        left: 10px;
+    }
+
+    .next{
+        right: 10px;
+    }
 }
