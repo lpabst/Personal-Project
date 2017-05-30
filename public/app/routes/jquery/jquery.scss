@@ -77,11 +77,11 @@
     ul{
         position: absolute;
         left: 0px;
-        width: 500%;
+        width: 550%;
         transition: all 1s ease-in-out;
 
         li{
-            display: inline-block;
+            float: left;
             width: 20%;
             line-height: 300px;
             text-align: center;
@@ -89,8 +89,6 @@
             font-weight: bold;
             color: white;
             background: #222;
-            border-left: 1px solid white;
-            border-right: 1px solid white;
         }
     }
 

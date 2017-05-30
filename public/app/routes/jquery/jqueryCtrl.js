@@ -39,17 +39,24 @@ angular.module('tutorialSite').controller('jqueryCtrl', function($scope){
 
 // Example3 - JQuery Carousel. Changes the positioning of the div so 
 // that a different picture is showing.
+        
+    var left = parseInt(pics.css('left'), 10);
+
     prev.click(function(){
-        var left = pics.css('left') - 20;
-        console.log(left);
+        if (left < 0){
+            left += 110;
+        }
+            console.log(left);
         pics.css({
             left: left + '%'
         })
     });
 
     next.click(function(){
-        var left = pics.css('left') + 20;
-        console.log(left);
+        if (left > -440){
+            left -= 110;
+        }
+            console.log(left);
         pics.css({
             left: left + '%'
         })
