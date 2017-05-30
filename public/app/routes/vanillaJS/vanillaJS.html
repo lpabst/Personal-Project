@@ -3,6 +3,7 @@
     <div class='js_container_backdrop'></div>
 
     <section class='js_main'>
+        <h1>JAVASCRIPT</h1>
         <div class='js_intro_header'>
             <h2>Javascript Animations</h2>
             <p>You should have a basic understanding of 
@@ -18,19 +19,10 @@
                 </a>
         </div>
 
-        <div class='js_first_animation'>
+        <div class='js_animation_wrapper'>
             <h2>Click Events - Change Color</h2>
-            <div id='js_examplebox1'>Click Me!</div>
-            <div class='js_example1_code'>
-                <code>var box1 = document.getElementById('js_examplebox1');</code>
-                <br><code>box1.addEventListener('click', function (){</code>
-                <br>&emsp;<code>if (box1.style.background == 'red'){</code>
-                <br>&emsp;&emsp;<code>box1.style.background = 'blue';</code>
-                <br>&emsp;<code>}else{</code>
-                <br>&emsp;&emsp;<code>box1.style.background = 'red';</code>
-                <br>&emsp;<code>}</code>
-                <br><code>})</code>
-            </div>
+            <div class='js_examplebox' id='js_box1'>Click Me!</div>
+            <img src='./img/js/example1.jpg'>
             <p id='js_first_top_p'>Here we have a simple function that checks the current
                 background color when the box is clicked. If the current
                 color is red, it changes it to blue. Otherwise, it changes
@@ -41,10 +33,10 @@
                 you want to 'listen' for.</p>
         </div>
 
-        <div class='js_second_animation'>
+        <div class='js_animation_wrapper'>
             <h2>Mouseover Events - Change Element's Position</h2>
-            <div id='js_examplebox2'>Hover Over Me!</div>
-            <div class='js_example2_code'></div>
+            <div class='js_examplebox' id='js_box2'>Hover Over Me!</div>
+            <img src='./img/js/example2.jpg'>
             <p>Once again we are using document.getElementById to target
                 our example box, in this case box2. We use another event
                 listener, this time listening for 'mouseover'.  Once this
@@ -56,25 +48,24 @@
                 <a href='https://developer.mozilla.org/en-US/docs/Web/Events' target='_blank'>
                 Here is an extensive list</a> 
                 of Javascript events for reference, go crazy!</p>
-            <br>
+            <p>That was a bit jumpy though, wasn't it? Instead of moving over
+                to the new location, the box just kinda 'jumps' there. In this
+                next example, we'll take a look at how to smooth that out so 
+                the transition seems more natural.
         </div>
 
-        <div class='js_third_animation'>
-            <h2>Mouseover Events - Change Element's Position</h2>
-            <div id='js_examplebox3'>Hover Over Me!</div>
-            <div class='js_example3_code'></div>
-            <p>Once again we are using document.getElementById to target
-                our example box, in this case box2. We use another event
-                listener, this time listening for 'mouseover'.  Once this
-                happens, we set the position to absolute, and directly affect
-                the 'left' attribute.
-            </p>
-            <p>'Click' and 'mouseover' are just two examples of the many
-                Javascript events that can take place. 
-                <a href='https://developer.mozilla.org/en-US/docs/Web/Events' target='_blank'>
-                Here is an extensive list</a> 
-                of Javascript events for reference, go crazy!</p>
-            <br>
+        <div class='js_animation_wrapper'>
+            <h2>Smooth Transitions</h2>
+            <div class='js_examplebox' id='js_box3'>Hover Over Me!</div>
+            <img src='./img/js/example3js.jpg'>
+            <p>That first example was a bit jumpy, but this one moves gradually to
+                the new location. You'll also notice that I added in some functionality
+                that allows the box to move back and forth as many times as you want.</p>
+            <img src='./img/js/example3css.jpg' id='example3_css'>
+            <p>The key to smooth transitions actually lies in the CSS. Add this bit of 
+                code to any element in CSS and any CSS changes will transition gradually
+                over a 2 secone period. You can also put any amount of time that you want
+                there, it doesn't have to be 2 seconds!</p>
         </div>
 
     </section>

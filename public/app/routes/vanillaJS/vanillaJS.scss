@@ -18,22 +18,6 @@
     background: #ccc;
     padding: 120px 0 0 11%;
 
-    h2{
-        font-size: 22px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    p{
-        font-size: 17px;
-        margin-bottom: 4px;
-    }
-
-    a{
-        text-decoration: none;
-        color: black;
-    }
-
     @media(min-width: 1000px){
         position: absolute;
         width: 86%;
@@ -41,6 +25,58 @@
         padding-top: 40px;
         left: 7%;
         background: linear-gradient(to right, #ccc, #eee);
+    }
+
+    h1{
+        font-size: 32px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 30px;
+
+        @media(min-width: 1000px){
+            margin-left: 25%;
+        }
+    }
+
+    h2{
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    img {
+        margin-top: 60px;
+        display: block;
+        max-width: 95%;
+    }
+
+    p{
+        font-size: 17px;
+        margin-bottom: 4px;
+        margin-top: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .js_examplebox{
+        width: 180px;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        padding-top: 11px;
+        position: absolute;
+        left: 10px;
+    }
+
+    .js_animation_wrapper{
+        width: 86%;
+        margin-bottom: 40px;
+        position: relative;
     }
 
     .js_intro_header{
@@ -61,95 +97,29 @@
         }
     }
 
-    .js_first_animation{
-        width: 86%;
-        margin-bottom: 40px;
-        position: relative;
-
-        #js_examplebox1{
-            width: 100px;
-            height: 40px;
-            background: blue;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            cursor: pointer;
-            padding-top: 11px;
-            position: absolute;
-            left: 10px;
-        }
-
-        .js_example1_code{
-            width: 60%;
-            height: 200px;
-            margin-top: 60px;
-            background: #333;
-            color: lightseagreen;
-            padding: 10px 0 0 10px;
-            overflow: scroll;
-        }
-
-        p{
-            margin-top: 6px;
-        }
+    #js_box1{
+        width: 100px;
+        background: blue;
     }
 
-    .js_second_animation{
-        width: 80%;
-        margin-bottom: 40px;
-        position: relative;
-
-        #js_examplebox2{
-            width: 180px;
-            height: 40px;
-            background: green;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            cursor: pointer;
-            padding-top: 11px;
-            position: absolute;
-            left: 10px;
-        }
-
-        .js_example2_code{
-            width: 60%;
-            height: 200px;
-            margin-top: 60px;
-            background: #333;
-            color: lightseagreen;
-            padding: 10px 0 0 10px;
-            overflow: scroll;
-        }
-
-        a{
-            text-decoration: underline;
-            color: blue;
-        }
-
-        p{
-            margin-top: 6px;
-        }
+    #js_box2{
+        background: green;
     }
 
-    .js_third_animation{
-        width: 80%;
-        margin-bottom: 40px;
-        position: relative;
+    // a{
+    //     text-decoration: underline;
+    //     color: blue;
+    // }
+
     
-        #js_examplebox3{
-            width: 180px;
-            height: 40px;
-            background: orange;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            cursor: pointer;
-            padding-top: 11px;
-            position: absolute;
-            left: 10px;
-            -webkit-transition: all 2s;
-            transition: all 2s;
-        }
+    #js_box3{
+        background: orange;
+        -webkit-transition: all 2s;
+        transition: all 2s;
     }
+
+    #example3_css{
+        margin-top: 10px;
+    }
+    
 }

@@ -452,16 +452,6 @@ table {
   width: 100%;
   background: #ccc;
   padding: 120px 0 0 11%; }
-  .js_main h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px; }
-  .js_main p {
-    font-size: 17px;
-    margin-bottom: 4px; }
-  .js_main a {
-    text-decoration: none;
-    color: black; }
   @media (min-width: 1000px) {
     .js_main {
       position: absolute;
@@ -470,6 +460,43 @@ table {
       padding-top: 40px;
       left: 7%;
       background: linear-gradient(to right, #ccc, #eee); } }
+  .js_main h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 30px; }
+    @media (min-width: 1000px) {
+      .js_main h1 {
+        margin-left: 25%; } }
+  .js_main h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .js_main img {
+    margin-top: 60px;
+    display: block;
+    max-width: 95%; }
+  .js_main p {
+    font-size: 17px;
+    margin-bottom: 4px;
+    margin-top: 10px; }
+  .js_main a {
+    text-decoration: none;
+    color: black; }
+  .js_main .js_examplebox {
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 11px;
+    position: absolute;
+    left: 10px; }
+  .js_main .js_animation_wrapper {
+    width: 86%;
+    margin-bottom: 40px;
+    position: relative; }
   .js_main .js_intro_header {
     width: 88%;
     margin-bottom: 40px; }
@@ -484,73 +511,14 @@ table {
       padding-top: 12px;
       cursor: pointer;
       box-shadow: 3px 3px 5px; }
-  .js_main .js_first_animation {
-    width: 86%;
-    margin-bottom: 40px;
-    position: relative; }
-    .js_main .js_first_animation #js_examplebox1 {
-      width: 100px;
-      height: 40px;
-      background: blue;
-      border-radius: 5px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      padding-top: 11px;
-      position: absolute;
-      left: 10px; }
-    .js_main .js_first_animation .js_example1_code {
-      width: 60%;
-      height: 200px;
-      margin-top: 60px;
-      background: #333;
-      color: lightseagreen;
-      padding: 10px 0 0 10px;
-      overflow: scroll; }
-    .js_main .js_first_animation p {
-      margin-top: 6px; }
-  .js_main .js_second_animation {
-    width: 80%;
-    margin-bottom: 40px;
-    position: relative; }
-    .js_main .js_second_animation #js_examplebox2 {
-      width: 180px;
-      height: 40px;
-      background: green;
-      border-radius: 5px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      padding-top: 11px;
-      position: absolute;
-      left: 10px; }
-    .js_main .js_second_animation .js_example2_code {
-      width: 60%;
-      height: 200px;
-      margin-top: 60px;
-      background: #333;
-      color: lightseagreen;
-      padding: 10px 0 0 10px;
-      overflow: scroll; }
-    .js_main .js_second_animation a {
-      text-decoration: underline;
-      color: blue; }
-    .js_main .js_second_animation p {
-      margin-top: 6px; }
-  .js_main .js_third_animation {
-    width: 80%;
-    margin-bottom: 40px;
-    position: relative; }
-    .js_main .js_third_animation #js_examplebox3 {
-      width: 180px;
-      height: 40px;
-      background: orange;
-      border-radius: 5px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      padding-top: 11px;
-      position: absolute;
-      left: 10px;
-      -webkit-transition: all 2s;
-      transition: all 2s; }
+  .js_main #js_box1 {
+    width: 100px;
+    background: blue; }
+  .js_main #js_box2 {
+    background: green; }
+  .js_main #js_box3 {
+    background: orange;
+    -webkit-transition: all 2s;
+    transition: all 2s; }
+  .js_main #example3_css {
+    margin-top: 10px; }

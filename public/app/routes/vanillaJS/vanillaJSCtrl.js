@@ -1,8 +1,8 @@
 angular.module('tutorialSite').controller('vanillaJSCtrl', function($scope){
 
-    var box1 = document.getElementById('js_examplebox1');
-    var box2 = document.getElementById('js_examplebox2');
-    var box3 = document.getElementById('js_examplebox3');
+    var box1 = document.getElementById('js_box1');
+    var box2 = document.getElementById('js_box2');
+    var box3 = document.getElementById('js_box3');
 
     box1.addEventListener('click', function (){
         if (box1.style.background == 'red'){
@@ -14,15 +14,15 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', function($scope){
 
     box2.addEventListener('mouseover', function(){
         box2.style.position = 'absolute';
-        box2.style.left = '300px';
+        box2.style.left = '50%';
     });
 
     box3.addEventListener('mouseover', function(){
         box3.style.position = 'absolute';
-        if (box3.style.left == '300px'){
+        if (box3.style.left == '50%'){
             box3.style.left = '10px';
         }else{
-            box3.style.left = '300px';
+            box3.style.left = '50%';
         }
     });
 
