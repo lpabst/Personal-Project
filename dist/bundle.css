@@ -461,6 +461,36 @@ table {
     font-weight: bold;
     font-size: 13px; }
 
+.jquery_container {
+  width: 100%;
+  position: relative;
+  padding: 100px 20px 15px 20px;
+  background: #eee; }
+
+#jquery_header {
+  width: 150px;
+  height: 50px;
+  background: url("./img/home/jquery.jpeg") center no-repeat;
+  background-size: cover;
+  margin-left: 25%; }
+
+.jquery_animation_wrapper {
+  width: 90%;
+  position: relative;
+  padding-top: 20px; }
+  .jquery_animation_wrapper h2 {
+    font-size: 24px;
+    font-weight: bold; }
+  .jquery_animation_wrapper .jquery_examplebox {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer; }
+  .jquery_animation_wrapper p {
+    margin-top: 10px; }
 
 .js_container {
   width: 100%;
