@@ -130,6 +130,47 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
 }]);
 
+angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
+
+    // $(document).ready(function(){
+
+        var box1 = $('#jquery_box1');
+        var box2 = $('#jquery_box2');
+        var box3 = $('#jquery_box3');
+        var box4 = $('#jquery_box4');
+
+        box1.click(function(){
+            if($(this).css('height') == '40px'){
+                box1.css({
+                    'height': '80px',
+                    'width': '300px'
+                })
+            }else{
+                box1.css({
+                    'height': '40px',
+                    'width': '140px'
+                })
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+    // })
+
+
+
+
+
+}]);
 angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
 
     $scope.getHomePageIntro = function() {
@@ -228,47 +269,6 @@ angular.module('tutorialSite').service('homeService', ["$http", function($http){
   this.getTechInfo = function(){
       return techInfo;
   }
-
-
-}]);
-angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
-
-    // $(document).ready(function(){
-
-        var box1 = $('#jquery_box1');
-        var box2 = $('#jquery_box2');
-        var box3 = $('#jquery_box3');
-        var box4 = $('#jquery_box4');
-
-        box1.click(function(){
-            if($(this).css('height') == '40px'){
-                box1.css({
-                    'height': '80px',
-                    'width': '300px'
-                })
-            }else{
-                box1.css({
-                    'height': '40px',
-                    'width': '140px'
-                })
-            }
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-    // })
-
-
-
 
 
 }]);

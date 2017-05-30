@@ -301,6 +301,54 @@ table {
 
 
 
+.jquery_container {
+  width: 100%;
+  position: relative;
+  padding: 100px 20px 15px 20px;
+  background: #eee; }
+  @media (min-width: 1000px) {
+    .jquery_container {
+      padding: 100px 100px 15px 40px; } }
+
+#jquery_header {
+  width: 150px;
+  height: 50px;
+  background: url("./img/home/jquery.jpeg") center no-repeat;
+  background-size: cover;
+  margin-left: 30%; }
+  @media (min-width: 1000px) {
+    #jquery_header {
+      margin-left: 40%;
+      width: 250px;
+      height: 83px; } }
+
+.jquery_animation_wrapper {
+  width: 90%;
+  position: relative;
+  padding-top: 20px; }
+  .jquery_animation_wrapper h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .jquery_animation_wrapper .jquery_examplebox {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px;
+    transition: all 1.5s; }
+  .jquery_animation_wrapper img {
+    max-width: 90%;
+    margin-top: 10px; }
+  .jquery_animation_wrapper p {
+    margin-top: 10px; }
+
+#jquery_box1 {
+  background: #eae; }
+
 .home_container {
   width: 100%;
   position: relative; }
@@ -460,46 +508,6 @@ table {
     text-align: center;
     font-weight: bold;
     font-size: 13px; }
-
-.jquery_container {
-  width: 100%;
-  position: relative;
-  padding: 100px 20px 15px 20px;
-  background: #eee; }
-
-#jquery_header {
-  width: 150px;
-  height: 50px;
-  background: url("./img/home/jquery.jpeg") center no-repeat;
-  background-size: cover;
-  margin-left: 25%; }
-
-.jquery_animation_wrapper {
-  width: 90%;
-  position: relative;
-  padding-top: 20px; }
-  .jquery_animation_wrapper h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px; }
-  .jquery_animation_wrapper .jquery_examplebox {
-    width: 140px;
-    height: 40px;
-    border-radius: 5px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 3px 3px 5px;
-    transition: all 1.5s; }
-  .jquery_animation_wrapper img {
-    max-width: 90%;
-    margin-top: 10px; }
-  .jquery_animation_wrapper p {
-    margin-top: 10px; }
-
-#jquery_box1 {
-  background: #eae; }
 
 .js_container {
   width: 100%;

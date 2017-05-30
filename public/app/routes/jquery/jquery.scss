@@ -4,6 +4,10 @@
     position: relative;
     padding: 100px 20px 15px 20px;
     background: #eee;
+
+    @media(min-width: 1000px){
+        padding: 100px 100px 15px 40px;
+    }
 }
 
 #jquery_header{
@@ -11,7 +15,13 @@
     height: 50px;
     background: url('./img/home/jquery.jpeg')center no-repeat;
     background-size: cover;
-    margin-left: 25%;
+    margin-left: 30%;
+
+    @media(min-width: 1000px){
+        margin-left: 40%;
+        width: 250px;
+        height: 83px;
+    }
 }
 
 .jquery_animation_wrapper{
