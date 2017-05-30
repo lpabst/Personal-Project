@@ -241,8 +241,7 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($
     });
 
     submitBtn.addEventListener('click', function(){
-        console.log(box4.value);
-        console.log(input.value);
+        box4.innerText = input.value;
     });
 
 

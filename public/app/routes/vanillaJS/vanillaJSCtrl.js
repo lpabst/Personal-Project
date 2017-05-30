@@ -30,8 +30,7 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', function($scope){
     });
 
     submitBtn.addEventListener('click', function(){
-        console.log(box4.value);
-        console.log(input.value);
+        box4.innerText = input.value;
     });
 
 
