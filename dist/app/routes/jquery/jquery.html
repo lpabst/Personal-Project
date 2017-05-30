@@ -46,7 +46,30 @@
             <button class='jquery_carousel_buttons next'>Next</button>
         </div>
         <img src='./img/jquery/jq_example3.PNG' alt='picture of code'>
-        <p>Carousel Explanation</p>
+        <p>Some explanations are included in the code. Basically, if the user clicks the 
+            previous button, it checks the current css 'left' value. if it's less than 
+            zero, we add 110, which takes us closer to 0.  The left property goes negative
+            in order to make the images slide right. Once it gets to 0, the image is all
+            the way to the right.</p>
+        <p>On the other hand, when the user clicks 'next', we want to make the 'left' value
+            smaller, so that the image will slide left. The lowest we want to go is 440, which
+            is the left edge of the final picture. This way, we can't scroll past the first or 
+            last picture on either end.</p>
+        <p>Once we know the css value, and we've made sure that we aren't sliding past either end
+            of the pictures, we can either add 110 or subtract 110 from the current css percentage
+            in order to move the pictures in one direction or the other. The css property 'transition'
+            has been set to 'transition: all 1s;' so that the images appear to slide. Of course, instead
+            of the numbers 1-5, we could put images inside the divs and have a sliding carousel for 
+            pictures!
+    </div>
+
+    <div class='jquery_animation_wrapper'>
+        <h2>Nice Work!</h2>
+        <p>Check out some of my other tutorials here:</p>
+        <div class='pagelink' ui-sref='angular'>ANGULAR</div>
+        <div class='pagelink' ui-sref='css'>CSS</div>
+        <div class='pagelink' ui-sref='greensock'>GREENSOCK</div>
+        <div class='pagelink' ui-sref='javascript'>JAVASCRIPT</div>
     </div>
 
 

@@ -260,9 +260,12 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
 
 // Example2 - Changes box width and height based on user input
     box2.click(function(){
-        if (height.val() < 10 || width.val() < 10 || height.val() > 300 || width.val() > 300){
+        //limits height/width to values 10-300
+        if (height.val() < 10 || width.val() < 10 
+        || height.val() > 300 || width.val() > 300){
             alert('Please enter height and width values between 10-300');
         }else{
+            //changes the box's css based on what the user typed in
             box2.css({
                 'width': width.val() + 'px',
                 'height': height.val() + 'px'
@@ -273,23 +276,29 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
 // Example3 - JQuery Carousel. Changes the positioning of the div so 
 // that a different picture is showing.
         
+    //Gets the css property 'left' from our
+    //element, and converts it to a number    
     var left = parseInt(pics.css('left'), 10);
 
+    //if they click the previous button, do this
     prev.click(function(){
+        //as long as left isn't greater than 0
         if (left < 0){
+            //add 110 to it
             left += 110;
         }
-            console.log(left);
+        //then, set the css property to that new
+        //value, as a percentage
         pics.css({
             left: left + '%'
         })
     });
 
+    //if they click the next button, do this
     next.click(function(){
         if (left > -440){
             left -= 110;
         }
-            console.log(left);
         pics.css({
             left: left + '%'
         })

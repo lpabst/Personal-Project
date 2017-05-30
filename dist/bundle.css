@@ -213,7 +213,6 @@ table {
           background: white;
           transform: scale(1.1); }
 
-
 .contact_container {
   width: 100%;
   position: relative;
@@ -298,6 +297,7 @@ table {
     .contact_main_section .large {
       margin-top: 24px;
       transform: scale(2); } }
+
 
 
 
@@ -551,6 +551,20 @@ table {
   .jquery_carousel_frame .next {
     right: 10px; }
 
+.pagelink {
+  width: 130px;
+  height: 40px;
+  border-radius: 6px;
+  background: linear-gradient(to bottom right, #99c, lightseagreen, #99c);
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 6px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 12px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #144; }
+
 .js_container {
   width: 100%;
   position: relative; }
@@ -647,16 +661,3 @@ table {
     margin-top: 60px; }
   .js_main #js_example4_code {
     margin-top: 10px; }
-  .js_main .pagelink {
-    width: 130px;
-    height: 40px;
-    border-radius: 6px;
-    background: linear-gradient(to bottom right, #99c, lightseagreen, #99c);
-    display: inline-block;
-    margin-right: 8px;
-    margin-top: 6px;
-    text-align: center;
-    font-weight: bold;
-    padding-top: 12px;
-    cursor: pointer;
-    box-shadow: 3px 3px 5px #144; }
