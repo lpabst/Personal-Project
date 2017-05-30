@@ -214,6 +214,9 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($
     var box1 = document.getElementById('js_box1');
     var box2 = document.getElementById('js_box2');
     var box3 = document.getElementById('js_box3');
+    var box4 = document.getElementById('js_box4');
+    var input = document.getElementById('js_input');
+    var submitBtn = document.getElementById('js_submit');
 
     box1.addEventListener('click', function (){
         if (box1.style.background == 'red'){
@@ -237,7 +240,10 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($
         }
     });
 
-
+    submitBtn.addEventListener('click', function(){
+        console.log(box4.value);
+        console.log(input.value);
+    });
 
 
 

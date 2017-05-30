@@ -468,6 +468,20 @@ table {
     @media (min-width: 1000px) {
       .js_main h1 {
         margin-left: 25%; } }
+  .js_main .js_intro_header {
+    width: 88%;
+    margin-bottom: 40px; }
+    .js_main .js_intro_header div {
+      margin-top: 6px;
+      width: 150px;
+      height: 40px;
+      border-radius: 5px;
+      background: linear-gradient(to right, #b29f94, #603813);
+      font-weight: bold;
+      text-align: center;
+      padding-top: 12px;
+      cursor: pointer;
+      box-shadow: 3px 3px 5px; }
   .js_main h2 {
     font-size: 22px;
     font-weight: bold;
@@ -497,20 +511,9 @@ table {
     width: 86%;
     margin-bottom: 40px;
     position: relative; }
-  .js_main .js_intro_header {
-    width: 88%;
-    margin-bottom: 40px; }
-    .js_main .js_intro_header div {
-      margin-top: 6px;
-      width: 150px;
-      height: 40px;
-      border-radius: 5px;
-      background: linear-gradient(to right, #b29f94, #603813);
-      font-weight: bold;
-      text-align: center;
-      padding-top: 12px;
-      cursor: pointer;
-      box-shadow: 3px 3px 5px; }
+  .js_main .js_animation_wrapper a {
+    text-decoration: underline;
+    color: blue; }
   .js_main #js_box1 {
     width: 100px;
     background: blue; }
@@ -522,3 +525,8 @@ table {
     transition: all 2s; }
   .js_main #example3_css {
     margin-top: 10px; }
+  .js_main #js_box4 {
+    width: auto;
+    height: auto; }
+  .js_main #js_input {
+    margin-top: 60px; }
