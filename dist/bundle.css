@@ -508,8 +508,49 @@ table {
       padding: 10px 0 0 10px;
       overflow: scroll; }
     .js_main .js_first_animation p {
-      margin-top: 5px; }
-  .js_main .test2 {
+      margin-top: 6px; }
+  .js_main .js_second_animation {
     width: 80%;
-    height: 800px;
-    background: blue; }
+    margin-bottom: 40px;
+    position: relative; }
+    .js_main .js_second_animation #js_examplebox2 {
+      width: 180px;
+      height: 40px;
+      background: green;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      padding-top: 11px;
+      position: absolute;
+      left: 10px; }
+    .js_main .js_second_animation .js_example2_code {
+      width: 60%;
+      height: 200px;
+      margin-top: 60px;
+      background: #333;
+      color: lightseagreen;
+      padding: 10px 0 0 10px;
+      overflow: scroll; }
+    .js_main .js_second_animation a {
+      text-decoration: underline;
+      color: blue; }
+    .js_main .js_second_animation p {
+      margin-top: 6px; }
+  .js_main .js_third_animation {
+    width: 80%;
+    margin-bottom: 40px;
+    position: relative; }
+    .js_main .js_third_animation #js_examplebox3 {
+      width: 180px;
+      height: 40px;
+      background: orange;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      padding-top: 11px;
+      position: absolute;
+      left: 10px;
+      -webkit-transition: all 2s;
+      transition: all 2s; }

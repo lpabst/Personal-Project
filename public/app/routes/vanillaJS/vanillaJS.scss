@@ -90,14 +90,66 @@
         }
 
         p{
-            margin-top: 5px;
+            margin-top: 6px;
         }
     }
 
-    .test2{
+    .js_second_animation{
         width: 80%;
-        height: 800px;
-        background: blue;
+        margin-bottom: 40px;
+        position: relative;
+
+        #js_examplebox2{
+            width: 180px;
+            height: 40px;
+            background: green;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            padding-top: 11px;
+            position: absolute;
+            left: 10px;
+        }
+
+        .js_example2_code{
+            width: 60%;
+            height: 200px;
+            margin-top: 60px;
+            background: #333;
+            color: lightseagreen;
+            padding: 10px 0 0 10px;
+            overflow: scroll;
+        }
+
+        a{
+            text-decoration: underline;
+            color: blue;
+        }
+
+        p{
+            margin-top: 6px;
+        }
     }
 
+    .js_third_animation{
+        width: 80%;
+        margin-bottom: 40px;
+        position: relative;
+    
+        #js_examplebox3{
+            width: 180px;
+            height: 40px;
+            background: orange;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            padding-top: 11px;
+            position: absolute;
+            left: 10px;
+            -webkit-transition: all 2s;
+            transition: all 2s;
+        }
+    }
 }
