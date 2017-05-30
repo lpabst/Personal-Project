@@ -11,12 +11,12 @@
                 this tutorial. If you need help learning,
                 or a refresher on the basics, check out one
                 of these great sites here:</p>
-                <a target='_blank' href='https://www.codecademy.com'>
-                    <div class='js_codecademy'>Codecademy</div>
-                </a>
-                <a target='_blank' href='https://www.freecodecamp.com'>
-                    <div class='js_freecodecamp'>Free Code Camp</div>
-                </a>
+            <a target='_blank' href='https://www.codecademy.com'>
+                <div class='js_codecademy'>Codecademy</div>
+            </a>
+            <a target='_blank' href='https://www.freecodecamp.com'>
+                <div class='js_freecodecamp'>Free Code Camp</div>
+            </a>
         </div>
 
         <div class='js_animation_wrapper'>
@@ -74,9 +74,21 @@
             <input type='text' id='js_input' placeholder="type here">
             <button id='js_submit'>Submit</button>
             <p>Type a few words into the input box, then hit submit!</p>
-            <img src='./img/js/example4.jpg' alt='code'>
-            <p>This will be the explanation!</p>
+            <img id='js_example4_code' src='./img/js/example4.jpg' alt='code'>
+            <p>We target the elements with document.getElementById, then we wait for the
+                submit button to be clicked. Once it is, we set the inner text of the target
+                div to the value of whatever is currently in the input box.  We could also
+                add some code to zero out the input box if we wanted: input.value = "" i.e.
+                set it equal to an empty string!</p>
         </div>
+
+        <div class='js_animation_wrapper'>
+            <h2>Nice Work!</h2>
+            <p>Check out some of my other tutorials here:</p>
+            <div class='pagelink' ui-sref='angular'>ANGULAR</div>
+            <div class='pagelink' ui-sref='css'>CSS</div>
+            <div class='pagelink' ui-sref='greensock'>GREENSOCK</div>
+            <div class='pagelink' ui-sref='jquery'>JQUERY</div>
 
     </section>
 

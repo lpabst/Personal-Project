@@ -274,7 +274,6 @@ table {
       transform: scale(2); } }
 
 
-
 .home_container {
   width: 100%;
   position: relative; }
@@ -436,6 +435,7 @@ table {
     font-size: 13px; }
 
 
+
 .js_container {
   width: 100%;
   position: relative; }
@@ -451,7 +451,7 @@ table {
 .js_main {
   width: 100%;
   background: #ccc;
-  padding: 120px 0 0 11%; }
+  padding: 120px 0 15px 11%; }
   @media (min-width: 1000px) {
     .js_main {
       position: absolute;
@@ -530,3 +530,18 @@ table {
     height: auto; }
   .js_main #js_input {
     margin-top: 60px; }
+  .js_main #js_example4_code {
+    margin-top: 10px; }
+  .js_main .pagelink {
+    width: 130px;
+    height: 40px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom right, #99c, lightseagreen, #99c);
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: 6px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px #144; }
