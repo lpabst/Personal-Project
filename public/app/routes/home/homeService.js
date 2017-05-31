@@ -23,38 +23,6 @@ angular.module('tutorialSite').service('homeService', function($http){
         }
     ];
 
-    var techInfo = [
-        {
-            route: 'angular',
-            img: './img/angular.jpeg',
-            desc: `AngularJS is a structural 
-                framework for dynamic web apps`
-        },
-        {
-            route: 'css',
-            img: './img/css.jpeg',
-            desc: `"Cascading Style Sheet." Cascading style sheets 
-                are used to format the layout of Web pages`
-        },
-        {
-            route: 'greensock',
-            img: './img/greensock.png',
-            desc: `GreenSock is a suite of JavaScript
-                tools for high-performance HTML5 animations`
-        },
-        {
-            route: 'jquery',
-            img: './img/jquery.jpeg',
-            desc: `jQuery is a fast, small, and 
-                feature-rich JavaScript library`
-        },
-        {
-            route: 'javascript',
-            img: './img/js.jpeg',
-            desc: `JavaScript is a programming language commonly 
-                used in web development`
-        },
-    ]
 
   this.getHomePageIntro = function(){
       return homePageInfo[0];
@@ -69,7 +37,7 @@ angular.module('tutorialSite').service('homeService', function($http){
   }
 
   this.getTechInfo = function(){
-      return techInfo;
+      return $http.get('/api/techinfo');
   }
 
 

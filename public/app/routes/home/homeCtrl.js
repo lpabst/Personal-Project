@@ -13,7 +13,10 @@ angular.module('tutorialSite').controller('homeCtrl', function($scope, homeServi
     }
 
     $scope.getTechInfo = function(){
-        $scope.techInfo = homeService.getTechInfo();
+        $scope.techInfo = homeService.getTechInfo().then(function(response){
+            console.log(response.data);
+            $scope.techInfo = response.data;
+        });
     }
 
     $scope.getHomePageIntro();
