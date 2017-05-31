@@ -95,7 +95,9 @@ table {
   position: fixed;
   left: 3%;
   top: 88px;
-  z-index: 155; }
+  z-index: 155;
+  transition: all 1s;
+  -webkit-transition: all 0.5s; }
   .learn_subheader ul {
     width: 20%;
     height: 200px;
@@ -213,6 +215,7 @@ table {
           background: white;
           transform: scale(1.1); }
 
+
 .contact_container {
   width: 100%;
   position: relative;
@@ -297,7 +300,6 @@ table {
     .contact_main_section .large {
       margin-top: 24px;
       transform: scale(2); } }
-
 
 
 
