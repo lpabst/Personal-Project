@@ -215,7 +215,6 @@ table {
           background: white;
           transform: scale(1.1); }
 
-
 .contact_container {
   width: 100%;
   position: relative;
@@ -301,6 +300,10 @@ table {
       margin-top: 24px;
       transform: scale(2); } }
 
+.csspage_container {
+  width: 100%;
+  position: relative;
+  padding-top: 100px; }
 
 
 .home_container {
@@ -663,3 +666,4 @@ table {
     margin-top: 60px; }
   .js_main #js_example4_code {
     margin-top: 10px; }
+
