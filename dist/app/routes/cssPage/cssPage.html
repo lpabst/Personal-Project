@@ -12,18 +12,73 @@
 
         <div class='css_animation_wrapper'>
             <h2>Intro</h2>
-            <div class='jquery_examplebox' id='jquery_box2'>Click Me!</div>
-            <input type='text' placeholder="Height" id='jquery_input_height'>Height
-            <input type='text' placeholder="Width" id='jquery_input_width'>Width
-            <img src='./img/jquery/jq_example2.PNG' alt='picture of code'>
-            <p>This builds on our last example, allowing the user to type a custom height
-                and width into the input boxes, then when they click on the box, it will
-                grow to that height/width. You will notice I also added in some restrictions
-                for how large or small the height/width are allowed to go
+            <p>Css makes the website <span id='css_pretty'>pretty</span>! While it's mainly used for styling the webpage
+                and sizing/positioning everything on the page a certain way, it can also be 
+                used for animations! While we won't be getting into the styling aspects of CSS
+                here, we will learn about CSS animations.</p>
+            <P> To Learn CSS basics, such as styling,
+                check out 
+                <a href='https://codecademy.com' target='_blank'>CodeCademy</a> 
+                or <a href='https://w3schools.com/css/default.asp' target='_blank'>W3Schools</a>! 
+                Using one of the Javascript languages offers a lot more 
+                power and versatility in what kinds of animations you can do, but CSS is
+                simple, and blazingly fast.  This makes it a great option for any simple 
+                animations.</p>
+            <p>Css is limited however.  If you want to click a button and carry out some
+                effect somewhere on the page, you will need to use Javascript (or any 
+                of the JS libraries like JQuery/Angular/Greensock). Let's explore some of the
+                options we have with CSS though!</p>
+            <div class='css_examplebox' id='css_box1'>Hover Effect</div>
+            <img src='./img/css/css_example1.PNG' alt='picture of code'>
+            <p>Here we have 3 blocks of code. The first is the styling. All of my example boxes
+                on this page will share the same class (css_examplebox) for their initial styling.
+                This real fun happens in code-blocks 2 & 3!</p>
+            <p>From here, I can use their id (css_box1, css_box2, etc) to give them specific
+                instructions, such as a background color, and transition duration.  Transition: all
+                0.4s basically says, for ALL transitions on this element, take 0.4 seconds to 
+                get there, and 0.4 seconds to get back. </p>
+            <p>So when we hover (code-block 3), we are changing the background color, 
+                and increasing the entire element by a scale of 1.1. It takes 0.4 
+                seconds to do that, and when your mouse leaves the element, 0.4 seconds
+                again to go back to the original state.
+            </p>
+            <p>Css is great for hover effects. If you want slight changes when the user is
+                hovering over an element- such as having a menu item light up when they hover
+                over it to let them know it is clickable- use CSS.  It is fast, easy, and 
+                doesn't require a bunch of extra code!
             </p>
         </div>
 
-
+        <div class='css_animation_wrapper'>
+            <h2>Click Events</h2>
+            <p>Click events are pretty limited with CSS. We can use 'active' to imitate
+                what a click event would look like, but only on the element we are clicking.
+                When you click on an element, that element becomes 'active', so you can style
+                it accordingly. Css doesn't have a native way to affect the DOM in general
+                with a click event however.</p>          
+            <div class='css_examplebox' id='css_box2'>Active Effect</div>
+            <div class='css_examplebox' id='css_box3'>Active Effect</div>
+            <img src='./img/css/css_example2.PNG' alt='picture of code'>
+            <p>I made two boxes to demonstrate some different properties we can use with
+                the CSS 'transform' property! This one is a lot of fun, and allows us to 
+                do some really cool animations. You will notice that the purple box seems
+                to swing away from the webpage in a 3D motion.</p>
+            <p> To accomplish this, we give the containing element (the parent div) a 
+                property of 'perspective: 1000px;'. The amount of pixels determines how 
+                close you are to the effect. Smaller pixel values will result in a really large,
+                spectacular animation. Both boxes have a left margin, and transition durations 
+                specified.</p>
+            <p>Box 2 (green) rotates clockwise 20 degrees when it is active. Once it's not active
+                anymore, it goes back to starting position. You will also notice that I included
+                a 'transform-origin' property, which specifies where to rotate from. This is 
+                why that top left corner stays fixed while the rest of it swings, as if a nail
+                in the top right corner just fell out!</p>
+            <p>Box 3 (purple) rotates on the y axis. Transform-origin has been set to left, 
+                making it swing on the left side instead of in the middle. Since it is swinging
+                'away' from the webpage, the perspective that we set on the parent element 
+                comes into effect. Box 2 doesn't swing away from us, so it doesn't have any
+                effect on that one.</p>
+        </div>
 
 
 
