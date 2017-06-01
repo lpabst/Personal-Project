@@ -1,0 +1,53 @@
+
+.greensock_main_container{
+    width: 100%;
+    position: relative;
+    background: #222;
+}
+
+.greensock_intro{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+
+        @media (min-aspect-ratio: 16/9) {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            width: auto;
+            height: 100vh;
+            left: -70%;
+        }
+    }
+
+    h1{
+        font-size: 36px;
+        font-weight: bold;
+        color: #222;
+        text-shadow: 1px 1px 1px white;
+        text-align: center;
+        width: 60%;
+        position: absolute;
+        left: 20%;
+        top: 90px;
+
+        @media(min-width: 700px){
+            font-size: 52px;
+            top: 110px;
+        }
+    }
+}
+
+.greensock_animation_wrapper{
+
+}
