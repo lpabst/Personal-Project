@@ -58,6 +58,7 @@
     width: calc(100% - 20px);
     margin-bottom: 20px;
     perspective: 2000px;
+    position: relative;
 
     h2{
         font-size: 25px;
@@ -132,4 +133,72 @@
     top: 37px;
     left: 0;
     box-shadow: 2px 2px 4px;
+}
+
+.ground{
+    width: 100%;
+    height: 10px;
+    background: #551a1a;
+    position: absolute;
+    top: 200px;
+}
+
+.stem{
+    width: 8px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    background: darkgreen;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.petal{
+    width: 0px;
+    height: 0px;
+    border-radius: 45%;
+    position: absolute;
+    bottom: 118px;
+    left: 0px;
+    border: 0px solid gray;
+}
+
+.a{
+    transform: rotate(-40deg);
+    transform-origin: bottom;
+    background: linear-gradient(to right, #955, #c77, violet);
+}
+
+.b{
+    transform: rotate(40deg);
+    transform-origin: bottom;
+    background: linear-gradient(to right, violet, #c77, #955);
+}
+
+.c{
+    background: linear-gradient(to right, #c77, violet, #c77);
+}
+
+.leaf{
+    width: 10px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 6px;
+    background: darkolivegreen;
+    transform: rotate(-20deg);
+    transform-origin: left;
+}
+
+.mini_stem{
+    width: 3px;
+    height: 0px;
+    border-radius: 1px;
+    transform: rotate(-30deg);
+    transform-origin: bottom left;
+    position: absolute;
+    bottom: 40%;
+    background: green;
 }

@@ -142,6 +142,11 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
     var box3 = $('#greensock_box3');
     let box4_btn = $('#gs_example4_btn');
     var box4 = $('#greensock_box4');
+    var plantExampleBtn = $('#plant_example_btn');
+    var stem = $('.stem');
+    var petals = $('.petal');
+    var leaf = $('.leaf');
+    var miniStem = $('.mini_stem');
 
     TweenLite.to($('#greensock_box1'), 10, {left:'200px'});
 
@@ -174,7 +179,13 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
         TweenLite.from(box4, 1.2, {left:'200px'});
     })
 
-
+    plantExampleBtn.click(function(){
+        TweenLite.to(stem, 5, {height:'120px'});
+        TweenLite.to(leaf, 3, {width: '30px', height: '18px', delay:1});
+        TweenLite.to(miniStem, 3, {width:'4px', height:'42px', delay:1.8});
+        TweenLite.to(petals, 0.1, {border:'0.5px solid gray', delay:4.7});
+        TweenLite.to(petals, 2, {width:'14px', height:'20px', left:'-3px', delay:4.8});
+    })
 }]);
 angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
 

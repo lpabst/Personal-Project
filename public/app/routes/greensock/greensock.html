@@ -62,13 +62,25 @@
         </div>  
 
         <div class='animation_wrapper'>
-            <h2 style='margin-bottom:55px'>Putting It All Together</h2>
-            <p>TweenLite.from(element, duration, attributes). We use this for a slightly different
-                purpose. Instead </p>
-            <div class='examplebox' id='greensock_box4'>.from()</div>
-            <button id='gs_example4_btn'>Start Animation</button>
-            <img src='./img/greensock/greensock_example4.PNG' alt='picture of code'>
-            <p>Let's try something a little more complicated!</p>
+            <h2>Putting It All Together</h2>
+            <div class='ground'>
+                <div class='stem'>
+                    <div class='petal a'></div>
+                    <div class='petal b'></div>
+                    <div class='petal c'></div>
+                    <div class='leaf'></div>
+                    <div class='mini_stem'></div>
+                </div>
+            </div>
+            <button id='plant_example_btn' style='margin-bottom:170px'>GO</button>
+            <img src='./img/greensock/greensock_example5.PNG' alt='picture of code'>
+            <p>I have starting width and height very small for all of the items here. Using
+                TweenLite.to, I increase their size over time, some of them delayed. Once the
+                plant is done growing, I give the petals a thin border so we can see them, then
+                slowly increase their size. Two of the petals are rotated 40 degrees, and -40 
+                degrees, respectively, and they all have a gradient background. This presents a 
+                more 3-Dimensional look!
+            </p>
         </div>  
 
 
