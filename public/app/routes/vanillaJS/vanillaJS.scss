@@ -14,6 +14,11 @@
     box-shadow: 3px 3px 5px #144;
 }
 
+.pagelink:hover{
+    transform: scale(1.01);
+    color: #222;
+}
+
 .js_container{
     width: 100%;
     position: relative;

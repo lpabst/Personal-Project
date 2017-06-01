@@ -64,7 +64,7 @@
                 do some really cool animations. You will notice that the purple box seems
                 to swing away from the webpage in a 3D motion.</p>
             <p> To accomplish this, we give the containing element (the parent div) a 
-                property of 'perspective: 1000px;'. The amount of pixels determines how 
+                property of 'perspective: 2000px;'. The amount of pixels determines how 
                 close you are to the effect. Smaller pixel values will result in a really large,
                 spectacular animation. Both boxes have a left margin, and transition durations 
                 specified.</p>
@@ -78,6 +78,42 @@
                 'away' from the webpage, the perspective that we set on the parent element 
                 comes into effect. Box 2 doesn't swing away from us, so it doesn't have any
                 effect on that one.</p>
+        </div>
+
+        <div class='css_animation_wrapper'>
+            <h2>Custom Animations</h2>       
+            <div class='css_examplebox' id='css_box4'>Example 1</div>
+            <p style="margin-top: 85px">Built in transitions are wonderful, and offer a wide variety of effects that can
+                be applied to our styling. Times may arise however, when we want a very specific
+                effect that isn't readily available with the built in Transitions. This is when
+                we can build a custom animation and apply it to an element!</p>   
+            <img src='./img/css/css_example3.PNG' alt='picture of code'>
+            <p>Step 1: Name your animation and apply it to the element. In this scenario
+                we named it 'movearound', and we told the element to apply that animation over a
+                period of 4 seconds, and to do that over and over again infinitely.</p>
+            <p>Step 2: Decide how many steps you want and how spaced apart they will be. In this
+                scenario we have four steps. At 0% completion, the box stays where it is. At 
+                30% completion, it has moved down and right, grown bigger, and increased its 
+                shadow (giving it the illusion of coming off the screen). At 60% completion, it
+                has reduced size and shadow size, moved back up and to the right, and by 100% it
+                is back where it started. Altering the percentages will alter the speed at which
+                each step is completed. The entire 100% is 4 seconds in this case, since that is
+                what we specified on the element's styling.
+            </p>
+            <p>That's it! You can control how long it takes, and what is happening at each step.
+            So what if we want to only trigger the animation when the user interacts with the
+            element? We could use hover or active, or a simple Javascript click event.</p>
+            <p>For this next one, let's make it spin around in circles!</p>
+            <div class='css_examplebox' id='css_box5'>Example 2</div>
+            <img src='./img/css/css_example4.PNG' alt='picture of code'>
+            <p>Notice how we take 70% of the time doing the first half of the spin, then
+                the rest happens in 30% of the time. So the effect is different on each half of
+                the spin. </p>
+            <p>And if we want to spin on the edge instead of in the middle?</p>
+            <div class='css_examplebox' id='css_box6'>Example 3</div>
+            <img src='./img/css/css_example5.PNG' alt='picture of code'>            
+            <p>That's about it! With these tools you can set up all kinds of CSS animations! 
+                Have fun!</p>
         </div>
 
 
