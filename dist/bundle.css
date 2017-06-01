@@ -469,8 +469,7 @@ table {
 
 .greensock_main_container {
   width: 100%;
-  position: relative;
-  background: #222; }
+  position: relative; }
 
 .greensock_intro {
   width: 100%;
@@ -506,6 +505,282 @@ table {
       .greensock_intro h1 {
         font-size: 52px;
         top: 110px; } }
+
+.greensock_tutorials_container {
+  width: 100%;
+  background: #ddd;
+  padding: 20px 10px 15px 10px;
+  z-index: 1000; }
+
+.animation_wrapper {
+  width: calc(100% - 20px);
+  margin-bottom: 20px;
+  perspective: 2000px; }
+  .animation_wrapper h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0px 15px 0px; }
+    @media (min-width: 1000px) {
+      .animation_wrapper h2 {
+        font-size: 34px; } }
+  .animation_wrapper p {
+    margin-bottom: 10px; }
+  .animation_wrapper .examplebox {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 12px; }
+  .animation_wrapper img {
+    max-width: 95%;
+    margin-bottom: 10px;
+    display: block; }
+
+#greensock_box1 {
+  background: #932;
+  position: absolute;
+  top: 33px;
+  left: 0; }
+
+#greensock_box2 {
+  background: #4cc;
+  position: absolute;
+  top: 33px;
+  left: 0; }
+
+#greensock_box3 {
+  background: #69c;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+#greensock_box4 {
+  background: #ce6;
+  position: absolute;
+  left: 105px;
+  top: 35px; }
+
+#gs_example4_btn {
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(#813, #395);
+  position: absolute;
+  top: 37px;
+  left: 0;
+  box-shadow: 2px 2px 4px; }
+
+.pagelink {
+  width: 130px;
+  height: 40px;
+  border-radius: 6px;
+  background: linear-gradient(to bottom right, #99c, lightseagreen, #99c);
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 6px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 12px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #144; }
+
+.pagelink:hover {
+  transform: scale(1.01);
+  color: #222; }
+
+.js_container {
+  width: 100%;
+  position: relative; }
+
+.js_container_backdrop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: url("./img/js_intro.jpeg") right no-repeat;
+  background-size: cover;
+  z-index: -5; }
+
+.js_main {
+  width: 100%;
+  background: #ccc;
+  padding: 120px 0 15px 11%; }
+  @media (min-width: 1000px) {
+    .js_main {
+      position: absolute;
+      width: 86%;
+      top: 100px;
+      padding-top: 40px;
+      left: 7%;
+      background: linear-gradient(to right, #ccc, #eee); } }
+  .js_main h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 30px; }
+    @media (min-width: 1000px) {
+      .js_main h1 {
+        margin-left: 25%; } }
+  .js_main .js_intro_header {
+    width: 88%;
+    margin-bottom: 40px; }
+    .js_main .js_intro_header div {
+      margin-top: 6px;
+      width: 150px;
+      height: 40px;
+      border-radius: 5px;
+      background: linear-gradient(to right, #b29f94, #603813);
+      font-weight: bold;
+      text-align: center;
+      padding-top: 12px;
+      cursor: pointer;
+      box-shadow: 3px 3px 5px; }
+  .js_main h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .js_main img {
+    margin-top: 60px;
+    display: block;
+    max-width: 95%; }
+  .js_main p {
+    font-size: 17px;
+    margin-bottom: 4px;
+    margin-top: 10px; }
+  .js_main a {
+    text-decoration: none;
+    color: black; }
+  .js_main .js_examplebox {
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 11px;
+    position: absolute;
+    left: 10px; }
+  .js_main .js_animation_wrapper {
+    width: 86%;
+    margin-bottom: 40px;
+    position: relative; }
+  .js_main .js_animation_wrapper a {
+    text-decoration: underline;
+    color: blue; }
+  .js_main #js_box1 {
+    width: 100px;
+    background: blue; }
+  .js_main #js_box2 {
+    background: green; }
+  .js_main #js_box3 {
+    background: orange;
+    -webkit-transition: all 2s;
+    transition: all 2s; }
+  .js_main #example3_css {
+    margin-top: 10px; }
+  .js_main #js_box4 {
+    width: auto;
+    height: auto; }
+  .js_main #js_input {
+    margin-top: 60px; }
+  .js_main #js_example4_code {
+    margin-top: 10px; }
+
+.jquery_container {
+  width: 100%;
+  position: relative;
+  padding: 100px 20px 15px 20px;
+  background: #eee; }
+  @media (min-width: 1000px) {
+    .jquery_container {
+      padding: 100px 100px 15px 40px; } }
+
+#jquery_header {
+  width: 150px;
+  height: 50px;
+  background: url("./img/home/jquery.jpeg") center no-repeat;
+  background-size: cover;
+  margin-left: 30%; }
+  @media (min-width: 1000px) {
+    #jquery_header {
+      margin-left: 40%;
+      width: 250px;
+      height: 83px; } }
+
+.jquery_animation_wrapper {
+  width: 90%;
+  position: relative;
+  padding-top: 30px; }
+  .jquery_animation_wrapper h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .jquery_animation_wrapper .jquery_examplebox {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px;
+    transition: all 1.5s; }
+  .jquery_animation_wrapper img {
+    max-width: 90%;
+    margin-top: 10px;
+    display: block; }
+  .jquery_animation_wrapper p {
+    margin-top: 10px; }
+
+#jquery_box1 {
+  background: #eae; }
+
+#jquery_box2 {
+  background: #4ee;
+  margin-bottom: 10px;
+  overflow: hidden; }
+
+.jquery_carousel_frame {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden; }
+  .jquery_carousel_frame ul {
+    position: absolute;
+    left: 0px;
+    width: 550%;
+    transition: all 1s ease-in-out; }
+    .jquery_carousel_frame ul li {
+      float: left;
+      width: 20%;
+      line-height: 300px;
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+      color: white;
+      background: #222; }
+  .jquery_carousel_frame .jquery_carousel_buttons {
+    width: 60px;
+    height: 30px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px; }
+  .jquery_carousel_frame .prev {
+    left: 10px; }
+  .jquery_carousel_frame .next {
+    right: 10px; }
 
 .home_container {
   width: 100%;
@@ -666,208 +941,3 @@ table {
     text-align: center;
     font-weight: bold;
     font-size: 13px; }
-
-.jquery_container {
-  width: 100%;
-  position: relative;
-  padding: 100px 20px 15px 20px;
-  background: #eee; }
-  @media (min-width: 1000px) {
-    .jquery_container {
-      padding: 100px 100px 15px 40px; } }
-
-#jquery_header {
-  width: 150px;
-  height: 50px;
-  background: url("./img/home/jquery.jpeg") center no-repeat;
-  background-size: cover;
-  margin-left: 30%; }
-  @media (min-width: 1000px) {
-    #jquery_header {
-      margin-left: 40%;
-      width: 250px;
-      height: 83px; } }
-
-.jquery_animation_wrapper {
-  width: 90%;
-  position: relative;
-  padding-top: 30px; }
-  .jquery_animation_wrapper h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px; }
-  .jquery_animation_wrapper .jquery_examplebox {
-    width: 140px;
-    height: 40px;
-    border-radius: 5px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 3px 3px 5px;
-    transition: all 1.5s; }
-  .jquery_animation_wrapper img {
-    max-width: 90%;
-    margin-top: 10px;
-    display: block; }
-  .jquery_animation_wrapper p {
-    margin-top: 10px; }
-
-#jquery_box1 {
-  background: #eae; }
-
-#jquery_box2 {
-  background: #4ee;
-  margin-bottom: 10px;
-  overflow: hidden; }
-
-.jquery_carousel_frame {
-  width: 300px;
-  height: 300px;
-  position: relative;
-  overflow: hidden; }
-  .jquery_carousel_frame ul {
-    position: absolute;
-    left: 0px;
-    width: 550%;
-    transition: all 1s ease-in-out; }
-    .jquery_carousel_frame ul li {
-      float: left;
-      width: 20%;
-      line-height: 300px;
-      text-align: center;
-      font-size: 50px;
-      font-weight: bold;
-      color: white;
-      background: #222; }
-  .jquery_carousel_frame .jquery_carousel_buttons {
-    width: 60px;
-    height: 30px;
-    line-height: 25px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    background: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    bottom: 20px; }
-  .jquery_carousel_frame .prev {
-    left: 10px; }
-  .jquery_carousel_frame .next {
-    right: 10px; }
-
-.pagelink {
-  width: 130px;
-  height: 40px;
-  border-radius: 6px;
-  background: linear-gradient(to bottom right, #99c, lightseagreen, #99c);
-  display: inline-block;
-  margin-right: 8px;
-  margin-top: 6px;
-  text-align: center;
-  font-weight: bold;
-  padding-top: 12px;
-  cursor: pointer;
-  box-shadow: 3px 3px 5px #144; }
-
-.pagelink:hover {
-  transform: scale(1.01);
-  color: #222; }
-
-.js_container {
-  width: 100%;
-  position: relative; }
-
-.js_container_backdrop {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background: url("./img/js_intro.jpeg") right no-repeat;
-  background-size: cover;
-  z-index: -5; }
-
-.js_main {
-  width: 100%;
-  background: #ccc;
-  padding: 120px 0 15px 11%; }
-  @media (min-width: 1000px) {
-    .js_main {
-      position: absolute;
-      width: 86%;
-      top: 100px;
-      padding-top: 40px;
-      left: 7%;
-      background: linear-gradient(to right, #ccc, #eee); } }
-  .js_main h1 {
-    font-size: 32px;
-    font-weight: bold;
-    text-decoration: underline;
-    margin-bottom: 30px; }
-    @media (min-width: 1000px) {
-      .js_main h1 {
-        margin-left: 25%; } }
-  .js_main .js_intro_header {
-    width: 88%;
-    margin-bottom: 40px; }
-    .js_main .js_intro_header div {
-      margin-top: 6px;
-      width: 150px;
-      height: 40px;
-      border-radius: 5px;
-      background: linear-gradient(to right, #b29f94, #603813);
-      font-weight: bold;
-      text-align: center;
-      padding-top: 12px;
-      cursor: pointer;
-      box-shadow: 3px 3px 5px; }
-  .js_main h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px; }
-  .js_main img {
-    margin-top: 60px;
-    display: block;
-    max-width: 95%; }
-  .js_main p {
-    font-size: 17px;
-    margin-bottom: 4px;
-    margin-top: 10px; }
-  .js_main a {
-    text-decoration: none;
-    color: black; }
-  .js_main .js_examplebox {
-    width: 180px;
-    height: 40px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    padding-top: 11px;
-    position: absolute;
-    left: 10px; }
-  .js_main .js_animation_wrapper {
-    width: 86%;
-    margin-bottom: 40px;
-    position: relative; }
-  .js_main .js_animation_wrapper a {
-    text-decoration: underline;
-    color: blue; }
-  .js_main #js_box1 {
-    width: 100px;
-    background: blue; }
-  .js_main #js_box2 {
-    background: green; }
-  .js_main #js_box3 {
-    background: orange;
-    -webkit-transition: all 2s;
-    transition: all 2s; }
-  .js_main #example3_css {
-    margin-top: 10px; }
-  .js_main #js_box4 {
-    width: auto;
-    height: auto; }
-  .js_main #js_input {
-    margin-top: 60px; }
-  .js_main #js_example4_code {
-    margin-top: 10px; }

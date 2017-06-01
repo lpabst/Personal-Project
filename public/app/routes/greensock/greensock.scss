@@ -2,7 +2,6 @@
 .greensock_main_container{
     width: 100%;
     position: relative;
-    background: #222;
 }
 
 .greensock_intro{
@@ -48,6 +47,89 @@
     }
 }
 
-.greensock_animation_wrapper{
+.greensock_tutorials_container{
+    width: 100%;
+    background: #ddd;
+    padding: 20px 10px 15px 10px;
+    z-index: 1000;
+}
 
+.animation_wrapper{
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+    perspective: 2000px;
+
+    h2{
+        font-size: 25px;
+        font-weight: bold;
+        margin: 10px 0px 15px 0px;
+
+        @media(min-width: 1000px){
+            font-size: 34px;
+        }
+    }
+
+    p{
+        margin-bottom: 10px;
+    }
+
+    .examplebox{
+        width: 140px;
+        height: 40px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 12px;
+    }
+
+    img{
+        max-width: 95%;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+#greensock_box1{
+    background: #932;
+    position: absolute;
+    top: 33px;
+    left: 0;
+}
+
+#greensock_box2{
+    background: #4cc;
+    position: absolute;
+    top: 33px;
+    left: 0;
+}
+
+#greensock_box3{
+    background: #69c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#greensock_box4{
+    background: #ce6;
+    position: absolute;
+    left: 105px;
+    top: 35px;
+}
+
+#gs_example4_btn{
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(#813, #395);
+    position: absolute;
+    top: 37px;
+    left: 0;
+    box-shadow: 2px 2px 4px;
 }

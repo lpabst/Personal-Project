@@ -10,24 +10,72 @@
 
     <section class='greensock_tutorials_container'>
 
-        <div class='greensock_animation_wrapper'>
-            <h2>Intro</h2>
-            <p>Css makes it can also While we won't be getting into the styling aspects of CSS
-                here, we will learn about CSS animations.</p>
-            <div class='greensock_examplebox' id='greensock_box1'>Hover Effect</div>
+        <div class='animation_wrapper'>
+            <h2 style='margin-bottom:55px'>Tweenlite.to</h2>
+            <p>Greensock uses JQuery selectors, and integrates very well with JQuery.
+                We use $('#id or .class') to select an element. We use TweenLite.to in 
+                the following format - TweenLite.to(element, delay, attributes). So we select
+                our element, state the duration, and say what we want to happen. In this 
+                case we changed the CSS property 'left' to 200.</p>
+            <div class='examplebox' id='greensock_box1'>.to()</div>
             <img src='./img/greensock/greensock_example1.PNG' alt='picture of code'>
-            <p>Here we have 3 blocks of code. The first is the styling. All of my example boxes
-                on this page will share the same class (css_examplebox) for their initial styling.
-                This real fun happens</p>
+            <p>So What if we wanted to chain effects? We can use the 'delay' method inside
+                of the effect like this: {left:200, delay:2}. This would change 'left'' to
+                200, but only after a 2 second delay. So chaining commands becomes as simple 
+                as listing effects one after the other. Let's look at that next!</p>
         </div>   
 
+        <div class='animation_wrapper' style='padding-bottom:50px'>
+            <h2 style='margin-bottom:55px'>Chaining effects</h2>
+            <div class='examplebox' id='greensock_box2'>Click Me!!!</div>
+            <img src='./img/greensock/greensock_example2.PNG' alt='picture of code'>
+            <p>With this example we threw in a few new components! We select the box and
+                save it to a variable so that the computer doesn't have to go searching for 
+                it each time we want to do something with it.</p>
+            <p>Next, we use a JQuery click function to initiate the sequence of animations. 
+                After that, it's as simple as listing one animation after the other. We insert 
+                the 'delay' statement right in line with the CSS declarations we want to change.
+                For this example, I have the delays set to the same amount of time it takes all
+                of the previous animations to complete, but you could put whatever time you want 
+                there.</p>
+            <div class='examplebox' id='greensock_box3'>Click Me!!!</div>
+            <p>Another way to chain events is to use the 'onComplete'
+                method. Once the animation is done, it will fire off whatever function you put 
+                in there. In this case, I have each function referring to the other one once it's 
+                complete, so they just go back and forth, infinitely!
+            <img src='./img/greensock/greensock_example3.PNG' alt='picture of code'>
+        </div>   
+
+        <div class='animation_wrapper'>
+            <h2 style='margin-bottom:55px'>Tweenlite.from</h2>
+            <p>TweenLite.from(element, duration, attributes). We use this for a slightly different
+                purpose. Instead of going TO the attributes we put in, it will come FROM them, to
+                whatever location/state it is in when the animation is initiated.</p>
+            <p>So when you push the button, it comes FROM left:200px, back to it's starting position
+                of left:105px. But what if you push the button again in the middle of the animation?
+                Whereever the box is at when you push the button, that will be its new end point. It
+                will come FROM left:200px to that point.</p>
+            <div class='examplebox' id='greensock_box4'>.from()</div>
+            <button id='gs_example4_btn'>Start Animation</button>
+            <img src='./img/greensock/greensock_example4.PNG' alt='picture of code'>
+            <p>Let's try something a little more complicated!</p>
+        </div>  
+
+        <div class='animation_wrapper'>
+            <h2 style='margin-bottom:55px'>Putting It All Together</h2>
+            <p>TweenLite.from(element, duration, attributes). We use this for a slightly different
+                purpose. Instead </p>
+            <div class='examplebox' id='greensock_box4'>.from()</div>
+            <button id='gs_example4_btn'>Start Animation</button>
+            <img src='./img/greensock/greensock_example4.PNG' alt='picture of code'>
+            <p>Let's try something a little more complicated!</p>
+        </div>  
 
 
 
 
 
-
-        <div class='greensock_animation_wrapper'>
+        <div class='animation_wrapper'>
             <h2>Nice Work!</h2>
             <p>Check out some of my other tutorials here:</p>
             <div class='pagelink' ui-sref='angular'>ANGULAR</div>
