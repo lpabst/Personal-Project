@@ -88,7 +88,15 @@
         }
 
         #angular_box3{
-            background: #1f5;
+            width: 200px;
+            height: 90px;
+            background: #333;
+            color: #eee;
+
+            .highlighted{
+                background: yellow;
+                color: black;
+            }
         }
 
         #angular_box4{

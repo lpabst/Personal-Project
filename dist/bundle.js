@@ -46,6 +46,40 @@ $urlRouterProvider.otherwise('/');
 
 
 }]);
+angular.module('tutorialSite')
+.directive('growShrink', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            var normalSize = true;
+
+            elem.click(function(){
+                if (normalSize){
+                    elem.css('width', '+=200');
+                    normalSize = false;
+                }else{
+                    elem.css('width', '-=200');
+                    normalSize = true;
+                }
+            })
+        }
+    }
+
+});
+angular.module('tutorialSite')
+.directive('highlightText', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            elem.click(function(){
+                elem.toggleClass('highlighted');
+            })
+        }
+    }
+
+});
 angular.module('tutorialSite').service('headersService', ["$http", function($http){
 
 

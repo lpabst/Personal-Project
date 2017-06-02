@@ -1,10 +1,11 @@
-angular.module('tutorialSite').directive('highlightText', function(){
+angular.module('tutorialSite')
+.directive('highlightText', function(){
 
     return {
         restrict: 'A',
-        link: function(scope, elem, attr){
-            elem.css({
-                'background': 'yellow'
+        link: function(scope, elem, atts){
+            elem.click(function(){
+                elem.toggleClass('highlighted');
             })
         }
     }
