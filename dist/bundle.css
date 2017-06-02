@@ -578,65 +578,76 @@ table {
   left: 0;
   box-shadow: 2px 2px 4px; }
 
-.ground {
+.greensock_plant_animation {
   width: 100%;
-  height: 10px;
-  background: #551a1a;
-  position: absolute;
-  top: 200px; }
-
-.stem {
-  width: 8px;
-  height: 30px;
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  background: darkgreen;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px; }
-
-.petal {
-  width: 0px;
-  height: 0px;
-  border-radius: 45%;
-  position: absolute;
-  bottom: 118px;
-  left: 0px;
-  border: 0px solid gray; }
-
-.a {
-  transform: rotate(-40deg);
-  transform-origin: bottom;
-  background: linear-gradient(to right, #955, #c77, violet); }
-
-.b {
-  transform: rotate(40deg);
-  transform-origin: bottom;
-  background: linear-gradient(to right, violet, #c77, #955); }
-
-.c {
-  background: linear-gradient(to right, #c77, violet, #c77); }
-
-.leaf {
-  width: 10px;
-  height: 6px;
-  border-radius: 50%;
-  position: absolute;
-  top: 25%;
-  left: 6px;
-  background: darkolivegreen;
-  transform: rotate(-20deg);
-  transform-origin: left; }
-
-.mini_stem {
-  width: 3px;
-  height: 0px;
-  border-radius: 1px;
-  transform: rotate(-30deg);
-  transform-origin: bottom left;
-  position: absolute;
-  bottom: 40%;
-  background: green; }
+  height: 210px;
+  position: relative;
+  background: #553e3e;
+  margin-bottom: 10px; }
+  .greensock_plant_animation .sky {
+    width: 100%;
+    height: 170px;
+    background: linear-gradient(blue, white); }
+  .greensock_plant_animation .sun {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(orange, orangered);
+    border-radius: 50%;
+    position: absolute;
+    top: 65px;
+    left: 45px; }
+  .greensock_plant_animation .ground {
+    width: 100%;
+    height: 10px;
+    background: #551a1a;
+    position: absolute;
+    top: 200px; }
+  .greensock_plant_animation .stem {
+    width: 8px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    background: darkgreen;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
+  .greensock_plant_animation .petal {
+    width: 0px;
+    height: 0px;
+    border-radius: 45%;
+    position: absolute;
+    bottom: 118px;
+    left: 0px;
+    border: 0px solid gray; }
+  .greensock_plant_animation .a {
+    transform: rotate(-40deg);
+    transform-origin: bottom;
+    background: linear-gradient(to right, #955, #c77, violet); }
+  .greensock_plant_animation .b {
+    transform: rotate(40deg);
+    transform-origin: bottom;
+    background: linear-gradient(to right, violet, #c77, #955); }
+  .greensock_plant_animation .c {
+    background: linear-gradient(to right, #c77, violet, #c77); }
+  .greensock_plant_animation .leaf {
+    width: 10px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 6px;
+    background: darkolivegreen;
+    transform: rotate(-20deg);
+    transform-origin: left; }
+  .greensock_plant_animation .mini_stem {
+    width: 3px;
+    height: 0px;
+    border-radius: 1px;
+    transform: rotate(-30deg);
+    transform-origin: bottom left;
+    position: absolute;
+    bottom: 40%;
+    background: green; }
 
 .home_container {
   width: 100%;
@@ -798,6 +809,96 @@ table {
     font-weight: bold;
     font-size: 13px; }
 
+.jquery_container {
+  width: 100%;
+  position: relative;
+  padding: 100px 20px 15px 20px;
+  background: #eee; }
+  @media (min-width: 1000px) {
+    .jquery_container {
+      padding: 100px 100px 15px 40px; } }
+
+#jquery_header {
+  width: 150px;
+  height: 50px;
+  background: url("./img/home/jquery.jpeg") center no-repeat;
+  background-size: cover;
+  margin-left: 30%; }
+  @media (min-width: 1000px) {
+    #jquery_header {
+      margin-left: 40%;
+      width: 250px;
+      height: 83px; } }
+
+.jquery_animation_wrapper {
+  width: 90%;
+  position: relative;
+  padding-top: 30px; }
+  .jquery_animation_wrapper h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .jquery_animation_wrapper .jquery_examplebox {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px;
+    transition: all 1.5s; }
+  .jquery_animation_wrapper img {
+    max-width: 90%;
+    margin-top: 10px;
+    display: block; }
+  .jquery_animation_wrapper p {
+    margin-top: 10px; }
+
+#jquery_box1 {
+  background: #eae; }
+
+#jquery_box2 {
+  background: #4ee;
+  margin-bottom: 10px;
+  overflow: hidden; }
+
+.jquery_carousel_frame {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden; }
+  .jquery_carousel_frame ul {
+    position: absolute;
+    left: 0px;
+    width: 550%;
+    transition: all 1s ease-in-out; }
+    .jquery_carousel_frame ul li {
+      float: left;
+      width: 20%;
+      line-height: 300px;
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+      color: white;
+      background: #222; }
+  .jquery_carousel_frame .jquery_carousel_buttons {
+    width: 60px;
+    height: 30px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px; }
+  .jquery_carousel_frame .prev {
+    left: 10px; }
+  .jquery_carousel_frame .next {
+    right: 10px; }
+
 .pagelink {
   width: 130px;
   height: 40px;
@@ -912,93 +1013,3 @@ table {
     margin-top: 60px; }
   .js_main #js_example4_code {
     margin-top: 10px; }
-
-.jquery_container {
-  width: 100%;
-  position: relative;
-  padding: 100px 20px 15px 20px;
-  background: #eee; }
-  @media (min-width: 1000px) {
-    .jquery_container {
-      padding: 100px 100px 15px 40px; } }
-
-#jquery_header {
-  width: 150px;
-  height: 50px;
-  background: url("./img/home/jquery.jpeg") center no-repeat;
-  background-size: cover;
-  margin-left: 30%; }
-  @media (min-width: 1000px) {
-    #jquery_header {
-      margin-left: 40%;
-      width: 250px;
-      height: 83px; } }
-
-.jquery_animation_wrapper {
-  width: 90%;
-  position: relative;
-  padding-top: 30px; }
-  .jquery_animation_wrapper h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px; }
-  .jquery_animation_wrapper .jquery_examplebox {
-    width: 140px;
-    height: 40px;
-    border-radius: 5px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 3px 3px 5px;
-    transition: all 1.5s; }
-  .jquery_animation_wrapper img {
-    max-width: 90%;
-    margin-top: 10px;
-    display: block; }
-  .jquery_animation_wrapper p {
-    margin-top: 10px; }
-
-#jquery_box1 {
-  background: #eae; }
-
-#jquery_box2 {
-  background: #4ee;
-  margin-bottom: 10px;
-  overflow: hidden; }
-
-.jquery_carousel_frame {
-  width: 300px;
-  height: 300px;
-  position: relative;
-  overflow: hidden; }
-  .jquery_carousel_frame ul {
-    position: absolute;
-    left: 0px;
-    width: 550%;
-    transition: all 1s ease-in-out; }
-    .jquery_carousel_frame ul li {
-      float: left;
-      width: 20%;
-      line-height: 300px;
-      text-align: center;
-      font-size: 50px;
-      font-weight: bold;
-      color: white;
-      background: #222; }
-  .jquery_carousel_frame .jquery_carousel_buttons {
-    width: 60px;
-    height: 30px;
-    line-height: 25px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    background: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    bottom: 20px; }
-  .jquery_carousel_frame .prev {
-    left: 10px; }
-  .jquery_carousel_frame .next {
-    right: 10px; }

@@ -63,24 +63,32 @@
 
         <div class='animation_wrapper'>
             <h2>Putting It All Together</h2>
-            <div class='ground'>
-                <div class='stem'>
-                    <div class='petal a'></div>
-                    <div class='petal b'></div>
-                    <div class='petal c'></div>
-                    <div class='leaf'></div>
-                    <div class='mini_stem'></div>
+            <button id='plant_example_btn' style='margin-bottom:10px'>Go</button>
+            <button id='plant_reset_btn'>Reset</button>
+            <div class='greensock_plant_animation'>
+                <div class='sky'>
+                    <div class='sun'></div>
+                </div>
+                <div class='ground'>
+                    <div class='stem'>
+                        <div class='petal a'></div>
+                        <div class='petal b'></div>
+                        <div class='petal c'></div>
+                        <div class='leaf'></div>
+                        <div class='mini_stem'></div>
+                    </div>
                 </div>
             </div>
-            <button id='plant_example_btn' style='margin-bottom:170px'>GO</button>
             <img src='./img/greensock/greensock_example5.PNG' alt='picture of code'>
-            <p>I have starting width and height very small for all of the items here. Using
-                TweenLite.to, I increase their size over time, some of them delayed. Once the
+            <p>The starting width and height are very small for all of the items here. Using
+                TweenLite.to, I increase their size over time, delaying some of the effects. Once the
                 plant is done growing, I give the petals a thin border so we can see them, then
-                slowly increase their size. Two of the petals are rotated 40 degrees, and -40 
+                slowly increase their size. Two of the petals are rotated; 40 degrees and -40 
                 degrees, respectively, and they all have a gradient background. This presents a 
-                more 3-Dimensional look!
-            </p>
+                more 3-Dimensional look!</p>
+            <p>I also added in a reset button that returns things to their original
+                position, and I added some code to move the sun across the sky. using what you
+                know now, see if you can figure out the code for the sun!</p>
         </div>  
 
 
