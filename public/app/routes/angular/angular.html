@@ -3,11 +3,9 @@
 
     <section class='angular_fullscreen_intro'>
         <h1>Angular</h1>
-        <!--<a href='#angular_tuts'>-->
-            <div class='angular_scroll_circle' ng-click='scrollPage()'>
-                <img src='./img/angular/angular_scroll_arrow.png'>
-            </div>
-        <!--</a>-->
+        <div class='angular_scroll_circle' ng-click='scrollPage()'>
+            <img src='./img/angular/angular_scroll_arrow.png'>
+        </div>
     </section>
 
     <section class='angular_tutorials_container' id='angular_tuts'>
@@ -16,11 +14,11 @@
             <h2>Learning Angular</h2>
             <p>A basic understanding of how Angular works is required for this tutorial.
                 If you need help learning Angular, or a refresher, you can learn on
-                <a href='http://codecademy.com' target='_blank'>Codecademy</a> or
+                <a href='http://codecademy.com' target='_blank'>Codecademy</a> or with
                 <a href='https://youtube.com/results?search_query=angular' target='_blank'>
                 Youtube Tutorials</a>. Here is a great video for reference:
             </p>
-            <a href='https://www.youtube.com/watch?v=i9MHigUZKEM&t=2504s' target='_blank'>
+            <a id='angular_pic_a' href='https://www.youtube.com/watch?v=i9MHigUZKEM&t=2504s' target='_blank'>
                 <img id='angular_pic' ng-src='{{ angularPicUrl }}'>
             </a>
         </div>  
@@ -51,15 +49,11 @@
             <p>We are somewhat limited, however, with built in directives. Only certain functionality has
                 been built into the directives. For additional functionality, we can create our own 
                 directives, which we can then add to any HTML element that we want!</p>
-            <div class='examplebox' id='angular_box1' ng-click='showLeftBox = !showLeftBox' ng-show='showLeftBox'>Click Me!</div>
-            <div class='examplebox' id='angular_box2' ng-click='showLeftBox = !showLeftBox' ng-hide='showLeftBox'>Click Me!</div>
-            <p>This illustrates two of Angular's built in directives, ng-hide and ng-show. The first two 
-                pictures show how to use both directives. The first div, the one on the left of the
-                screen, has ng-show set to the scope variable 'showLeftBox'. So when that variable
-                is true, the left box will 'show'. First, we add $scope.showLeftBox = true to our 
-                Javascript. Then we add ng-show and ng-hide to our divs in our HTML.</p>
-            <img src='./img/angular/angular_example1.PNG' alt='picture of code'>
-            <img src='./img/angular/angular_example2.PNG' alt='picture of code'>
+            <div class='examplebox' id='angular_box3' highlight-text>Highlight</div>
+            <div class='examplebox' id='angular_box4' grow-shrink>Grow/Shrink</div>
+            <p>Here we have two custom directives.</p>
+            <img src='./img/angular/angular_example4.PNG' alt='picture of code'>
+            <img src='./img/angular/angular_example5.PNG' alt='picture of code'>
             <p>The second div has ng-hide set to the same variable. So when that variable is true, div
                 #2 will 'hide'. So one of these boxes will always be hidden, and one will always be
                 showing.</p>

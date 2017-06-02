@@ -62,10 +62,20 @@
         padding: 20px 10px 15px 10px;
         z-index: 1000;
 
+        #angular_pic_a{
+            width: 350px;
+            height: 282px;
+            margin: 10px 0px 10px 10px;
+            display: block;
+        }
+
         #angular_pic{
             width: 350px;
             height: 262px;
-            margin: 10px 0px 10px 0px;
+        }
+
+        #angular_pic:hover{
+            border: 2px solid black;
         }
 
         #angular_box1{
