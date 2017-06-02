@@ -719,7 +719,7 @@ table {
 .home_top_section {
   width: 100%;
   height: 100vh;
-  background: url("./img/programming1.jpeg") center no-repeat;
+  background: url("./img/home/programming1.jpeg") center no-repeat;
   background-size: cover;
   position: relative; }
   .home_top_section .home_intro_container {
@@ -755,7 +755,7 @@ table {
   .home_middle_section .home_start_pic {
     width: 100%;
     height: 400px;
-    background: url("./img/programming2.jpg") center no-repeat;
+    background: url("./img/home/programming2.jpg") center no-repeat;
     background-size: cover;
     position: absolute;
     left: 0;
@@ -811,7 +811,7 @@ table {
   .home_bottom_section .home_experience_pic {
     width: 100%;
     height: 400px;
-    background: url("./img/programming3.jpg") center no-repeat;
+    background: url("./img/home/programming3.jpg") center no-repeat;
     background-size: cover;
     position: absolute;
     right: 0;
@@ -988,7 +988,7 @@ table {
   width: 100%;
   height: 100vh;
   position: fixed;
-  background: url("./img/js_intro.jpeg") right no-repeat;
+  background: url("./img/js/js_intro.jpeg") right no-repeat;
   background-size: cover;
   z-index: -5; }
 
