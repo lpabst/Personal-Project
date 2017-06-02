@@ -29,8 +29,45 @@
             <h2>Angular Directives</h2>
             <div class='examplebox' id='angular_box1' ng-click='showLeftBox = !showLeftBox' ng-show='showLeftBox'>Click Me!</div>
             <div class='examplebox' id='angular_box2' ng-click='showLeftBox = !showLeftBox' ng-hide='showLeftBox'>Click Me!</div>
-            <img src='./img/angular/angular_example4.PNG' alt='picture of code'>
-            <p>Let's try something a little more complicated!</p>
+            <p>This illustrates two of Angular's built in directives, ng-hide and ng-show. The first two 
+                pictures show how to use both directives. The first div, the one on the left of the
+                screen, has ng-show set to the scope variable 'showLeftBox'. So when that variable
+                is true, the left box will 'show'. First, we add $scope.showLeftBox = true to our 
+                Javascript. Then we add ng-show and ng-hide to our divs in our HTML.</p>
+            <img src='./img/angular/angular_example1.PNG' alt='picture of code'>
+            <img src='./img/angular/angular_example2.PNG' alt='picture of code'>
+            <p>The second div has ng-hide set to the same variable. So when that variable is true, div
+                #2 will 'hide'. So one of these boxes will always be hidden, and one will always be
+                showing.</p>
+            <img src='./img/angular/angular_example3.PNG' alt='picture of code'>
+            <p>This third picture shows how to switch the variable back and forth. Both divs have an 
+                ng-click on them, which changes the variable to the opposite of what it was before 
+                the click happened. ng-show, ng-hide, and ng-click are examples of built
+                in directives in Angular. Built in directives make simple animations very easy to implement.</p>
+        </div> 
+
+        <div class='animation_wrapper'>
+            <h2>Custom Directives</h2>
+            <p>We are somewhat limited, however, with built in directives. Only certain functionality has
+                been built into the directives. For additional functionality, we can create our own 
+                directives, which we can then add to any HTML element that we want!</p>
+            <div class='examplebox' id='angular_box1' ng-click='showLeftBox = !showLeftBox' ng-show='showLeftBox'>Click Me!</div>
+            <div class='examplebox' id='angular_box2' ng-click='showLeftBox = !showLeftBox' ng-hide='showLeftBox'>Click Me!</div>
+            <p>This illustrates two of Angular's built in directives, ng-hide and ng-show. The first two 
+                pictures show how to use both directives. The first div, the one on the left of the
+                screen, has ng-show set to the scope variable 'showLeftBox'. So when that variable
+                is true, the left box will 'show'. First, we add $scope.showLeftBox = true to our 
+                Javascript. Then we add ng-show and ng-hide to our divs in our HTML.</p>
+            <img src='./img/angular/angular_example1.PNG' alt='picture of code'>
+            <img src='./img/angular/angular_example2.PNG' alt='picture of code'>
+            <p>The second div has ng-hide set to the same variable. So when that variable is true, div
+                #2 will 'hide'. So one of these boxes will always be hidden, and one will always be
+                showing.</p>
+            <img src='./img/angular/angular_example3.PNG' alt='picture of code'>
+            <p>This third picture shows how to switch the variable back and forth. Both divs have an 
+                ng-click on them, which changes the variable to the opposite of what it was before 
+                the click happened. ng-show, ng-hide, and ng-click are examples of built
+                in directives in Angular. Built in directives make simple animations very easy to implement.</p>
         </div> 
 
 
