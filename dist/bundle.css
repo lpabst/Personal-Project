@@ -278,6 +278,12 @@ table {
     .main_angular_container .angular_tutorials_container #angular_box2 {
       background: #14b;
       margin-left: 180px; }
+    @media (min-width: 1000px) {
+      .main_angular_container .angular_tutorials_container .angular_example_wrapper {
+        width: 45%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        float: left; } }
     .main_angular_container .angular_tutorials_container #angular_box3 {
       width: 200px;
       height: 90px;
@@ -542,6 +548,188 @@ table {
     transform: rotateZ(360deg);
     transform-origin: 100%; } }
 
+.greensock_main_container {
+  width: 100%;
+  position: relative; }
+
+.greensock_intro {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+  .greensock_intro video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; }
+    @media (min-aspect-ratio: 16 / 9) {
+      .greensock_intro video {
+        width: 100%;
+        height: auto; } }
+    @media (max-aspect-ratio: 16 / 9) {
+      .greensock_intro video {
+        width: auto;
+        height: 100vh;
+        left: -70%; } }
+  .greensock_intro h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 1px 1px 1px white;
+    text-align: center;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    top: 90px; }
+    @media (min-width: 700px) {
+      .greensock_intro h1 {
+        font-size: 52px;
+        top: 110px; } }
+
+.greensock_tutorials_container {
+  width: 100%;
+  background: #ddd;
+  padding: 20px 10px 15px 10px;
+  z-index: 1000; }
+
+.animation_wrapper {
+  width: calc(100% - 20px);
+  margin-bottom: 20px;
+  perspective: 2000px;
+  position: relative; }
+  .animation_wrapper h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0px 15px 0px; }
+    @media (min-width: 1000px) {
+      .animation_wrapper h2 {
+        font-size: 34px; } }
+  .animation_wrapper p {
+    margin-bottom: 10px; }
+  .animation_wrapper .examplebox {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 12px; }
+  .animation_wrapper img {
+    max-width: 95%;
+    margin-bottom: 10px;
+    display: block; }
+
+#greensock_box1 {
+  background: #932;
+  position: absolute;
+  top: 33px;
+  left: 0; }
+
+#greensock_box2 {
+  background: #4cc;
+  position: absolute;
+  top: 33px;
+  left: 0; }
+
+#greensock_box3 {
+  background: #69c;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+#greensock_box4 {
+  background: #ce6;
+  position: absolute;
+  left: 105px;
+  top: 35px; }
+
+#gs_example4_btn {
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(#813, #395);
+  position: absolute;
+  top: 37px;
+  left: 0;
+  box-shadow: 2px 2px 4px; }
+
+.greensock_plant_animation {
+  width: 100%;
+  height: 210px;
+  position: relative;
+  background: #553e3e;
+  margin-bottom: 10px; }
+  .greensock_plant_animation .sky {
+    width: 100%;
+    height: 170px;
+    background: linear-gradient(blue, white); }
+  .greensock_plant_animation .sun {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(orange, orangered);
+    border-radius: 50%;
+    position: absolute;
+    top: 65px;
+    left: 45px; }
+  .greensock_plant_animation .ground {
+    width: 100%;
+    height: 10px;
+    background: #551a1a;
+    position: absolute;
+    top: 200px; }
+  .greensock_plant_animation .stem {
+    width: 8px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    background: darkgreen;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
+  .greensock_plant_animation .petal {
+    width: 0px;
+    height: 0px;
+    border-radius: 45%;
+    position: absolute;
+    bottom: 118px;
+    left: 0px;
+    border: 0px solid gray; }
+  .greensock_plant_animation .a {
+    transform: rotate(-40deg);
+    transform-origin: bottom;
+    background: linear-gradient(to right, #955, #c77, violet); }
+  .greensock_plant_animation .b {
+    transform: rotate(40deg);
+    transform-origin: bottom;
+    background: linear-gradient(to right, violet, #c77, #955); }
+  .greensock_plant_animation .c {
+    background: linear-gradient(to right, #c77, violet, #c77); }
+  .greensock_plant_animation .leaf {
+    width: 10px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 6px;
+    background: darkolivegreen;
+    transform: rotate(-20deg);
+    transform-origin: left; }
+  .greensock_plant_animation .mini_stem {
+    width: 3px;
+    height: 0px;
+    border-radius: 1px;
+    transform: rotate(-30deg);
+    transform-origin: bottom left;
+    position: absolute;
+    bottom: 40%;
+    background: green; }
+
 .home_container {
   width: 100%;
   position: relative; }
@@ -791,188 +979,6 @@ table {
     left: 10px; }
   .jquery_carousel_frame .next {
     right: 10px; }
-
-.greensock_main_container {
-  width: 100%;
-  position: relative; }
-
-.greensock_intro {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative; }
-  .greensock_intro video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; }
-    @media (min-aspect-ratio: 16 / 9) {
-      .greensock_intro video {
-        width: 100%;
-        height: auto; } }
-    @media (max-aspect-ratio: 16 / 9) {
-      .greensock_intro video {
-        width: auto;
-        height: 100vh;
-        left: -70%; } }
-  .greensock_intro h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #222;
-    text-shadow: 1px 1px 1px white;
-    text-align: center;
-    width: 60%;
-    position: absolute;
-    left: 20%;
-    top: 90px; }
-    @media (min-width: 700px) {
-      .greensock_intro h1 {
-        font-size: 52px;
-        top: 110px; } }
-
-.greensock_tutorials_container {
-  width: 100%;
-  background: #ddd;
-  padding: 20px 10px 15px 10px;
-  z-index: 1000; }
-
-.animation_wrapper {
-  width: calc(100% - 20px);
-  margin-bottom: 20px;
-  perspective: 2000px;
-  position: relative; }
-  .animation_wrapper h2 {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 10px 0px 15px 0px; }
-    @media (min-width: 1000px) {
-      .animation_wrapper h2 {
-        font-size: 34px; } }
-  .animation_wrapper p {
-    margin-bottom: 10px; }
-  .animation_wrapper .examplebox {
-    width: 140px;
-    height: 40px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    padding-top: 12px; }
-  .animation_wrapper img {
-    max-width: 95%;
-    margin-bottom: 10px;
-    display: block; }
-
-#greensock_box1 {
-  background: #932;
-  position: absolute;
-  top: 33px;
-  left: 0; }
-
-#greensock_box2 {
-  background: #4cc;
-  position: absolute;
-  top: 33px;
-  left: 0; }
-
-#greensock_box3 {
-  background: #69c;
-  position: absolute;
-  bottom: 0;
-  left: 0; }
-
-#greensock_box4 {
-  background: #ce6;
-  position: absolute;
-  left: 105px;
-  top: 35px; }
-
-#gs_example4_btn {
-  width: 100px;
-  height: 35px;
-  text-align: center;
-  line-height: 16px;
-  font-size: 16px;
-  font-weight: bold;
-  background: linear-gradient(#813, #395);
-  position: absolute;
-  top: 37px;
-  left: 0;
-  box-shadow: 2px 2px 4px; }
-
-.greensock_plant_animation {
-  width: 100%;
-  height: 210px;
-  position: relative;
-  background: #553e3e;
-  margin-bottom: 10px; }
-  .greensock_plant_animation .sky {
-    width: 100%;
-    height: 170px;
-    background: linear-gradient(blue, white); }
-  .greensock_plant_animation .sun {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(orange, orangered);
-    border-radius: 50%;
-    position: absolute;
-    top: 65px;
-    left: 45px; }
-  .greensock_plant_animation .ground {
-    width: 100%;
-    height: 10px;
-    background: #551a1a;
-    position: absolute;
-    top: 200px; }
-  .greensock_plant_animation .stem {
-    width: 8px;
-    height: 30px;
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    background: darkgreen;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px; }
-  .greensock_plant_animation .petal {
-    width: 0px;
-    height: 0px;
-    border-radius: 45%;
-    position: absolute;
-    bottom: 118px;
-    left: 0px;
-    border: 0px solid gray; }
-  .greensock_plant_animation .a {
-    transform: rotate(-40deg);
-    transform-origin: bottom;
-    background: linear-gradient(to right, #955, #c77, violet); }
-  .greensock_plant_animation .b {
-    transform: rotate(40deg);
-    transform-origin: bottom;
-    background: linear-gradient(to right, violet, #c77, #955); }
-  .greensock_plant_animation .c {
-    background: linear-gradient(to right, #c77, violet, #c77); }
-  .greensock_plant_animation .leaf {
-    width: 10px;
-    height: 6px;
-    border-radius: 50%;
-    position: absolute;
-    top: 25%;
-    left: 6px;
-    background: darkolivegreen;
-    transform: rotate(-20deg);
-    transform-origin: left; }
-  .greensock_plant_animation .mini_stem {
-    width: 3px;
-    height: 0px;
-    border-radius: 1px;
-    transform: rotate(-30deg);
-    transform-origin: bottom left;
-    position: absolute;
-    bottom: 40%;
-    background: green; }
 
 .pagelink {
   width: 130px;

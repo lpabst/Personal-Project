@@ -87,6 +87,15 @@
             margin-left: 180px;
         }
 
+        .angular_example_wrapper{
+            @media(min-width: 1000px){
+                width: 45%;
+                margin-left: 2.5%;
+                margin-right: 2.5%;
+                float: left;
+            }
+        }
+
         #angular_box3{
             width: 200px;
             height: 90px;

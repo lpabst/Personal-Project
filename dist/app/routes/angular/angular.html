@@ -49,26 +49,35 @@
             <p>We are somewhat limited, however, with built in directives. Only certain functionality has
                 been built into the directives. For additional functionality, we can create our own 
                 directives, which we can then add to any HTML element that we want!</p>
-            <div class='examplebox' id='angular_box3'>
-                <ul>
-                    <li highlight-text>Highlight list item #1</li>
-                    <li highlight-text>Highlight list item #2</li>
-                    <li highlight-text>Highlight list item #3</li>
-                    <li highlight-text>Highlight list item #4</li>
-                </ul>
+            <div class='angular_example_wrapper'>
+                <div class='examplebox' id='angular_box3'>
+                    <ul>
+                        <li highlight-text>click me list item #1</li>
+                        <li highlight-text>click me instead #2</li>
+                        <li highlight-text>click repeatedly item #3</li>
+                        <li highlight-text>click here too! item #4</li>
+                    </ul>
+                </div>
+                <img src='./img/angular/angular_example4.PNG' alt='picture of code'>
+                <img src='./img/angular/angular_example4_html.PNG' alt='picture of code'>
             </div>
-            <div class='examplebox' id='angular_box4' grow-shrink>Grow/Shrink</div>
-            <p>Here we have two custom directives.</p>
-            <img src='./img/angular/angular_example4.PNG' alt='picture of code'>
-            <img src='./img/angular/angular_example5.PNG' alt='picture of code'>
-            <p>The second div has ng-hide set to the same variable. So when that variable is true, div
-                #2 will 'hide'. So one of these boxes will always be hidden, and one will always be
-                showing.</p>
-            <img src='./img/angular/angular_example3.PNG' alt='picture of code'>
-            <p>This third picture shows how to switch the variable back and forth. Both divs have an 
-                ng-click on them, which changes the variable to the opposite of what it was before 
-                the click happened. ng-show, ng-hide, and ng-click are examples of built
-                in directives in Angular. Built in directives make simple animations very easy to implement.</p>
+            <div class='angular_example_wrapper'>
+                <div class='examplebox' id='angular_box4' grow-shrink>Click to change</div>
+                <img src='./img/angular/angular_example5.PNG' alt='picture of code'>
+                <img src='./img/angular/angular_example5_html.PNG' alt='picture of code'>
+            </div>
+            <p>Here we have two custom directives. The Javascript code is on top, and the HTML code is
+                on bottom. Notice that once we have the javascript code set up, applying it to the HTML
+                is as easy as typing in the name on your element. </p>
+            <p>Setting up the directive itself is pretty easy. My app's name is tutorialSite, I am 
+                assigning it a directive name 'highlightText', and returning an object with the 
+                directive's instructions. **Note that HTML doesn't support camelCase, so in the HTML
+                you must write it as 'highlight-text' instead. Angular will know that they are the same
+                thing.</p>
+            <p>Restrict 'A' means we will be using this directive as an attribute on HTML elements (A = 
+                attribute). The link function is where the javascript logic takes place. We can see from
+                these two examples how to affect CSS on any element. You can assign new classes, or affect
+                the CSS directly!</p>
         </div> 
 
 
