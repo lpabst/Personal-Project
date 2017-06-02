@@ -11,13 +11,25 @@
     <section class='angular_tutorials_container'>
 
         <div class='animation_wrapper'>
+            <h2>Learning Angular</h2>
+            <p>A basic understanding of how Angular works is required for this tutorial.
+                If you need help learning Angular, or a refresher, you can learn on
+                <a href='http://codecademy.com' target='_blank'>Codecademy</a> or
+                <a href='https://youtube.com/results?search_query=angular' target='_blank'>
+                Youtube Tutorials</a>. Here is a great video for reference:
+            </p>
+            <a href='https://www.youtube.com/watch?v=i9MHigUZKEM&t=2504s' target='_blank'>
+                <img id='angular_pic' ng-src='{{ angularPicUrl }}'>
+            </a>
+        </div>  
+
+        <div class='animation_wrapper'>
             <h2>Angular Directives</h2>
-            <p>TweenLite.from(element, duration, attributes). We use this for a slightly different
-                purpos.</p>
-            <div class='examplebox' id='angular_box1'>Hide Me</div>
+            <div class='examplebox' id='angular_box1' ng-click='showLeftBox = !showLeftBox' ng-show='showLeftBox'>Click Me!</div>
+            <div class='examplebox' id='angular_box2' ng-click='showLeftBox = !showLeftBox' ng-hide='showLeftBox'>Click Me!</div>
             <img src='./img/angular/angular_example4.PNG' alt='picture of code'>
             <p>Let's try something a little more complicated!</p>
-        </div>  
+        </div> 
 
 
 

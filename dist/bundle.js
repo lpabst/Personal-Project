@@ -129,11 +129,27 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
 
 }]);
-angular.module('tutorialSite').controller('angularCtrl', ["$scope", function($scope){
+angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularService", function($scope, angularService){
 
+    $scope.showLeftBox = true;
 
+    $scope.getYoutubePic = function(){
+        angularService.getYoutubePic().then(function(response){
+            $scope.angularPicUrl = response.data.items[0].snippet.thumbnails.high.url;
+        })
+    }
 
+    $scope.getYoutubePic();
 
+}]);
+angular.module('tutorialSite').service('angularService', ["$http", function($http){
+
+//api key = AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI
+//video id = i9MHigUZKEM
+
+    this.getYoutubePic = function(){
+        return $http.get('https://www.googleapis.com/youtube/v3/videos?id=i9MHigUZKEM&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet')
+    }
 
 }]);
 angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($scope){
@@ -280,6 +296,52 @@ angular.module('tutorialSite').service('homeService', ["$http", function($http){
 
 
 }]);
+angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
+
+    var box1 = document.getElementById('js_box1');
+    var box2 = document.getElementById('js_box2');
+    var box3 = document.getElementById('js_box3');
+    var box4 = document.getElementById('js_box4');
+    var input = document.getElementById('js_input');
+    var submitBtn = document.getElementById('js_submit');
+
+    box1.addEventListener('click', function (){
+        if (box1.style.background == 'red'){
+            box1.style.background = 'blue';
+        }else{
+            box1.style.background = 'red';
+        }
+    });
+
+    box2.addEventListener('mouseover', function(){
+        box2.style.position = 'absolute';
+        box2.style.left = '50%';
+    });
+
+    box3.addEventListener('mouseover', function(){
+        box3.style.position = 'absolute';
+        if (box3.style.left == '50%'){
+            box3.style.left = '10px';
+        }else{
+            box3.style.left = '50%';
+        }
+    });
+
+    submitBtn.addEventListener('click', function(){
+        box4.innerText = input.value;
+    });
+
+
+
+
+}])
+
+
+
+
+
+
+
 angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
 
     var box1 = $('#jquery_box1');
@@ -345,48 +407,3 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
     });
 
 }]);
-angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
-
-    var box1 = document.getElementById('js_box1');
-    var box2 = document.getElementById('js_box2');
-    var box3 = document.getElementById('js_box3');
-    var box4 = document.getElementById('js_box4');
-    var input = document.getElementById('js_input');
-    var submitBtn = document.getElementById('js_submit');
-
-    box1.addEventListener('click', function (){
-        if (box1.style.background == 'red'){
-            box1.style.background = 'blue';
-        }else{
-            box1.style.background = 'red';
-        }
-    });
-
-    box2.addEventListener('mouseover', function(){
-        box2.style.position = 'absolute';
-        box2.style.left = '50%';
-    });
-
-    box3.addEventListener('mouseover', function(){
-        box3.style.position = 'absolute';
-        if (box3.style.left == '50%'){
-            box3.style.left = '10px';
-        }else{
-            box3.style.left = '50%';
-        }
-    });
-
-    submitBtn.addEventListener('click', function(){
-        box4.innerText = input.value;
-    });
-
-
-
-
-}])
-
-
-
-
-
-

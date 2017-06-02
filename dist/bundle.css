@@ -263,6 +263,21 @@ table {
     background: #ddd;
     padding: 20px 10px 15px 10px;
     z-index: 1000; }
+    .main_angular_container .angular_tutorials_container #angular_pic {
+      width: 350px;
+      height: 262px;
+      margin: 10px 0px 10px 0px; }
+    .main_angular_container .angular_tutorials_container #angular_box1 {
+      background: #e45; }
+    .main_angular_container .angular_tutorials_container #angular_box2 {
+      background: #14b;
+      margin-left: 180px; }
+    .main_angular_container .angular_tutorials_container #angular_box3 {
+      background: #1f5; }
+    .main_angular_container .angular_tutorials_container #angular_box4 {
+      background: #f70; }
+    .main_angular_container .angular_tutorials_container #angular_box5 {
+      background: #189; }
 
 .contact_container {
   width: 100%;
