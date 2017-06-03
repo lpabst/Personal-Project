@@ -25,8 +25,10 @@
 
         <div class='animation_wrapper'>
             <h2>Angular Directives</h2>
-            <div class='examplebox' id='angular_box1' ng-click='showLeftBox = !showLeftBox' ng-show='showLeftBox'>Click Me!</div>
-            <div class='examplebox' id='angular_box2' ng-click='showLeftBox = !showLeftBox' ng-hide='showLeftBox'>Click Me!</div>
+            <div class='examplebox_wrapper'>
+                <div class='examplebox' id='angular_box1' ng-click='showLeftBox = !showLeftBox' ng-show='showLeftBox'>Click Me!</div>
+                <div class='examplebox' id='angular_box2' ng-click='showLeftBox = !showLeftBox' ng-hide='showLeftBox'>Click Me!</div>
+            </div>
             <p>This illustrates two of Angular's built in directives, ng-hide and ng-show. The first two 
                 pictures show how to use both directives. The first div, the one on the left of the
                 screen, has ng-show set to the scope variable 'showLeftBox'. So when that variable

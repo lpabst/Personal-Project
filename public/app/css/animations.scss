@@ -21,7 +21,7 @@
 
 @keyframes movearound{
     0%{
-        top: 30px;
+        top: 35px;
         left: 0;
     }
     30%{
@@ -31,13 +31,13 @@
         box-shadow: 12px 12px 16px black;
     }
     60%{
-        top: 30px;
+        top: 35px;
         left: 180px;
         transform: scale(1);
         box-shadow: 3px 3px 5px;
     }
     100%{
-        top: 30px;
+        top: 35px;
         left: 0px;
     }
 }
