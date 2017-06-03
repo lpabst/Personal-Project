@@ -221,93 +221,6 @@ table {
           background: white;
           transform: scale(1.1); }
 
-.main_angular_container {
-  width: 100%;
-  position: relative; }
-  .main_angular_container .angular_fullscreen_intro {
-    width: 100%;
-    height: 100vh;
-    background: url("./img/angular/angular_fullscreen_intro.jpeg") center no-repeat;
-    background-size: cover;
-    position: relative; }
-    .main_angular_container .angular_fullscreen_intro h1 {
-      width: 60%;
-      font-size: 38px;
-      font-weight: bold;
-      color: #d00;
-      text-shadow: 1px 1px 1px black;
-      text-align: center;
-      position: absolute;
-      left: 20%;
-      top: 20%; }
-      @media (min-width: 700px) {
-        .main_angular_container .angular_fullscreen_intro h1 {
-          font-size: 54px; } }
-    .main_angular_container .angular_fullscreen_intro .angular_scroll_circle {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #d00;
-      cursor: pointer;
-      position: absolute;
-      bottom: 15px;
-      left: calc(50% - 20px);
-      animation: pulse 1.6s infinite ease-in-out; }
-
-@keyframes pulse {
-  50% {
-    transform: scale(1.1); }
-  100% {
-    transform: scale(1); } }
-      .main_angular_container .angular_fullscreen_intro .angular_scroll_circle img {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        left: 10px;
-        top: 11px; }
-  .main_angular_container .angular_tutorials_container {
-    width: 100%;
-    background: #ddd;
-    padding: 20px 10px 15px 10px;
-    z-index: 1000; }
-    .main_angular_container .angular_tutorials_container #angular_pic_a {
-      width: 350px;
-      height: 282px;
-      margin: 10px 0px 10px 10px;
-      display: block; }
-    .main_angular_container .angular_tutorials_container #angular_pic {
-      width: 350px;
-      height: 262px; }
-    .main_angular_container .angular_tutorials_container #angular_pic:hover {
-      border: 2px solid black; }
-    .main_angular_container .angular_tutorials_container #angular_box1 {
-      background: #e45; }
-    .main_angular_container .angular_tutorials_container #angular_box2 {
-      background: #14b;
-      margin-left: 180px; }
-    @media (min-width: 1000px) {
-      .main_angular_container .angular_tutorials_container .angular_example_wrapper {
-        width: 45%;
-        margin-left: 2.5%;
-        margin-right: 2.5%;
-        float: left; } }
-    .main_angular_container .angular_tutorials_container #angular_box3 {
-      width: 200px;
-      height: 90px;
-      background: #333;
-      color: #eee; }
-      .main_angular_container .angular_tutorials_container #angular_box3 .highlighted {
-        background: yellow;
-        color: black; }
-    .main_angular_container .angular_tutorials_container #angular_box4 {
-      background: #f70; }
-    .main_angular_container .angular_tutorials_container .angular_to_do_list {
-      width: 250px;
-      margin: 10px 0px 10px 0px;
-      padding: 10px 10px;
-      background: black;
-      color: #fee; }
-
 .contact_container {
   width: 100%;
   position: relative;
@@ -392,191 +305,6 @@ table {
     .contact_main_section .large {
       margin-top: 24px;
       transform: scale(2); } }
-
-.csspage_container {
-  width: 100%;
-  position: relative; }
-
-.css_fullscreen_intro {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative; }
-  .css_fullscreen_intro video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; }
-    @media (min-aspect-ratio: 16 / 9) {
-      .css_fullscreen_intro video {
-        width: 100%;
-        height: auto; } }
-    @media (max-aspect-ratio: 16 / 9) {
-      .css_fullscreen_intro video {
-        width: auto;
-        height: 100vh;
-        left: -50%; } }
-  .css_fullscreen_intro h1 {
-    width: 60%;
-    font-size: 70px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 1px #fd8;
-    position: absolute;
-    top: 85px;
-    left: 20%;
-    text-align: center;
-    animation: pulse 1s infinite ease-in-out;
-    -webkit-animation: cssPulse 5s infinite ease-in-out; }
-    @media (min-width: 700px) {
-      .css_fullscreen_intro h1 {
-        top: 105px; } }
-  .css_fullscreen_intro .css_scroll_circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: white;
-    cursor: pointer;
-    position: absolute;
-    bottom: 15px;
-    left: calc(50% - 20px);
-    animation: pulse 1.6s infinite ease-in-out; }
-
-@keyframes pulse {
-  50% {
-    transform: scale(1.1); }
-  100% {
-    transform: scale(1); } }
-    .css_fullscreen_intro .css_scroll_circle img {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      left: 10px;
-      top: 11px; }
-
-@keyframes cssPulse {
-  50% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1); } }
-
-.css_tutorials_container {
-  width: 100%;
-  background: #bbb;
-  padding: 20px 10px 15px 10px;
-  z-index: 1000; }
-
-.css_animation_wrapper {
-  width: calc(100% - 20px);
-  margin-bottom: 20px;
-  perspective: 2000px; }
-  .css_animation_wrapper h2 {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 10px 0px 15px 0px; }
-    @media (min-width: 1000px) {
-      .css_animation_wrapper h2 {
-        font-size: 34px; } }
-  .css_animation_wrapper p {
-    margin-bottom: 10px; }
-  .css_animation_wrapper .css_examplebox {
-    width: 140px;
-    height: 40px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    padding-top: 12px; }
-  .css_animation_wrapper img {
-    max-width: 95%;
-    margin-bottom: 10px; }
-  .css_animation_wrapper #css_pretty {
-    font-size: 17px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    line-height: 17px;
-    color: #e27;
-    text-shadow: 2px 2px 3px #601; }
-  .css_animation_wrapper #css_box1 {
-    background: blue;
-    transition: all 0.4s;
-    -webkit-transition: all 0.4s; }
-  .css_animation_wrapper #css_box1:hover {
-    transform: scale(1.1);
-    background: #26e; }
-  .css_animation_wrapper #css_box2 {
-    margin-left: 20px;
-    background: green;
-    transition: all 1s;
-    -webkit-transition: all 1s;
-    transform-origin: left top; }
-  .css_animation_wrapper #css_box2:active {
-    transform: rotate(20deg); }
-  .css_animation_wrapper #css_box3 {
-    margin-left: 20px;
-    background: #52a;
-    transition: all 2s;
-    -webkit-transition: all 2s;
-    transform-origin: left; }
-  .css_animation_wrapper #css_box3:active {
-    transform: rotateY(80deg);
-    background: #215; }
-  .css_animation_wrapper #css_box4 {
-    background: #159;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    animation: movearound 4s infinite;
-    -webkit-animation: movearound 4s infinite; }
-
-@keyframes movearound {
-  0% {
-    top: 30px;
-    left: 0; }
-  30% {
-    top: 50px;
-    left: 70px;
-    transform: scale(1.3);
-    box-shadow: 12px 12px 16px black; }
-  60% {
-    top: 30px;
-    left: 180px;
-    transform: scale(1);
-    box-shadow: 3px 3px 5px; }
-  100% {
-    top: 30px;
-    left: 0px; } }
-  .css_animation_wrapper #css_box5 {
-    background: #c6c;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    animation: spinaround 3s infinite;
-    -webkit-animation: spinaround 3s infinite; }
-
-@keyframes spinaround {
-  70% {
-    transform: rotateZ(180deg); }
-  100% {
-    transform: rotateZ(360deg); } }
-  .css_animation_wrapper #css_box6 {
-    background: #6b2;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    animation: spinOnEdge 3s infinite;
-    -webkit-animation: spinOnEdge 3s infinite; }
-
-@keyframes spinOnEdge {
-  50% {
-    transform: rotateZ(180deg);
-    transform-origin: 100%; }
-  100% {
-    transform: rotateZ(360deg);
-    transform-origin: 100%; } }
 
 .greensock_main_container {
   width: 100%;
@@ -779,165 +507,277 @@ table {
     bottom: 40%;
     background: green; }
 
-.home_container {
+.main_angular_container {
+  width: 100%;
+  position: relative; }
+  .main_angular_container .angular_fullscreen_intro {
+    width: 100%;
+    height: 100vh;
+    background: url("./img/angular/angular_fullscreen_intro.jpeg") center no-repeat;
+    background-size: cover;
+    position: relative; }
+    .main_angular_container .angular_fullscreen_intro h1 {
+      width: 60%;
+      font-size: 38px;
+      font-weight: bold;
+      color: #d00;
+      text-shadow: 1px 1px 1px black;
+      text-align: center;
+      position: absolute;
+      left: 20%;
+      top: 20%; }
+      @media (min-width: 700px) {
+        .main_angular_container .angular_fullscreen_intro h1 {
+          font-size: 54px; } }
+    .main_angular_container .angular_fullscreen_intro .angular_scroll_circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #d00;
+      cursor: pointer;
+      position: absolute;
+      bottom: 15px;
+      left: calc(50% - 20px);
+      animation: pulse 1.6s infinite ease-in-out; }
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+      .main_angular_container .angular_fullscreen_intro .angular_scroll_circle img {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 10px;
+        top: 11px; }
+  .main_angular_container .angular_tutorials_container {
+    width: 100%;
+    background: #ddd;
+    padding: 20px 10px 15px 10px;
+    z-index: 1000; }
+    .main_angular_container .angular_tutorials_container #angular_pic_a {
+      width: 350px;
+      height: 282px;
+      margin: 10px 0px 10px 10px;
+      display: block; }
+    .main_angular_container .angular_tutorials_container #angular_pic {
+      width: 350px;
+      height: 262px; }
+    .main_angular_container .angular_tutorials_container #angular_pic:hover {
+      border: 2px solid black; }
+    .main_angular_container .angular_tutorials_container #angular_box1 {
+      background: #e45; }
+    .main_angular_container .angular_tutorials_container #angular_box2 {
+      background: #14b;
+      margin-left: 180px; }
+    @media (min-width: 1000px) {
+      .main_angular_container .angular_tutorials_container .angular_example_wrapper {
+        width: 45%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        float: left; } }
+    .main_angular_container .angular_tutorials_container #angular_box3 {
+      width: 200px;
+      height: 90px;
+      background: #333;
+      color: #eee; }
+      .main_angular_container .angular_tutorials_container #angular_box3 .highlighted {
+        background: yellow;
+        color: black; }
+    .main_angular_container .angular_tutorials_container #angular_box4 {
+      background: #f70; }
+    .main_angular_container .angular_tutorials_container .angular_to_do_list {
+      width: 250px;
+      margin: 10px 0px 10px 0px;
+      padding: 10px 10px;
+      background: black;
+      color: #fee; }
+
+.csspage_container {
   width: 100%;
   position: relative; }
 
-.home_top_section {
+.css_fullscreen_intro {
   width: 100%;
   height: 100vh;
-  background: url("./img/home/programming1.jpeg") center no-repeat;
-  background-size: cover;
+  overflow: hidden;
   position: relative; }
-  .home_top_section .home_intro_container {
-    width: 80%;
+  .css_fullscreen_intro video {
     position: absolute;
-    left: 10%;
-    top: 120px;
-    color: #eee;
-    font-size: 22px;
-    font-weight: bold; }
-    .home_top_section .home_intro_container h3 {
-      font-size: 32px;
-      text-align: center;
-      margin-bottom: 30px; }
-      @media (min-width: 500px) {
-        .home_top_section .home_intro_container h3 {
-          font-size: 28px; } }
-      @media (min-width: 900px) {
-        .home_top_section .home_intro_container h3 {
-          font-size: 35px; } }
-    @media (min-width: 500px) {
-      .home_top_section .home_intro_container {
-        font-size: 20px; } }
-    @media (min-width: 900px) {
-      .home_top_section .home_intro_container {
-        top: 220px;
-        font-size: 25px; } }
-
-.home_middle_section {
-  width: 100%;
-  height: 400px;
-  position: relative; }
-  .home_middle_section .home_start_pic {
-    width: 100%;
-    height: 400px;
-    background: url("./img/home/programming2.jpg") center no-repeat;
-    background-size: cover;
-    position: absolute;
+    top: 0;
     left: 0;
-    color: #401;
-    padding: 80px 40px 0 40px;
-    font-size: 20px;
-    font-weight: bold; }
-    .home_middle_section .home_start_pic h3 {
-      font-size: 28px;
-      margin-bottom: 15px; }
-    @media (min-width: 700px) {
-      .home_middle_section .home_start_pic {
-        width: 50%; }
-        .home_middle_section .home_start_pic .home_start_words {
-          display: none; } }
-  .home_middle_section .home_start_container {
-    width: 50%;
-    height: 400px;
-    position: absolute;
-    right: 0;
-    background: #eee;
-    display: none;
-    padding: 100px 40px 0 40px;
-    font-size: 20px;
-    font-weight: bold; }
-    .home_middle_section .home_start_container h3 {
-      font-size: 28px;
-      margin-bottom: 15px; }
-    @media (min-width: 700px) {
-      .home_middle_section .home_start_container {
-        display: block; } }
-
-.home_bottom_section {
-  width: 100%;
-  height: 400px;
-  position: relative; }
-  .home_bottom_section .home_experience_container {
-    width: 50%;
-    height: 400px;
-    position: absolute;
-    left: 0;
-    display: none;
-    padding: 100px 40px 0 40px;
-    background: #eee;
-    font-size: 20px;
-    font-weight: bold; }
-    .home_bottom_section .home_experience_container h3 {
-      font-size: 28px;
-      margin-bottom: 15px; }
-    @media (min-width: 700px) {
-      .home_bottom_section .home_experience_container {
-        display: block; } }
-  .home_bottom_section .home_experience_pic {
     width: 100%;
-    height: 400px;
-    background: url("./img/home/programming3.jpg") center no-repeat;
-    background-size: cover;
+    height: 100vh; }
+    @media (min-aspect-ratio: 16 / 9) {
+      .css_fullscreen_intro video {
+        width: 100%;
+        height: auto; } }
+    @media (max-aspect-ratio: 16 / 9) {
+      .css_fullscreen_intro video {
+        width: auto;
+        height: 100vh;
+        left: -50%; } }
+  .css_fullscreen_intro h1 {
+    width: 60%;
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 1px #fd8;
     position: absolute;
-    right: 0;
-    color: #007;
-    padding: 80px 40px 0 40px;
-    font-size: 20px;
-    font-weight: bold; }
-    .home_bottom_section .home_experience_pic h3 {
-      font-size: 28px;
-      margin-bottom: 15px; }
+    top: 85px;
+    left: 20%;
+    text-align: center;
+    animation: pulse 1s infinite ease-in-out;
+    -webkit-animation: cssPulse 5s infinite ease-in-out; }
     @media (min-width: 700px) {
-      .home_bottom_section .home_experience_pic {
-        width: 50%; }
-        .home_bottom_section .home_experience_pic .home_experience_words {
-          display: none; } }
-
-.home_tech_container {
-  width: 100%;
-  position: relative;
-  padding: 10px 0 0 2%; }
-  .home_tech_container div {
-    width: 96%;
-    height: 100px;
-    border-radius: 6px;
-    background: #333;
-    margin-bottom: 6px;
-    padding: 5px 0 0 5px;
-    position: relative;
-    color: #eee;
+      .css_fullscreen_intro h1 {
+        top: 105px; } }
+  .css_fullscreen_intro .css_scroll_circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
     cursor: pointer;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s; }
-    .home_tech_container div img {
-      width: 90px;
-      height: 90px;
-      border-radius: 5px; }
-    .home_tech_container div p {
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 20px);
+    animation: pulse 1.6s infinite ease-in-out; }
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+    .css_fullscreen_intro .css_scroll_circle img {
+      width: 20px;
+      height: 20px;
       position: absolute;
-      left: 100px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 17px;
-      margin-right: 5px;
-      text-align: left; }
-    @media (min-width: 900px) {
-      .home_tech_container div {
-        width: 48%;
-        display: inline-block;
-        margin-right: 5px; } }
-  .home_tech_container div:hover {
-    background: #444;
-    transform: scale(1.1);
-    z-index: 105; }
-  .home_tech_container p {
+      left: 10px;
+      top: 11px; }
+
+@keyframes cssPulse {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+.css_tutorials_container {
+  width: 100%;
+  background: #bbb;
+  padding: 20px 10px 15px 10px;
+  z-index: 1000; }
+
+.css_animation_wrapper {
+  width: calc(100% - 20px);
+  margin-bottom: 20px;
+  perspective: 2000px; }
+  .css_animation_wrapper h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0px 15px 0px; }
+    @media (min-width: 1000px) {
+      .css_animation_wrapper h2 {
+        font-size: 34px; } }
+  .css_animation_wrapper p {
+    margin-bottom: 10px; }
+  .css_animation_wrapper .css_examplebox {
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
     text-align: center;
     font-weight: bold;
-    font-size: 13px; }
+    padding-top: 12px; }
+  .css_animation_wrapper img {
+    max-width: 95%;
+    margin-bottom: 10px; }
+  .css_animation_wrapper #css_pretty {
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 17px;
+    color: #e27;
+    text-shadow: 2px 2px 3px #601; }
+  .css_animation_wrapper #css_box1 {
+    background: blue;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s; }
+  .css_animation_wrapper #css_box1:hover {
+    transform: scale(1.1);
+    background: #26e; }
+  .css_animation_wrapper #css_box2 {
+    margin-left: 20px;
+    background: green;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    transform-origin: left top; }
+  .css_animation_wrapper #css_box2:active {
+    transform: rotate(20deg); }
+  .css_animation_wrapper #css_box3 {
+    margin-left: 20px;
+    background: #52a;
+    transition: all 2s;
+    -webkit-transition: all 2s;
+    transform-origin: left; }
+  .css_animation_wrapper #css_box3:active {
+    transform: rotateY(80deg);
+    background: #215; }
+  .css_animation_wrapper #css_box4 {
+    background: #159;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    animation: movearound 4s infinite;
+    -webkit-animation: movearound 4s infinite; }
+
+@keyframes movearound {
+  0% {
+    top: 30px;
+    left: 0; }
+  30% {
+    top: 50px;
+    left: 70px;
+    transform: scale(1.3);
+    box-shadow: 12px 12px 16px black; }
+  60% {
+    top: 30px;
+    left: 180px;
+    transform: scale(1);
+    box-shadow: 3px 3px 5px; }
+  100% {
+    top: 30px;
+    left: 0px; } }
+  .css_animation_wrapper #css_box5 {
+    background: #c6c;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    animation: spinaround 3s infinite;
+    -webkit-animation: spinaround 3s infinite; }
+
+@keyframes spinaround {
+  70% {
+    transform: rotateZ(180deg); }
+  100% {
+    transform: rotateZ(360deg); } }
+  .css_animation_wrapper #css_box6 {
+    background: #6b2;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    animation: spinOnEdge 3s infinite;
+    -webkit-animation: spinOnEdge 3s infinite; }
+
+@keyframes spinOnEdge {
+  50% {
+    transform: rotateZ(180deg);
+    transform-origin: 100%; }
+  100% {
+    transform: rotateZ(360deg);
+    transform-origin: 100%; } }
 
 .jquery_container {
   width: 100%;
@@ -1203,3 +1043,163 @@ table {
     margin-top: 60px; }
   .js_main #js_example4_code {
     margin-top: 10px; }
+
+.home_container {
+  width: 100%;
+  position: relative; }
+
+.home_top_section {
+  width: 100%;
+  height: 100vh;
+  background: url("./img/home/programming1.jpeg") center no-repeat;
+  background-size: cover;
+  position: relative; }
+  .home_top_section .home_intro_container {
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    top: 120px;
+    color: #eee;
+    font-size: 22px;
+    font-weight: bold; }
+    .home_top_section .home_intro_container h3 {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px; }
+      @media (min-width: 500px) {
+        .home_top_section .home_intro_container h3 {
+          font-size: 28px; } }
+      @media (min-width: 900px) {
+        .home_top_section .home_intro_container h3 {
+          font-size: 35px; } }
+    @media (min-width: 500px) {
+      .home_top_section .home_intro_container {
+        font-size: 20px; } }
+    @media (min-width: 900px) {
+      .home_top_section .home_intro_container {
+        top: 220px;
+        font-size: 25px; } }
+
+.home_middle_section {
+  width: 100%;
+  height: 400px;
+  position: relative; }
+  .home_middle_section .home_start_pic {
+    width: 100%;
+    height: 400px;
+    background: url("./img/home/programming2.jpg") center no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    color: #401;
+    padding: 80px 40px 0 40px;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_middle_section .home_start_pic h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_middle_section .home_start_pic {
+        width: 50%; }
+        .home_middle_section .home_start_pic .home_start_words {
+          display: none; } }
+  .home_middle_section .home_start_container {
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    background: #eee;
+    display: none;
+    padding: 100px 40px 0 40px;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_middle_section .home_start_container h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_middle_section .home_start_container {
+        display: block; } }
+
+.home_bottom_section {
+  width: 100%;
+  height: 400px;
+  position: relative; }
+  .home_bottom_section .home_experience_container {
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    display: none;
+    padding: 100px 40px 0 40px;
+    background: #eee;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_bottom_section .home_experience_container h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_bottom_section .home_experience_container {
+        display: block; } }
+  .home_bottom_section .home_experience_pic {
+    width: 100%;
+    height: 400px;
+    background: url("./img/home/programming3.jpg") center no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    color: #007;
+    padding: 80px 40px 0 40px;
+    font-size: 20px;
+    font-weight: bold; }
+    .home_bottom_section .home_experience_pic h3 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+    @media (min-width: 700px) {
+      .home_bottom_section .home_experience_pic {
+        width: 50%; }
+        .home_bottom_section .home_experience_pic .home_experience_words {
+          display: none; } }
+
+.home_tech_container {
+  width: 100%;
+  position: relative;
+  padding: 10px 0 0 2%; }
+  .home_tech_container div {
+    width: 96%;
+    height: 100px;
+    border-radius: 6px;
+    background: #333;
+    margin-bottom: 6px;
+    padding: 5px 0 0 5px;
+    position: relative;
+    color: #eee;
+    cursor: pointer;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s; }
+    .home_tech_container div img {
+      width: 90px;
+      height: 90px;
+      border-radius: 5px; }
+    .home_tech_container div p {
+      position: absolute;
+      left: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 17px;
+      margin-right: 5px;
+      text-align: left; }
+    @media (min-width: 900px) {
+      .home_tech_container div {
+        width: 48%;
+        display: inline-block;
+        margin-right: 5px; } }
+  .home_tech_container div:hover {
+    background: #444;
+    transform: scale(1.1);
+    z-index: 105; }
+  .home_tech_container p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px; }

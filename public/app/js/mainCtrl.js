@@ -2,23 +2,23 @@ angular.module('tutorialSite').controller('mainCtrl', function($scope){
 
     $scope.mobileMenu = false;
     $scope.showLearnSubheader = false; //desktop learn submenu
-    var learnSubMenu = false; //mobile learn submenu
+    let learnSubMenu = false; //mobile learn submenu
 
-    $scope.showMobileMenu = function(){
+    $scope.showMobileMenu = () => {
         $scope.mobileMenu = true;
     }
 
-    $scope.hideMobileMenu = function(){
+    $scope.hideMobileMenu = () => {
         $scope.mobileMenu = false;
         learnSubMenu = false;
     }
 
-    $scope.hideLearnSubheader = function() {
+    $scope.hideLearnSubheader = () => {
         $scope.showLearnSubheader = false;
     }
 
 //slides out the mobile learn submenu
-    $scope.showLearnSubMenu = function(){
+    $scope.showLearnSubMenu = () => {
         if (!learnSubMenu){
             $('.learn_submenu_mobile').css({
                 'left': '200px',

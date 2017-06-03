@@ -24,19 +24,19 @@ angular.module('tutorialSite').service('homeService', function($http){
     ];
 
 
-  this.getHomePageIntro = function(){
+  this.getHomePageIntro = () => {
       return homePageInfo[0];
   };
 
-  this.getMiddleSection = function(){
+  this.getMiddleSection = () => {
       return homePageInfo[1];
   }
 
-  this.getBottomSection = function(){
+  this.getBottomSection = () => {
       return homePageInfo[2];
   }
 
-  this.getTechInfo = function(){
+  this.getTechInfo = () => {
       return $http.get('/api/techinfo');
   }
 

@@ -2,22 +2,22 @@ angular.module('tutorialSite').controller('angularCtrl', function($scope, angula
 
     $scope.showLeftBox = true;
 
-    $scope.getYoutubePic = function(){
-        angularService.getYoutubePic().then(function(response){
+    $scope.getYoutubePic = () => {
+        angularService.getYoutubePic().then((response) => {
             $scope.angularPicUrl = response.data.items[0].snippet.thumbnails.high.url;
         })
     }
 
     $scope.getYoutubePic();
 
-    $scope.scrollPage = function(){
+    $scope.scrollPage = () => {
 
         //Check height of screen, adjust scroll for desktop/mobile headers.
         //If screen is at least 700 pixels wide, scroll for desktopHeader,
         //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
 
         if (mq.matches){
             $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
@@ -29,7 +29,7 @@ angular.module('tutorialSite').controller('angularCtrl', function($scope, angula
 
     $scope.toDoList = [];
 
-    $scope.addItem = function(){
+    $scope.addItem = () => {
         $scope.toDoList.push($scope.newItem);
     }
 

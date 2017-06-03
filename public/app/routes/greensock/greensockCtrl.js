@@ -1,16 +1,16 @@
 angular.module('tutorialSite').controller('greensockCtrl', function($scope){
 
-    var box2 = $('#greensock_box2');
-    var box3 = $('#greensock_box3');
+    let box2 = $('#greensock_box2');
+    let box3 = $('#greensock_box3');
     let box4_btn = $('#gs_example4_btn');
-    var box4 = $('#greensock_box4');
-    var plantExampleBtn = $('#plant_example_btn');
-    var plant_reset_btn = $('#plant_reset_btn');
-    var sun = $('.sun');
-    var stem = $('.stem');
-    var petals = $('.petal');
-    var leaf = $('.leaf');
-    var miniStem = $('.mini_stem');
+    let box4 = $('#greensock_box4');
+    let plantExampleBtn = $('#plant_example_btn');
+    let plant_reset_btn = $('#plant_reset_btn');
+    let sun = $('.sun');
+    let stem = $('.stem');
+    let petals = $('.petal');
+    let leaf = $('.leaf');
+    let miniStem = $('.mini_stem');
 
     TweenLite.to($('#greensock_box1'), 10, {left:'200px'});
 
@@ -45,7 +45,7 @@ angular.module('tutorialSite').controller('greensockCtrl', function($scope){
 
     plantExampleBtn.click(function(){
         //sun
-        var mq = window.matchMedia( "(min-width: 1000px)" );
+        let mq = window.matchMedia( "(min-width: 1000px)" );
         if(mq.matches){//Checks if the screen is larger than 1000px or not
             TweenLite.to(sun, 3.4, {left:'480px', top:'15px', ease:Linear.easeNone});
             TweenLite.to(sun, 3.6, {left:'960px', top:'65px', delay:3.4});
@@ -70,14 +70,14 @@ angular.module('tutorialSite').controller('greensockCtrl', function($scope){
         TweenLite.to(petals, 1, {width:'0px', height:'0px', left:'0px', border:'0px solid gray'});
     })
 
-    $scope.scrollPage = function(){
+    $scope.scrollPage = () => {
 
         //Check height of screen, adjust scroll for desktop/mobile headers.
         //If screen is at least 700 pixels wide, scroll for desktopHeader,
         //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
 
         if (mq.matches){
             $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);

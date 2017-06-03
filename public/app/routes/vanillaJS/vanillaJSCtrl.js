@@ -1,11 +1,11 @@
 angular.module('tutorialSite').controller('vanillaJSCtrl', function($scope){
 
-    var box1 = document.getElementById('js_box1');
-    var box2 = document.getElementById('js_box2');
-    var box3 = document.getElementById('js_box3');
-    var box4 = document.getElementById('js_box4');
-    var input = document.getElementById('js_input');
-    var submitBtn = document.getElementById('js_submit');
+    let box1 = document.getElementById('js_box1');
+    let box2 = document.getElementById('js_box2');
+    let box3 = document.getElementById('js_box3');
+    let box4 = document.getElementById('js_box4');
+    let input = document.getElementById('js_input');
+    let submitBtn = document.getElementById('js_submit');
 
     box1.addEventListener('click', function (){
         if (box1.style.background == 'red'){
@@ -35,14 +35,14 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', function($scope){
 
 //This scrolls the page when the pulsing scroll
 //arrow is pressed
-    $scope.scrollPage = function(){
+    $scope.scrollPage = () => {
 
         //Check height of screen, adjust scroll for desktop/mobile headers.
         //If screen is at least 700 pixels wide, scroll for desktopHeader,
         //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
 
         if (mq.matches){
             $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);

@@ -92,23 +92,23 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
     $scope.mobileMenu = false;
     $scope.showLearnSubheader = false; //desktop learn submenu
-    var learnSubMenu = false; //mobile learn submenu
+    let learnSubMenu = false; //mobile learn submenu
 
-    $scope.showMobileMenu = function(){
+    $scope.showMobileMenu = () => {
         $scope.mobileMenu = true;
     }
 
-    $scope.hideMobileMenu = function(){
+    $scope.hideMobileMenu = () => {
         $scope.mobileMenu = false;
         learnSubMenu = false;
     }
 
-    $scope.hideLearnSubheader = function() {
+    $scope.hideLearnSubheader = () => {
         $scope.showLearnSubheader = false;
     }
 
 //slides out the mobile learn submenu
-    $scope.showLearnSubMenu = function(){
+    $scope.showLearnSubMenu = () => {
         if (!learnSubMenu){
             $('.learn_submenu_mobile').css({
                 'left': '200px',
@@ -163,22 +163,22 @@ angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularServ
 
     $scope.showLeftBox = true;
 
-    $scope.getYoutubePic = function(){
-        angularService.getYoutubePic().then(function(response){
+    $scope.getYoutubePic = () => {
+        angularService.getYoutubePic().then((response) => {
             $scope.angularPicUrl = response.data.items[0].snippet.thumbnails.high.url;
         })
     }
 
     $scope.getYoutubePic();
 
-    $scope.scrollPage = function(){
+    $scope.scrollPage = () => {
 
         //Check height of screen, adjust scroll for desktop/mobile headers.
         //If screen is at least 700 pixels wide, scroll for desktopHeader,
         //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
 
         if (mq.matches){
             $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
@@ -190,7 +190,7 @@ angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularServ
 
     $scope.toDoList = [];
 
-    $scope.addItem = function(){
+    $scope.addItem = () => {
         $scope.toDoList.push($scope.newItem);
     }
 
@@ -207,17 +207,17 @@ angular.module('tutorialSite').service('angularService', ["$http", function($htt
 }]);
 angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($scope){
 
-    var box2 = $('#greensock_box2');
-    var box3 = $('#greensock_box3');
+    let box2 = $('#greensock_box2');
+    let box3 = $('#greensock_box3');
     let box4_btn = $('#gs_example4_btn');
-    var box4 = $('#greensock_box4');
-    var plantExampleBtn = $('#plant_example_btn');
-    var plant_reset_btn = $('#plant_reset_btn');
-    var sun = $('.sun');
-    var stem = $('.stem');
-    var petals = $('.petal');
-    var leaf = $('.leaf');
-    var miniStem = $('.mini_stem');
+    let box4 = $('#greensock_box4');
+    let plantExampleBtn = $('#plant_example_btn');
+    let plant_reset_btn = $('#plant_reset_btn');
+    let sun = $('.sun');
+    let stem = $('.stem');
+    let petals = $('.petal');
+    let leaf = $('.leaf');
+    let miniStem = $('.mini_stem');
 
     TweenLite.to($('#greensock_box1'), 10, {left:'200px'});
 
@@ -252,7 +252,7 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
 
     plantExampleBtn.click(function(){
         //sun
-        var mq = window.matchMedia( "(min-width: 1000px)" );
+        let mq = window.matchMedia( "(min-width: 1000px)" );
         if(mq.matches){//Checks if the screen is larger than 1000px or not
             TweenLite.to(sun, 3.4, {left:'480px', top:'15px', ease:Linear.easeNone});
             TweenLite.to(sun, 3.6, {left:'960px', top:'65px', delay:3.4});
@@ -277,14 +277,14 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
         TweenLite.to(petals, 1, {width:'0px', height:'0px', left:'0px', border:'0px solid gray'});
     })
 
-    $scope.scrollPage = function(){
+    $scope.scrollPage = () => {
 
         //Check height of screen, adjust scroll for desktop/mobile headers.
         //If screen is at least 700 pixels wide, scroll for desktopHeader,
         //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
 
         if (mq.matches){
             $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
@@ -296,21 +296,20 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
 }]);
 angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
 
-    $scope.getHomePageIntro = function() {
+    $scope.getHomePageIntro = () =>  {
         $scope.intro = homeService.getHomePageIntro();
     }
 
-    $scope.getMiddleSection = function(){
+    $scope.getMiddleSection = () => {
         $scope.middle = homeService.getMiddleSection();
     }
 
-    $scope.getBottomSection = function(){
+    $scope.getBottomSection = () => {
         $scope.bottom = homeService.getBottomSection();
     }
 
-    $scope.getTechInfo = function(){
+    $scope.getTechInfo = () => {
         $scope.techInfo = homeService.getTechInfo().then(function(response){
-            console.log(response.data);
             $scope.techInfo = response.data;
         });
     }
@@ -348,33 +347,96 @@ angular.module('tutorialSite').service('homeService', ["$http", function($http){
     ];
 
 
-  this.getHomePageIntro = function(){
+  this.getHomePageIntro = () => {
       return homePageInfo[0];
   };
 
-  this.getMiddleSection = function(){
+  this.getMiddleSection = () => {
       return homePageInfo[1];
   }
 
-  this.getBottomSection = function(){
+  this.getBottomSection = () => {
       return homePageInfo[2];
   }
 
-  this.getTechInfo = function(){
+  this.getTechInfo = () => {
       return $http.get('/api/techinfo');
   }
 
 
 }]);
+angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
+
+    let box1 = document.getElementById('js_box1');
+    let box2 = document.getElementById('js_box2');
+    let box3 = document.getElementById('js_box3');
+    let box4 = document.getElementById('js_box4');
+    let input = document.getElementById('js_input');
+    let submitBtn = document.getElementById('js_submit');
+
+    box1.addEventListener('click', function (){
+        if (box1.style.background == 'red'){
+            box1.style.background = 'blue';
+        }else{
+            box1.style.background = 'red';
+        }
+    });
+
+    box2.addEventListener('mouseover', function(){
+        box2.style.position = 'absolute';
+        box2.style.left = '50%';
+    });
+
+    box3.addEventListener('mouseover', function(){
+        box3.style.position = 'absolute';
+        if (box3.style.left == '50%'){
+            box3.style.left = '10px';
+        }else{
+            box3.style.left = '50%';
+        }
+    });
+
+    submitBtn.addEventListener('click', function(){
+        box4.innerText = input.value;
+    });
+
+//This scrolls the page when the pulsing scroll
+//arrow is pressed
+    $scope.scrollPage = () => {
+
+        //Check height of screen, adjust scroll for desktop/mobile headers.
+        //If screen is at least 700 pixels wide, scroll for desktopHeader,
+        //else scroll for Mobile header.
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
+
+        if (mq.matches){
+            $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
+        }else{
+            $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
+        }
+        //***800 is the number of milliseconds it takes to carry out the animation
+    }
+
+
+}])
+
+
+
+
+
+
+
 angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
 
-    var box1 = $('#jquery_box1');
-    var box2 = $('#jquery_box2');
-    var height = $('#jquery_input_height');
-    var width = $('#jquery_input_width');
-    var prev = $('.prev');
-    var next = $('.next');
-    var pics = $('#jquery_carousel_pictures');
+    let box1 = $('#jquery_box1');
+    let box2 = $('#jquery_box2');
+    let height = $('#jquery_input_height');
+    let width = $('#jquery_input_width');
+    let prev = $('.prev');
+    let next = $('.next');
+    let pics = $('#jquery_carousel_pictures');
 
 //example 1 - changes box width and height
     box1.click(function(){
@@ -407,7 +469,7 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
 // Example3 - JQuery Carousel. Changes the positioning of the div so 
 // that a different picture is showing.
     
-    var left = parseInt(pics.css('left'), 10);
+    let left = parseInt(pics.css('left'), 10);
     
     prev.click(function(){
         
@@ -432,14 +494,14 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
 
 //top screen pulsing scroll button scrolls page automatically
 //with this function
-    $scope.scrollPage = function(){
+    $scope.scrollPage = () => {
 
         //Check height of screen, adjust scroll for desktop/mobile headers.
         //If screen is at least 700 pixels wide, scroll for desktopHeader,
         //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
 
         if (mq.matches){
             $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
@@ -450,65 +512,3 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
     }
 
 }]);
-angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
-
-    var box1 = document.getElementById('js_box1');
-    var box2 = document.getElementById('js_box2');
-    var box3 = document.getElementById('js_box3');
-    var box4 = document.getElementById('js_box4');
-    var input = document.getElementById('js_input');
-    var submitBtn = document.getElementById('js_submit');
-
-    box1.addEventListener('click', function (){
-        if (box1.style.background == 'red'){
-            box1.style.background = 'blue';
-        }else{
-            box1.style.background = 'red';
-        }
-    });
-
-    box2.addEventListener('mouseover', function(){
-        box2.style.position = 'absolute';
-        box2.style.left = '50%';
-    });
-
-    box3.addEventListener('mouseover', function(){
-        box3.style.position = 'absolute';
-        if (box3.style.left == '50%'){
-            box3.style.left = '10px';
-        }else{
-            box3.style.left = '50%';
-        }
-    });
-
-    submitBtn.addEventListener('click', function(){
-        box4.innerText = input.value;
-    });
-
-//This scrolls the page when the pulsing scroll
-//arrow is pressed
-    $scope.scrollPage = function(){
-
-        //Check height of screen, adjust scroll for desktop/mobile headers.
-        //If screen is at least 700 pixels wide, scroll for desktopHeader,
-        //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
-
-        if (mq.matches){
-            $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
-        }else{
-            $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
-        }
-        //***800 is the number of milliseconds it takes to carry out the animation
-    }
-
-
-}])
-
-
-
-
-
-

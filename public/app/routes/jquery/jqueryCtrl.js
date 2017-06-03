@@ -1,12 +1,12 @@
 angular.module('tutorialSite').controller('jqueryCtrl', function($scope){
 
-    var box1 = $('#jquery_box1');
-    var box2 = $('#jquery_box2');
-    var height = $('#jquery_input_height');
-    var width = $('#jquery_input_width');
-    var prev = $('.prev');
-    var next = $('.next');
-    var pics = $('#jquery_carousel_pictures');
+    let box1 = $('#jquery_box1');
+    let box2 = $('#jquery_box2');
+    let height = $('#jquery_input_height');
+    let width = $('#jquery_input_width');
+    let prev = $('.prev');
+    let next = $('.next');
+    let pics = $('#jquery_carousel_pictures');
 
 //example 1 - changes box width and height
     box1.click(function(){
@@ -39,7 +39,7 @@ angular.module('tutorialSite').controller('jqueryCtrl', function($scope){
 // Example3 - JQuery Carousel. Changes the positioning of the div so 
 // that a different picture is showing.
     
-    var left = parseInt(pics.css('left'), 10);
+    let left = parseInt(pics.css('left'), 10);
     
     prev.click(function(){
         
@@ -64,14 +64,14 @@ angular.module('tutorialSite').controller('jqueryCtrl', function($scope){
 
 //top screen pulsing scroll button scrolls page automatically
 //with this function
-    $scope.scrollPage = function(){
+    $scope.scrollPage = () => {
 
         //Check height of screen, adjust scroll for desktop/mobile headers.
         //If screen is at least 700 pixels wide, scroll for desktopHeader,
         //else scroll for Mobile header.
-        var scrollMinusDesktopHeader = $(window).height()-68;
-        var scrollMinusMobileHeader = $(window).height()-60;
-        var mq = window.matchMedia( "(min-width: 700px)" );
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
 
         if (mq.matches){
             $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);

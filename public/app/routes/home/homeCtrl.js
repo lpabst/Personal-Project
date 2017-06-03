@@ -1,20 +1,19 @@
 angular.module('tutorialSite').controller('homeCtrl', function($scope, homeService){
 
-    $scope.getHomePageIntro = function() {
+    $scope.getHomePageIntro = () =>  {
         $scope.intro = homeService.getHomePageIntro();
     }
 
-    $scope.getMiddleSection = function(){
+    $scope.getMiddleSection = () => {
         $scope.middle = homeService.getMiddleSection();
     }
 
-    $scope.getBottomSection = function(){
+    $scope.getBottomSection = () => {
         $scope.bottom = homeService.getBottomSection();
     }
 
-    $scope.getTechInfo = function(){
+    $scope.getTechInfo = () => {
         $scope.techInfo = homeService.getTechInfo().then(function(response){
-            console.log(response.data);
             $scope.techInfo = response.data;
         });
     }
