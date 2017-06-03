@@ -1,51 +1,81 @@
 angular.module('tutorialSite', ['ui.router'])
 .config(["$urlRouterProvider", "$stateProvider", function($urlRouterProvider, $stateProvider){
     
-
-$stateProvider
-    .state('home', {
-        url: '/',
-        templateUrl: './app/routes/home/home.html',
-        controller: 'homeCtrl',
-    })
-    .state('contact', {
-        url: '/contact',
-        templateUrl: './app/routes/contact/contact.html',
-        controller: '',
-    })
-    .state('angular', {
-        url: '/angular',
-        templateUrl: './app/routes/angular/angular.html',
-        controller: 'angularCtrl',
-    })
-    .state('css', {
-        url: '/css',
-        templateUrl: './app/routes/cssPage/cssPage.html',
-        controller: '',
-    })
-    .state('greensock', {
-        url: '/greensock',
-        templateUrl: './app/routes/greensock/greensock.html',
-        controller: 'greensockCtrl',
-    })
-    .state('jquery', {
-        url: '/jquery',
-        templateUrl: './app/routes/jquery/jquery.html',
-        controller: 'jqueryCtrl',
-    })
-    .state('javascript', {
-        url: '/javascript',
-        templateUrl: './app/routes/vanillaJS/vanillaJS.html',
-        controller: 'vanillaJSCtrl',
-    })
-
-
-$urlRouterProvider.otherwise('/');
+    $stateProvider
+        .state('home', {
+            url: '/',
+            templateUrl: './app/routes/home/home.html',
+            controller: 'homeCtrl',
+        })
+        .state('contact', {
+            url: '/contact',
+            templateUrl: './app/routes/contact/contact.html',
+            controller: '',
+        })
+        .state('angular', {
+            url: '/angular',
+            templateUrl: './app/routes/angular/angular.html',
+            controller: 'angularCtrl',
+        })
+        .state('css', {
+            url: '/css',
+            templateUrl: './app/routes/cssPage/cssPage.html',
+            controller: '',
+        })
+        .state('greensock', {
+            url: '/greensock',
+            templateUrl: './app/routes/greensock/greensock.html',
+            controller: 'greensockCtrl',
+        })
+        .state('jquery', {
+            url: '/jquery',
+            templateUrl: './app/routes/jquery/jquery.html',
+            controller: 'jqueryCtrl',
+        })
+        .state('javascript', {
+            url: '/javascript',
+            templateUrl: './app/routes/vanillaJS/vanillaJS.html',
+            controller: 'vanillaJSCtrl',
+        })
 
 
-
+    $urlRouterProvider.otherwise('/');
 
 }]);
+angular.module('tutorialSite')
+.directive('growShrink', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            var normalSize = true;
+
+            elem.click(function(){
+                if (normalSize){
+                    elem.css('width', '+=200');
+                    normalSize = false;
+                }else{
+                    elem.css('width', '-=200');
+                    normalSize = true;
+                }
+            })
+        }
+    }
+
+});
+angular.module('tutorialSite')
+.directive('highlightText', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            elem.click(function(){
+                elem.toggleClass('highlighted');
+            })
+        }
+    }
+
+});
 angular.module('tutorialSite').service('headersService', ["$http", function($http){
 
 
@@ -129,40 +159,6 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
 
 }]);
-angular.module('tutorialSite')
-.directive('growShrink', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            var normalSize = true;
-
-            elem.click(function(){
-                if (normalSize){
-                    elem.css('width', '+=200');
-                    normalSize = false;
-                }else{
-                    elem.css('width', '-=200');
-                    normalSize = true;
-                }
-            })
-        }
-    }
-
-});
-angular.module('tutorialSite')
-.directive('highlightText', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            elem.click(function(){
-                elem.toggleClass('highlighted');
-            })
-        }
-    }
-
-});
 angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularService", function($scope, angularService){
 
     $scope.showLeftBox = true;
