@@ -18,7 +18,7 @@ angular.module('tutorialSite').controller('greensockCtrl', function($scope){
         TweenLite.to(box2, 2, {top:'130px'});
         TweenLite.to(box2, 2, {left:'200px', delay:2});
         TweenLite.to(box2, 2, {top:'0px', left:'160px', delay:4});
-        TweenLite.to(box2, 2, {top:'33px', left:'0px', delay:6});
+        TweenLite.to(box2, 2, {top:'0px', left:'0px', delay:6});
     })
 
     function firstAnimation(){
@@ -40,7 +40,7 @@ angular.module('tutorialSite').controller('greensockCtrl', function($scope){
     })
 
     box4_btn.click(function(){
-        TweenLite.from(box4, 1.2, {left:'200px'});
+        TweenLite.from(box4, 1.6, {left:'200px'});
     })
 
     plantExampleBtn.click(function(){

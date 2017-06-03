@@ -4,7 +4,7 @@
 */
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -24,6 +24,14 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	box-sizing: border-box;
 	font-family: sans-serif;
+}
+
+p{
+	font-family: 'Gentium Book Basic', serif;
+}
+
+h2{
+	font-family: 'Open Sans', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

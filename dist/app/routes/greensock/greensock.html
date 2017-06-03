@@ -14,13 +14,15 @@
     <section class='greensock_tutorials_container'>
 
         <div class='animation_wrapper'>
-            <h2 style='margin-bottom:55px'>Tweenlite.to</h2>
+            <h2>Tweenlite.to</h2>
             <p>Greensock uses JQuery selectors, and integrates very well with JQuery.
                 We use $('#id or .class') to select an element. We use TweenLite.to in 
                 the following format - TweenLite.to(element, delay, attributes). So we select
                 our element, state the duration, and say what we want to happen. In this 
                 case we changed the CSS property 'left' to 200.</p>
-            <div class='examplebox' id='greensock_box1'>.to()</div>
+            <div class='examplebox_wrapper'>
+                <div class='examplebox' id='greensock_box1'>.to()</div>
+            </div>
             <img src='./img/greensock/greensock_example1.PNG' alt='picture of code'>
             <p>So What if we wanted to chain effects? We can use the 'delay' method inside
                 of the effect like this: {left:200, delay:2}. This would change 'left'' to
@@ -28,9 +30,11 @@
                 as listing effects one after the other. Let's look at that next!</p>
         </div>   
 
-        <div class='animation_wrapper' style='padding-bottom:50px'>
-            <h2 style='margin-bottom:55px'>Chaining effects</h2>
-            <div class='examplebox' id='greensock_box2'>Click Me!!!</div>
+        <div class='animation_wrapper'>
+            <h2>Chaining effects</h2>
+            <div class='examplebox_wrapper'>
+                <div class='examplebox' id='greensock_box2'>Click Me!!!</div>
+            </div>
             <img src='./img/greensock/greensock_example2.PNG' alt='picture of code'>
             <p>With this example we threw in a few new components! We select the box and
                 save it to a variable so that the computer doesn't have to go searching for 
@@ -41,7 +45,9 @@
                 For this example, I have the delays set to the same amount of time it takes all
                 of the previous animations to complete, but you could put whatever time you want 
                 there.</p>
-            <div class='examplebox' id='greensock_box3'>Click Me!!!</div>
+            <div class='examplebox_wrapper'>
+                <div class='examplebox' id='greensock_box3'>Click Me!!!</div>
+            </div>
             <p>Another way to chain events is to use the 'onComplete'
                 method. Once the animation is done, it will fire off whatever function you put 
                 in there. In this case, I have each function referring to the other one once it's 
@@ -50,7 +56,7 @@
         </div>   
 
         <div class='animation_wrapper'>
-            <h2 style='margin-bottom:55px'>Tweenlite.from</h2>
+            <h2>Tweenlite.from</h2>
             <p>TweenLite.from(element, duration, attributes). We use this for a slightly different
                 purpose. Instead of going TO the attributes we put in, it will come FROM them, to
                 whatever location/state it is in when the animation is initiated.</p>
@@ -58,8 +64,10 @@
                 of left:105px. But what if you push the button again in the middle of the animation?
                 Whereever the box is at when you push the button, that will be its new end point. It
                 will come FROM left:200px to that point.</p>
-            <div class='examplebox' id='greensock_box4'>.from()</div>
-            <button id='gs_example4_btn'>Start Animation</button>
+            <div class='examplebox_wrapper'>
+                <div class='examplebox' id='greensock_box4'>.from()</div>
+                <button id='gs_example4_btn'>Start Animation</button>
+            </div>
             <img src='./img/greensock/greensock_example4.PNG' alt='picture of code'>
             <p>Let's try something a little more complicated!</p>
         </div>  

@@ -104,12 +104,18 @@
         margin-bottom: 10px;
     }
 
+    .examplebox_wrapper{
+        width: 150px;
+        height: 45px;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
     .examplebox{
         width: 140px;
         height: 40px;
         border-radius: 5px;
         box-shadow: 3px 3px 5px;
-        margin-bottom: 10px;
         cursor: pointer;
         text-align: center;
         font-weight: bold;
@@ -126,42 +132,34 @@
 #greensock_box1{
     background: #932;
     position: absolute;
-    top: 33px;
-    left: 0;
 }
 
 #greensock_box2{
     background: #4cc;
     position: absolute;
-    top: 33px;
-    left: 0;
 }
 
 #greensock_box3{
     background: #69c;
     position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 #greensock_box4{
     background: #ce6;
     position: absolute;
-    left: 105px;
-    top: 35px;
 }
 
 #gs_example4_btn{
     width: 100px;
-    height: 35px;
+    height: 37px;
     text-align: center;
     line-height: 16px;
     font-size: 16px;
     font-weight: bold;
-    background: linear-gradient(#813, #395);
+    background: #444;
     position: absolute;
-    top: 37px;
-    left: 0;
+    top: 0px;
+    left: 150px;
     box-shadow: 2px 2px 4px;
 }
 

@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -23,6 +23,12 @@ time, mark, audio, video {
   vertical-align: baseline;
   box-sizing: border-box;
   font-family: sans-serif; }
+
+p {
+  font-family: 'Gentium Book Basic', serif; }
+
+h2 {
+  font-family: 'Open Sans', sans-serif; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -654,12 +660,16 @@ table {
         font-size: 34px; } }
   .animation_wrapper p {
     margin-bottom: 10px; }
+  .animation_wrapper .examplebox_wrapper {
+    width: 150px;
+    height: 45px;
+    position: relative;
+    margin-bottom: 10px; }
   .animation_wrapper .examplebox {
     width: 140px;
     height: 40px;
     border-radius: 5px;
     box-shadow: 3px 3px 5px;
-    margin-bottom: 10px;
     cursor: pointer;
     text-align: center;
     font-weight: bold;
@@ -671,39 +681,31 @@ table {
 
 #greensock_box1 {
   background: #932;
-  position: absolute;
-  top: 33px;
-  left: 0; }
+  position: absolute; }
 
 #greensock_box2 {
   background: #4cc;
-  position: absolute;
-  top: 33px;
-  left: 0; }
+  position: absolute; }
 
 #greensock_box3 {
   background: #69c;
-  position: absolute;
-  bottom: 0;
-  left: 0; }
+  position: absolute; }
 
 #greensock_box4 {
   background: #ce6;
-  position: absolute;
-  left: 105px;
-  top: 35px; }
+  position: absolute; }
 
 #gs_example4_btn {
   width: 100px;
-  height: 35px;
+  height: 37px;
   text-align: center;
   line-height: 16px;
   font-size: 16px;
   font-weight: bold;
-  background: linear-gradient(#813, #395);
+  background: #444;
   position: absolute;
-  top: 37px;
-  left: 0;
+  top: 0px;
+  left: 150px;
   box-shadow: 2px 2px 4px; }
 
 .greensock_plant_animation {
