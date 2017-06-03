@@ -68,15 +68,6 @@
             left: 5px;
         }
     }
-
-    @keyframes pulse{
-        50%{
-            transform: scale(1.1);
-        }
-        100%{
-            transform: scale(1);
-        }
-    }
 }
 
 .js_main{
@@ -199,5 +190,4 @@
     #js_example4_code{
         margin-top: 10px;
     }
-    
 }
