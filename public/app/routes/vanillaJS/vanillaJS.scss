@@ -31,18 +31,46 @@
     background: url('./img/js/js_intro.jpeg')right no-repeat;
     background-size: cover;
     z-index: -5;
+
+    .js_scroll_circle{
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 15px;
+        left: calc(50% - 20px);
+        cursor: pointer;
+        animation: pulse 1.6s infinite ease-in-out;
+
+        img{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 6px;
+            left: 5px;
+        }
+    }
+
+    @keyframes pulse{
+        50%{
+            transform: scale(1.1);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
 }
 
 .js_main{
     width: 100%;
     background: #ccc;
-    padding: 120px 0 15px 11%;
+    padding: 40px 0 15px 11%;
+    position: absolute;
+    top: 100vh;
 
     @media(min-width: 1000px){
-        position: absolute;
         width: 86%;
-        top: 100px;
-        padding-top: 40px;
         left: 7%;
         background: linear-gradient(to right, #ccc, #eee);
     }

@@ -40,14 +40,14 @@
         left: 20%;
         text-align: center;
         animation: pulse 1s infinite ease-in-out;
-        -webkit-animation: pulse 1s infinite ease-in-out;
+        -webkit-animation: cssPulse 1s infinite ease-in-out;
 
         @media(min-width: 700px){
             top: 105px;
         }
     }
     
-    @keyframes pulse {
+    @keyframes cssPulse {
         0% {
         -webkit-transform: scale3d(1,1,1);
         transform: scale3d(1,1,1);
