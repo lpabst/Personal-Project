@@ -23,7 +23,6 @@ angular.module('tutorialSite').service('homeService', function($http){
         }
     ];
 
-
   this.getHomePageIntro = () => {
       return homePageInfo[0];
   };
@@ -39,6 +38,5 @@ angular.module('tutorialSite').service('homeService', function($http){
   this.getTechInfo = () => {
       return $http.get('/api/techinfo');
   }
-
 
 });

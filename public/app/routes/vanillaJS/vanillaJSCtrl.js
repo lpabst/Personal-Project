@@ -52,7 +52,6 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', function($scope){
         //***800 is the number of milliseconds it takes to carry out the animation
     }
 
-
 })
 
 

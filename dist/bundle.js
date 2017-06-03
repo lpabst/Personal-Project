@@ -38,7 +38,6 @@ angular.module('tutorialSite', ['ui.router'])
             controller: 'vanillaJSCtrl',
         })
 
-
     $urlRouterProvider.otherwise('/');
 
 }]);
@@ -76,18 +75,6 @@ angular.module('tutorialSite')
     }
 
 });
-angular.module('tutorialSite').service('headersService', ["$http", function($http){
-
-
-
-
-
-
-
-
-
-
-}]);
 angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope){
 
     $scope.mobileMenu = false;
@@ -153,11 +140,6 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
     
     window.addEventListener("scroll", changeHeaderCss, false);
 
-    
-
-
-
-
 }]);
 angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularService", function($scope, angularService){
 
@@ -197,12 +179,77 @@ angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularServ
 }]);
 angular.module('tutorialSite').service('angularService', ["$http", function($http){
 
-//api key = AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI
-//video id = i9MHigUZKEM
-
     this.getYoutubePic = function(){
         return $http.get('https://www.googleapis.com/youtube/v3/videos?id=i9MHigUZKEM&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet')
     }
+
+}]);
+angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
+
+    $scope.getHomePageIntro = () =>  {
+        $scope.intro = homeService.getHomePageIntro();
+    }
+
+    $scope.getMiddleSection = () => {
+        $scope.middle = homeService.getMiddleSection();
+    }
+
+    $scope.getBottomSection = () => {
+        $scope.bottom = homeService.getBottomSection();
+    }
+
+    $scope.getTechInfo = () => {
+        $scope.techInfo = homeService.getTechInfo().then(function(response){
+            $scope.techInfo = response.data;
+        });
+    }
+
+    $scope.getHomePageIntro();
+    $scope.getMiddleSection();
+    $scope.getBottomSection();
+    $scope.getTechInfo();
+
+}]);
+angular.module('tutorialSite').service('homeService', ["$http", function($http){
+
+    var homePageInfo = [
+        {
+            header: 'Welcome To My Tutorials!',
+            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
+                can many times be the ticket to understanding how certain technologies work.
+                Seeing living examples makes it easy to connect the dots and begin to
+                understand how the tech works.`
+        }, 
+        {
+            header: 'Where do I start?',
+            content: `Right here!  This page is meant as a quick introduction to the different
+                    technologies that can be learned on this website. Make sure to tell your
+                    friends so they can come learn too!`
+        }, 
+        {
+            header: 'How Much Experience Do I Need?',
+            content: `These tutorials are meant to be an easy introduction to the animations
+                that can be performed with many different web development languages. A basic 
+                understanding of HTML, CSS, and Javascript should be enough to get you 
+                started on any of these tutorials!`
+        }
+    ];
+
+  this.getHomePageIntro = () => {
+      return homePageInfo[0];
+  };
+
+  this.getMiddleSection = () => {
+      return homePageInfo[1];
+  }
+
+  this.getBottomSection = () => {
+      return homePageInfo[2];
+  }
+
+  this.getTechInfo = () => {
+      return $http.get('/api/techinfo');
+  }
 
 }]);
 angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($scope){
@@ -293,76 +340,89 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
         }
         //***800 is the number of milliseconds it takes to carry out the animation
     }
+    
 }]);
-angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
+angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
 
-    $scope.getHomePageIntro = () =>  {
-        $scope.intro = homeService.getHomePageIntro();
-    }
+    let box1 = $('#jquery_box1');
+    let box2 = $('#jquery_box2');
+    let height = $('#jquery_input_height');
+    let width = $('#jquery_input_width');
+    let prev = $('.prev');
+    let next = $('.next');
+    let pics = $('#jquery_carousel_pictures');
 
-    $scope.getMiddleSection = () => {
-        $scope.middle = homeService.getMiddleSection();
-    }
-
-    $scope.getBottomSection = () => {
-        $scope.bottom = homeService.getBottomSection();
-    }
-
-    $scope.getTechInfo = () => {
-        $scope.techInfo = homeService.getTechInfo().then(function(response){
-            $scope.techInfo = response.data;
-        });
-    }
-
-    $scope.getHomePageIntro();
-    $scope.getMiddleSection();
-    $scope.getBottomSection();
-    $scope.getTechInfo();
-
-
-}]);
-angular.module('tutorialSite').service('homeService', ["$http", function($http){
-
-    var homePageInfo = [
-        {
-            header: 'Welcome To My Tutorials!',
-            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
-                can many times be the ticket to understanding how certain technologies work.
-                Seeing living examples makes it easy to connect the dots and begin to
-                understand how the tech works.`
-        }, 
-        {
-            header: 'Where do I start?',
-            content: `Right here!  This page is meant as a quick introduction to the different
-                    technologies that can be learned on this website. Make sure to tell your
-                    friends so they can come learn too!`
-        }, 
-        {
-            header: 'How Much Experience Do I Need?',
-            content: `These tutorials are meant to be an easy introduction to the animations
-                that can be performed with many different web development languages. A basic 
-                understanding of HTML, CSS, and Javascript should be enough to get you 
-                started on any of these tutorials!`
+//example 1 - changes box width and height
+    box1.click(function(){
+        if($(this).css('height') == '40px'){
+            box1.css({
+                'height': '80px',
+                'width': '300px'
+            })
+        }else{
+            box1.css({
+                'height': '40px',
+                'width': '140px'
+            })
         }
-    ];
+    })
 
+// Example2 - Changes box width and height based on user input
+    box2.click(function(){
+        if (height.val() < 10 || width.val() < 10 
+        || height.val() > 300 || width.val() > 300){
+            alert('Please enter height and width values between 10-300');
+        }else{
+            box2.css({
+                'width': width.val() + 'px',
+                'height': height.val() + 'px'
+            })
+        }
+    })
 
-  this.getHomePageIntro = () => {
-      return homePageInfo[0];
-  };
+// Example3 - JQuery Carousel. Changes the positioning of the div so 
+// that a different picture is showing.
+    let left = parseInt(pics.css('left'), 10);
+    
+    prev.click(function(){
+        
+        if (left < 0){
+            left += 110;
+        }
 
-  this.getMiddleSection = () => {
-      return homePageInfo[1];
-  }
+        pics.css({
+            left: left + '%'
+        })
+    });
 
-  this.getBottomSection = () => {
-      return homePageInfo[2];
-  }
+    next.click(function(){
+        if (left > -440){
+            left -= 110;
+        }
 
-  this.getTechInfo = () => {
-      return $http.get('/api/techinfo');
-  }
+        pics.css({
+            left: left + '%'
+        })
+    });
 
+//top screen pulsing scroll button scrolls page automatically
+//with this function
+    $scope.scrollPage = () => {
+
+        //Check height of screen, adjust scroll for desktop/mobile headers.
+        //If screen is at least 700 pixels wide, scroll for desktopHeader,
+        //else scroll for Mobile header.
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
+
+        if (mq.matches){
+            $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
+        }else{
+            $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
+        }
+        //***800 is the number of milliseconds it takes to carry out the animation
+    }
 
 }]);
 angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
@@ -419,7 +479,6 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($
         //***800 is the number of milliseconds it takes to carry out the animation
     }
 
-
 }])
 
 
@@ -427,88 +486,3 @@ angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($
 
 
 
-
-angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
-
-    let box1 = $('#jquery_box1');
-    let box2 = $('#jquery_box2');
-    let height = $('#jquery_input_height');
-    let width = $('#jquery_input_width');
-    let prev = $('.prev');
-    let next = $('.next');
-    let pics = $('#jquery_carousel_pictures');
-
-//example 1 - changes box width and height
-    box1.click(function(){
-        if($(this).css('height') == '40px'){
-            box1.css({
-                'height': '80px',
-                'width': '300px'
-            })
-        }else{
-            box1.css({
-                'height': '40px',
-                'width': '140px'
-            })
-        }
-    })
-
-// Example2 - Changes box width and height based on user input
-    box2.click(function(){
-        if (height.val() < 10 || width.val() < 10 
-        || height.val() > 300 || width.val() > 300){
-            alert('Please enter height and width values between 10-300');
-        }else{
-            box2.css({
-                'width': width.val() + 'px',
-                'height': height.val() + 'px'
-            })
-        }
-    })
-
-// Example3 - JQuery Carousel. Changes the positioning of the div so 
-// that a different picture is showing.
-    
-    let left = parseInt(pics.css('left'), 10);
-    
-    prev.click(function(){
-        
-        if (left < 0){
-            left += 110;
-        }
-
-        pics.css({
-            left: left + '%'
-        })
-    });
-
-    next.click(function(){
-        if (left > -440){
-            left -= 110;
-        }
-
-        pics.css({
-            left: left + '%'
-        })
-    });
-
-//top screen pulsing scroll button scrolls page automatically
-//with this function
-    $scope.scrollPage = () => {
-
-        //Check height of screen, adjust scroll for desktop/mobile headers.
-        //If screen is at least 700 pixels wide, scroll for desktopHeader,
-        //else scroll for Mobile header.
-        let scrollMinusDesktopHeader = $(window).height()-68;
-        let scrollMinusMobileHeader = $(window).height()-60;
-        let mq = window.matchMedia( "(min-width: 700px)" );
-
-        if (mq.matches){
-            $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
-        }else{
-            $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
-        }
-        //***800 is the number of milliseconds it takes to carry out the animation
-    }
-
-}]);

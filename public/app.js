@@ -38,7 +38,6 @@ angular.module('tutorialSite', ['ui.router'])
             controller: 'vanillaJSCtrl',
         })
 
-
     $urlRouterProvider.otherwise('/');
 
 });

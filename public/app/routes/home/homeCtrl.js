@@ -23,5 +23,4 @@ angular.module('tutorialSite').controller('homeCtrl', function($scope, homeServi
     $scope.getBottomSection();
     $scope.getTechInfo();
 
-
 });
