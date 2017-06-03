@@ -1,11 +1,14 @@
 
 <section class='csspage_container'>
 
-    <section class='css_fullscreen_intro'>
+    <section class='css_fullscreen_intro' ng-controller='jqueryCtrl'>
         <video loop muted autoplay>
             <source src='./img/css/css_background.mp4' type='video/mp4'>
         </video>
         <h1>CSS</h1>
+        <div class='css_scroll_circle' ng-click='scrollPage()'>
+            <img src='./img/css/css_scroll_arrow.png'>
+        </div>
     </section>
 
     <section class='css_tutorials_container'>

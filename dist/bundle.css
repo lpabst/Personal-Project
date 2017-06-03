@@ -229,6 +229,7 @@ table {
       font-size: 38px;
       font-weight: bold;
       color: #d00;
+      text-shadow: 1px 1px 1px black;
       text-align: center;
       position: absolute;
       left: 20%;
@@ -415,27 +416,46 @@ table {
     font-size: 70px;
     font-weight: bold;
     color: white;
-    z-index: 5;
+    text-shadow: 1px 1px 1px #fd8;
     position: absolute;
     top: 85px;
     left: 20%;
     text-align: center;
     animation: pulse 1s infinite ease-in-out;
-    -webkit-animation: cssPulse 1s infinite ease-in-out; }
+    -webkit-animation: cssPulse 5s infinite ease-in-out; }
     @media (min-width: 700px) {
       .css_fullscreen_intro h1 {
         top: 105px; } }
+  .css_fullscreen_intro .css_scroll_circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 20px);
+    animation: pulse 1.6s infinite ease-in-out; }
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+    .css_fullscreen_intro .css_scroll_circle img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 10px;
+      top: 11px; }
 
 @keyframes cssPulse {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1); }
   50% {
-    -webkit-transform: scale3d(1.3, 1.3, 1.3);
-    transform: scale3d(1.3, 1.3, 1.3); }
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
   100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1); } }
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
 
 .css_tutorials_container {
   width: 100%;
@@ -580,7 +600,7 @@ table {
     font-size: 36px;
     font-weight: bold;
     color: #222;
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 1px #bbf;
     text-align: center;
     width: 60%;
     position: absolute;
@@ -590,6 +610,29 @@ table {
       .greensock_intro h1 {
         font-size: 52px;
         top: 110px; } }
+  .greensock_intro .greensock_scroll_circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #222;
+    box-shadow: 1px 1px 1px #bbf;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 20px);
+    animation: pulse 1.6s infinite ease-in-out; }
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+    .greensock_intro .greensock_scroll_circle img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 10px;
+      top: 11px; }
 
 .greensock_tutorials_container {
   width: 100%;
@@ -910,6 +953,7 @@ table {
     font-size: 38px;
     font-weight: bold;
     color: #211;
+    text-shadow: 1px 1px 1px #fdd;
     text-align: center;
     position: absolute;
     left: 20%;
@@ -1038,6 +1082,19 @@ table {
   background: url("./img/js/js_intro.jpeg") right no-repeat;
   background-size: cover;
   z-index: -5; }
+  .js_container_backdrop h1 {
+    width: 60%;
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+    position: absolute;
+    left: 20%;
+    top: 20%; }
+    @media (min-width: 700px) {
+      .js_container_backdrop h1 {
+        font-size: 54px; } }
   .js_container_backdrop .js_scroll_circle {
     width: 40px;
     height: 40px;

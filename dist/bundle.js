@@ -276,78 +276,23 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
         TweenLite.to(miniStem, 1, {width:'3px', height:'0px'});
         TweenLite.to(petals, 1, {width:'0px', height:'0px', left:'0px', border:'0px solid gray'});
     })
-}]);
-angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
 
-    $scope.getHomePageIntro = function() {
-        $scope.intro = homeService.getHomePageIntro();
-    }
+    $scope.scrollPage = function(){
 
-    $scope.getMiddleSection = function(){
-        $scope.middle = homeService.getMiddleSection();
-    }
+        //Check height of screen, adjust scroll for desktop/mobile headers.
+        //If screen is at least 700 pixels wide, scroll for desktopHeader,
+        //else scroll for Mobile header.
+        var scrollMinusDesktopHeader = $(window).height()-68;
+        var scrollMinusMobileHeader = $(window).height()-60;
+        var mq = window.matchMedia( "(min-width: 700px)" );
 
-    $scope.getBottomSection = function(){
-        $scope.bottom = homeService.getBottomSection();
-    }
-
-    $scope.getTechInfo = function(){
-        $scope.techInfo = homeService.getTechInfo().then(function(response){
-            console.log(response.data);
-            $scope.techInfo = response.data;
-        });
-    }
-
-    $scope.getHomePageIntro();
-    $scope.getMiddleSection();
-    $scope.getBottomSection();
-    $scope.getTechInfo();
-
-
-}]);
-angular.module('tutorialSite').service('homeService', ["$http", function($http){
-
-    var homePageInfo = [
-        {
-            header: 'Welcome To My Tutorials!',
-            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
-                can many times be the ticket to understanding how certain technologies work.
-                Seeing living examples makes it easy to connect the dots and begin to
-                understand how the tech works.`
-        }, 
-        {
-            header: 'Where do I start?',
-            content: `Right here!  This page is meant as a quick introduction to the different
-                    technologies that can be learned on this website. Make sure to tell your
-                    friends so they can come learn too!`
-        }, 
-        {
-            header: 'How Much Experience Do I Need?',
-            content: `These tutorials are meant to be an easy introduction to the animations
-                that can be performed with many different web development languages. A basic 
-                understanding of HTML, CSS, and Javascript should be enough to get you 
-                started on any of these tutorials!`
+        if (mq.matches){
+            $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
+        }else{
+            $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
         }
-    ];
-
-
-  this.getHomePageIntro = function(){
-      return homePageInfo[0];
-  };
-
-  this.getMiddleSection = function(){
-      return homePageInfo[1];
-  }
-
-  this.getBottomSection = function(){
-      return homePageInfo[2];
-  }
-
-  this.getTechInfo = function(){
-      return $http.get('/api/techinfo');
-  }
-
-
+        //***800 is the number of milliseconds it takes to carry out the animation
+    }
 }]);
 angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
 
@@ -431,6 +376,78 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
         }
         //***800 is the number of milliseconds it takes to carry out the animation
     }
+
+}]);
+angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
+
+    $scope.getHomePageIntro = function() {
+        $scope.intro = homeService.getHomePageIntro();
+    }
+
+    $scope.getMiddleSection = function(){
+        $scope.middle = homeService.getMiddleSection();
+    }
+
+    $scope.getBottomSection = function(){
+        $scope.bottom = homeService.getBottomSection();
+    }
+
+    $scope.getTechInfo = function(){
+        $scope.techInfo = homeService.getTechInfo().then(function(response){
+            console.log(response.data);
+            $scope.techInfo = response.data;
+        });
+    }
+
+    $scope.getHomePageIntro();
+    $scope.getMiddleSection();
+    $scope.getBottomSection();
+    $scope.getTechInfo();
+
+
+}]);
+angular.module('tutorialSite').service('homeService', ["$http", function($http){
+
+    var homePageInfo = [
+        {
+            header: 'Welcome To My Tutorials!',
+            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
+                can many times be the ticket to understanding how certain technologies work.
+                Seeing living examples makes it easy to connect the dots and begin to
+                understand how the tech works.`
+        }, 
+        {
+            header: 'Where do I start?',
+            content: `Right here!  This page is meant as a quick introduction to the different
+                    technologies that can be learned on this website. Make sure to tell your
+                    friends so they can come learn too!`
+        }, 
+        {
+            header: 'How Much Experience Do I Need?',
+            content: `These tutorials are meant to be an easy introduction to the animations
+                that can be performed with many different web development languages. A basic 
+                understanding of HTML, CSS, and Javascript should be enough to get you 
+                started on any of these tutorials!`
+        }
+    ];
+
+
+  this.getHomePageIntro = function(){
+      return homePageInfo[0];
+  };
+
+  this.getMiddleSection = function(){
+      return homePageInfo[1];
+  }
+
+  this.getBottomSection = function(){
+      return homePageInfo[2];
+  }
+
+  this.getTechInfo = function(){
+      return $http.get('/api/techinfo');
+  }
+
 
 }]);
 angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
