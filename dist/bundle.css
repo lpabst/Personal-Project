@@ -294,8 +294,12 @@ table {
         color: black; }
     .main_angular_container .angular_tutorials_container #angular_box4 {
       background: #f70; }
-    .main_angular_container .angular_tutorials_container #angular_box5 {
-      background: #189; }
+    .main_angular_container .angular_tutorials_container .angular_to_do_list {
+      width: 250px;
+      margin: 10px 0px 10px 0px;
+      padding: 10px 10px;
+      background: black;
+      color: #fee; }
 
 .contact_container {
   width: 100%;

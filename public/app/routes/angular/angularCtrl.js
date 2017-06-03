@@ -27,4 +27,10 @@ angular.module('tutorialSite').controller('angularCtrl', function($scope, angula
         //***800 is the number of milliseconds it takes to carry out the animation
     }
 
+    $scope.toDoList = [];
+
+    $scope.addItem = function(){
+        $scope.toDoList.push($scope.newItem);
+    }
+
 });

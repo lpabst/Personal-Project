@@ -80,9 +80,44 @@
                 the CSS directly!</p>
         </div> 
 
-
-
-
+        <div class='animation_wrapper'>
+            <h2>More On Directives</h2>
+            <p>Visual animations really aren't Angular's strongpoint. Angular is amazing at 
+                being a framework. Keeping everything connected and information flowing back 
+                and forth is a strongpoint for Angular.</p>
+            <p>Since it isn't a visual animation, we won't get into it too much here, but I'll
+                demonstrat one easy example of this. ng-model is an amazing tool for declaring 
+                variables right in your HTML. Here is a simple example of ng-model in action:</p>
+            <input ng-model='userInput' placeholder='type here' type='text'>
+            <h3>{{ userInput }}</h3>
+            <img src='./img/angular/angular_example6_html.PNG' alt='picture of code' style='margin-top: 5px'>
+            <p>Whatever you type in that input box will be displayed right beneath it! ng-model 
+                stores the input as a $scope variable, and we can access $scope variables using the 
+                {{ }} double curly braces.</p>
+            <p>Here is a real world use for this: </p>
+            <form ng-submit="addItem()">
+                <input ng-model='newItem'>
+                <button type='submit'>Add</button>
+            </form>
+            <div class='angular_to_do_list'>
+                <ul>
+                    <li ng-repeat='item in toDoList track by $index'>
+                        {{ item }}
+                    </li>
+                </ul>
+            </div>
+            <img src='./img/angular/angular_example7.PNG' alt='picture of code'>
+            <img src='./img/angular/angular_example7_html.PNG' alt='picture of code'>
+            <p>The html sets up the structure for the list. ng-model captures the user input
+                and saves it as a scope variable. A little bit of Javascript adds the item to 
+                an array (list), and then we use an ng-repeat in the html to display every 
+                item in the list. Pretty simple!</p>
+            <p>There are many, many built in directives that are very powerful in the right
+                situations. Custom directives also have much more potential that what we 
+                discussed in this tutorial, but hopefully this helped increase your 
+                understanding of how Angular directives can be used to animate/automate your
+                website!</p>
+        </div> 
 
         <div class='animation_wrapper'>
             <h2>Nice Work!</h2>

@@ -46,40 +46,6 @@ $urlRouterProvider.otherwise('/');
 
 
 }]);
-angular.module('tutorialSite')
-.directive('growShrink', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            var normalSize = true;
-
-            elem.click(function(){
-                if (normalSize){
-                    elem.css('width', '+=200');
-                    normalSize = false;
-                }else{
-                    elem.css('width', '-=200');
-                    normalSize = true;
-                }
-            })
-        }
-    }
-
-});
-angular.module('tutorialSite')
-.directive('highlightText', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            elem.click(function(){
-                elem.toggleClass('highlighted');
-            })
-        }
-    }
-
-});
 angular.module('tutorialSite').service('headersService', ["$http", function($http){
 
 
@@ -163,6 +129,40 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
 
 
 }]);
+angular.module('tutorialSite')
+.directive('growShrink', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            var normalSize = true;
+
+            elem.click(function(){
+                if (normalSize){
+                    elem.css('width', '+=200');
+                    normalSize = false;
+                }else{
+                    elem.css('width', '-=200');
+                    normalSize = true;
+                }
+            })
+        }
+    }
+
+});
+angular.module('tutorialSite')
+.directive('highlightText', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            elem.click(function(){
+                elem.toggleClass('highlighted');
+            })
+        }
+    }
+
+});
 angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularService", function($scope, angularService){
 
     $scope.showLeftBox = true;
@@ -190,6 +190,12 @@ angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularServ
             $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
         }
         //***800 is the number of milliseconds it takes to carry out the animation
+    }
+
+    $scope.toDoList = [];
+
+    $scope.addItem = function(){
+        $scope.toDoList.push($scope.newItem);
     }
 
 }]);
