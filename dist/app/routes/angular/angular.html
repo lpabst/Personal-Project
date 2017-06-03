@@ -111,7 +111,9 @@
             <p>The html sets up the structure for the list. ng-model captures the user input
                 and saves it as a scope variable. A little bit of Javascript adds the item to 
                 an array (list), and then we use an ng-repeat in the html to display every 
-                item in the list. Pretty simple!</p>
+                item in the list. Pretty simple! Note - track by $index isn't necessary to 
+                make this to-do list work, it just allows the list to contain the same item 
+                more than once.</p>
             <p>There are many, many built in directives that are very powerful in the right
                 situations. Custom directives also have much more potential that what we 
                 discussed in this tutorial, but hopefully this helped increase your 
