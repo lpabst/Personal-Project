@@ -1,5 +1,5 @@
 angular.module("tutorialSite")
-  .controller("showcaseCtrl", function($scope) {
+  .controller("showcaseCtrl", function($scope, $state) {
 
 // **********CALCULATOR FUNCTIONS***********************************
     $scope.display = '0';
@@ -286,9 +286,9 @@ angular.module("tutorialSite")
             nextSong++
         }
     })
-
+//  && elem.closest('[ui-view]').data('$uiView').state == 'showcase'
     function pauseAudio(){
-        if (this.scrollY > 480 && this.scrollY < 1310){
+        if (this.scrollY > 400 && this.scrollY < 1310 && $state.current.name == 'showcase'){
             audio.play();
         }else{
             audio.pause();
