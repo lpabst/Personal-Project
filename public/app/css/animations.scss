@@ -61,3 +61,64 @@
         transform-origin: 100%;
     }
 }
+
+@keyframes moveSmall{
+    25%{
+        left: 50px;
+        top: 100px;
+    }
+    50%{
+        left: 150px;
+        top: 50px;
+    }
+    75%{
+        left: 100px;
+        top: -50px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes moveMedium{
+    25%{
+        left: -100px;
+        top: 200px;
+    }
+    50%{
+        left: -300px;
+        top: 100px;
+    }
+    75%{
+        left: -200px;
+        top: -100px;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes moveLarge{
+    25%{
+        left: 150px;
+        top: 300px;
+        transform: rotate(90deg);
+    }
+    50%{
+        left: 300px;
+        top: 100px;
+        transform: rotate(180deg);
+    }
+    75%{
+        left: 200px;
+        top: -100px;
+        transform: rotate(270deg);
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+        transform: rotate(360deg);
+    }
+}

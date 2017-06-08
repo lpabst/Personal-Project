@@ -1,4 +1,6 @@
 
+<!-- *******************CALCULATOR*********************-->
+
 <section class='calculator_container'>
 
     <div class='calculator'>
@@ -40,5 +42,190 @@
     <div class='calculator_bottom_side'>
         <div class='calc_bottom_side_rotated'></div>
     </div>
+
+</section>
+
+<!-- *******************CONNECT4*********************-->
+
+<section class='connect4_container'>
+
+    <!--halloween_music track from www.bensound.com-->
+    <audio src='./img/audio/tiptoe.mp3' autoplay id='audio'></audio>
+
+    <h1>To win, connect 4 pieces in a row vertically,
+        horizontally, or diagonally</h1>
+
+    <div class='controls'>
+        <button class='new_game' ng-click='areYouSure(1, "clear the board?")'>New Game</button>
+        <button class='reset_score' ng-click='areYouSure(2, "reset the score?")'>Reset Score</button>
+        <div class='player_names'>
+            <p>PLAYER 1 (green)</p>
+            <p>Name:</p>
+            <input type='text' ng-model='playerOneName'>
+            <p>PLAYER 2 (orange)</p>
+            <p>Name:</p>
+            <input type='text' ng-model='playerTwoName'>
+        </div>
+        <div class='score_box'>
+            <p>Score:</p>
+            <p>{{ playerOneName }}: {{ score.player1 }}</p>
+            <p>{{ playerTwoName }}: {{ score.player2 }}</p>
+        </div>
+    </div>
+
+<!--Initially Hidden Boxes-->
+    <div class='double_check' ng-show='showAreYouSureBox'>
+        <p>Are you sure you want to {{ action }}</p>
+        <button ng-click='executeSelectedFunction()'>Yes</button>
+        <button ng-click='hideAreYouSureBox()' id='no_button'>No</button>
+    </div>
+
+    <div class='winner_box' ng-show='showWinnerBox'>
+        <p>{{ winner }} won!</p>
+        <button ng-click='newGame()'>OK</button>
+    </div>
+<!--*************************-->
+
+    <div class='board' ng-click='checkForWinner()'>
+
+        <div class='column' id='col_0'>
+            <div class='circle' id='c0r5'></div>
+            <div class='circle' id='c0r4'></div>
+            <div class='circle' id='c0r3'></div>
+            <div class='circle' id='c0r2'></div>
+            <div class='circle' id='c0r1'></div>
+            <div class='circle' id='c0r0'></div>
+        </div>
+    
+        <div class='column' id='col_1'>
+            <div class='circle' id='c1r5'></div>
+            <div class='circle' id='c1r4'></div>
+            <div class='circle' id='c1r3'></div>
+            <div class='circle' id='c1r2'></div>
+            <div class='circle' id='c1r1'></div>
+            <div class='circle' id='c1r0'></div>
+        </div>
+        
+        <div class='column' id='col_2'>
+            <div class='circle' id='c2r5'></div>
+            <div class='circle' id='c2r4'></div>
+            <div class='circle' id='c2r3'></div>
+            <div class='circle' id='c2r2'></div>
+            <div class='circle' id='c2r1'></div>
+            <div class='circle' id='c2r0'></div>
+        </div>
+        
+        <div class='column' id='col_3'>
+            <div class='circle' id='c3r5'></div>
+            <div class='circle' id='c3r4'></div>
+            <div class='circle' id='c3r3'></div>
+            <div class='circle' id='c3r2'></div>
+            <div class='circle' id='c3r1'></div>
+            <div class='circle' id='c3r0'></div>
+        </div>
+        
+        <div class='column' id='col_4'>
+            <div class='circle' id='c4r5'></div>
+            <div class='circle' id='c4r4'></div>
+            <div class='circle' id='c4r3'></div>
+            <div class='circle' id='c4r2'></div>
+            <div class='circle' id='c4r1'></div>
+            <div class='circle' id='c4r0'></div>
+        </div>
+        
+        <div class='column' id='col_5'>
+            <div class='circle' id='c5r5'></div>
+            <div class='circle' id='c5r4'></div>
+            <div class='circle' id='c5r3'></div>
+            <div class='circle' id='c5r2'></div>
+            <div class='circle' id='c5r1'></div>
+            <div class='circle' id='c5r0'></div>
+        </div>
+        
+        <div class='column' id='col_6'>
+            <div class='circle' id='c6r5'></div>
+            <div class='circle' id='c6r4'></div>
+            <div class='circle' id='c6r3'></div>
+            <div class='circle' id='c6r2'></div>
+            <div class='circle' id='c6r1'></div>
+            <div class='circle' id='c6r0'></div>
+        </div>
+
+    </div>
+
+    <!--Images-->
+    <div class='img_container' id='ghost1'>
+        <img src='./img/ghost1.png' class='image'>
+    </div>
+    <div class='img_container' id='ghost2'>
+        <img src='./img/ghost2.png' class='image'>
+    </div>
+    <div class='img_container' id='ghost3'>
+        <img src='./img/ghost3.png' class='image'>
+    </div>
+    <div class='img_container' id='pumpkin1'>
+        <img src='./img/pumpkin1.jpeg' class='image'>
+    </div>
+    <div class='img_container' id='pumpkin2'>
+        <img src='./img/pumpkin2.jpeg' class='image'>
+    </div>
+    <div class='img_container' id='pumpkin3'>
+        <img src='./img/pumpkin3.jpeg' class='image'>
+    </div>
+    <div class='img_container' id='witch1'>
+        <img src='./img/witch1.jpeg' class='image'>
+    </div>
+    <div class='img_container' id='witch2'>
+        <img src='./img/witch2.png' class='image'>
+    </div>
+    <div class='img_container' id='witch3'>
+        <img src='./img/witch3.jpeg' class='image'>
+    </div>
+
+</section>
+
+<!-- *******************GAMESHOW*********************-->
+
+<section class='gameshow_container'>
+
+    <div class='host_explanation_box' ng-show='showHostExplanationBox'>
+        <p>You selected door {{ userChoice }}. The Host comes 
+            out and opens door {{ doorOpenedByHost }}, revealing a
+            goat behind it.</p>
+        <p> You can now either stick with the door
+            you selected, or switch to the other unopened door. Once 
+            you click a door, it will open, and you get to keep whatever
+            is behind it!</p>
+        <button ng-click='hideHostExplanationBox()'>OK</button>
+    </div>
+    
+    <div class='stats'>
+        <h2>Stats</h2>
+
+        <h3>Winnings:</h3>
+        <h5>Cars won: {{ carsWon }}</h5>
+        <h5>Goats won: {{ goatsWon }}</h5>
+
+        <h3>Success rate:</h3>
+        <h5>Switch doors: {{ switchSuccess }}%</h5>
+        <h5>Don't switch: {{ staySuccess }}%</h5>
+    </div>
+
+    <div class='doorframe' id='door1'>
+        <p class='prize' id='p1'>{{ prize1 }}</p>
+        <div class='door' ng-click='pickDoor(1)' id='1'>1</div>
+        <img src='./img/checkmark.png' ng-show='check1' class='checkmark'>
+    </div>
+    <div class='doorframe' id='door2'>
+        <p class='prize' id='p2'>{{ prize2 }}</p>
+        <div class='door' ng-click='pickDoor(2)' id='2'>2</div>
+        <img src='./img/checkmark.png' ng-show='check2' class='checkmark'>
+    </div>
+    <div class='doorframe' id='door3'>
+        <p class='prize' id='p3'>{{ prize3 }}</p>
+        <div class='door' ng-click='pickDoor(3)' id='3'>3</div>
+        <img src='./img/checkmark.png' ng-show='check3' class='checkmark'>
+    </div>
+    <p id='instructions' ng-click='playGame()'>Pick a door</p>
 
 </section>
