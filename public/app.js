@@ -32,6 +32,11 @@ angular.module('tutorialSite', ['ui.router'])
             templateUrl: './app/routes/jquery/jquery.html',
             controller: 'jqueryCtrl',
         })
+        .state('showcase', {
+            url: '/showcase',
+            templateUrl: './app/routes/showcase/showcase.html',
+            controller: 'showcaseCtrl'
+        })
         .state('javascript', {
             url: '/javascript',
             templateUrl: './app/routes/vanillaJS/vanillaJS.html',

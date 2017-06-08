@@ -1,0 +1,44 @@
+
+<section class='calculator_container'>
+
+    <div class='calculator'>
+
+        <div class='display_area'>
+            {{ display }}
+        </div>
+
+        <div class='buttons'>
+            <ul>
+                <li ng-click='clear()'>CE</li>
+                <li ng-click='clear()'>C</li>
+                <li ng-click='backspace()'>DEL</li>
+                <li ng-click='addToDisplay("/")'>/</li>
+                <li ng-click='addToDisplay("7")'>7</li>
+                <li ng-click='addToDisplay("8")'>8</li>
+                <li ng-click='addToDisplay("9")'>9</li>
+                <li ng-click='addToDisplay("*")'>*</li>
+                <li ng-click='addToDisplay("4")'>4</li>
+                <li ng-click='addToDisplay("5")'>5</li>
+                <li ng-click='addToDisplay("6")'>6</li>
+                <li ng-click='addToDisplay("-")'>-</li>
+                <li ng-click='addToDisplay("1")'>1</li>
+                <li ng-click='addToDisplay("2")'>2</li>
+                <li ng-click='addToDisplay("3")'>3</li>
+                <li ng-click='addToDisplay("+")'>+</li>
+                <li ng-click='positiveNegative()'>+ -</li>
+                <li ng-click='addToDisplay("0")'>0</li>
+                <li ng-click='addToDisplay(".")'>.</li>
+                <li ng-click='equals()' id='equal_sign'>=</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class='calculator_right_side'>
+        <div class='calc_right_side_rotated'></div>
+    </div>
+    <div class='calculator_bottom_side'>
+        <div class='calc_bottom_side_rotated'></div>
+    </div>
+
+</section>

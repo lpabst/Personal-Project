@@ -32,6 +32,11 @@ angular.module('tutorialSite', ['ui.router'])
             templateUrl: './app/routes/jquery/jquery.html',
             controller: 'jqueryCtrl',
         })
+        .state('showcase', {
+            url: '/showcase',
+            templateUrl: './app/routes/showcase/showcase.html',
+            controller: 'showcaseCtrl'
+        })
         .state('javascript', {
             url: '/javascript',
             templateUrl: './app/routes/vanillaJS/vanillaJS.html',
@@ -274,68 +279,74 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
     }
     
 }]);
-angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
+angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
 
-    let box1 = document.getElementById('js_box1');
-    let box2 = document.getElementById('js_box2');
-    let box3 = document.getElementById('js_box3');
-    let box4 = document.getElementById('js_box4');
-    let input = document.getElementById('js_input');
-    let submitBtn = document.getElementById('js_submit');
-
-    box1.addEventListener('click', function (){
-        if (box1.style.background == 'red'){
-            box1.style.background = 'blue';
-        }else{
-            box1.style.background = 'red';
-        }
-    });
-
-    box2.addEventListener('mouseover', function(){
-        box2.style.position = 'absolute';
-        box2.style.left = '50%';
-    });
-
-    box3.addEventListener('mouseover', function(){
-        box3.style.position = 'absolute';
-        if (box3.style.left == '50%'){
-            box3.style.left = '10px';
-        }else{
-            box3.style.left = '50%';
-        }
-    });
-
-    submitBtn.addEventListener('click', function(){
-        box4.innerText = input.value;
-    });
-
-//This scrolls the page when the pulsing scroll
-//arrow is pressed
-    $scope.scrollPage = () => {
-
-        //Check height of screen, adjust scroll for desktop/mobile headers.
-        //If screen is at least 700 pixels wide, scroll for desktopHeader,
-        //else scroll for Mobile header.
-        let scrollMinusDesktopHeader = $(window).height()-68;
-        let scrollMinusMobileHeader = $(window).height()-60;
-        let mq = window.matchMedia( "(min-width: 700px)" );
-
-        if (mq.matches){
-            $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
-        }else{
-            $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
-        }
-        //***800 is the number of milliseconds it takes to carry out the animation
+    $scope.getHomePageIntro = () =>  {
+        $scope.intro = homeService.getHomePageIntro();
     }
 
-}])
+    $scope.getMiddleSection = () => {
+        $scope.middle = homeService.getMiddleSection();
+    }
 
+    $scope.getBottomSection = () => {
+        $scope.bottom = homeService.getBottomSection();
+    }
 
+    $scope.getTechInfo = () => {
+        $scope.techInfo = homeService.getTechInfo().then(function(response){
+            $scope.techInfo = response.data;
+        });
+    }
 
+    $scope.getHomePageIntro();
+    $scope.getMiddleSection();
+    $scope.getBottomSection();
+    $scope.getTechInfo();
 
+}]);
+angular.module('tutorialSite').service('homeService', ["$http", function($http){
 
+    var homePageInfo = [
+        {
+            header: 'Welcome To My Tutorials!',
+            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
+                can many times be the ticket to understanding how certain technologies work.
+                Seeing living examples makes it easy to connect the dots and begin to
+                understand how the tech works.`
+        }, 
+        {
+            header: 'Where do I start?',
+            content: `Right here!  This page is meant as a quick introduction to the different
+                    technologies that can be learned on this website. Make sure to tell your
+                    friends so they can come learn too!`
+        }, 
+        {
+            header: 'How Much Experience Do I Need?',
+            content: `These tutorials are meant to be an easy introduction to the animations
+                that can be performed with many different web development languages. A basic 
+                understanding of HTML, CSS, and Javascript should be enough to get you 
+                started on any of these tutorials!`
+        }
+    ];
 
+  this.getHomePageIntro = () => {
+      return homePageInfo[0];
+  };
 
+  this.getMiddleSection = () => {
+      return homePageInfo[1];
+  }
+
+  this.getBottomSection = () => {
+      return homePageInfo[2];
+  }
+
+  this.getTechInfo = () => {
+      return $http.get('/api/techinfo');
+  }
+
+}]);
 angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
 
     let box1 = $('#jquery_box1');
@@ -419,71 +430,108 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
     }
 
 }]);
-angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
+angular.module("tutorialSite")
+  .controller("showcaseCtrl", ["$scope", function($scope) {
 
-    $scope.getHomePageIntro = () =>  {
-        $scope.intro = homeService.getHomePageIntro();
+    $scope.display = '0';
+
+    $scope.clear = function(){
+      $scope.display = '0';
     }
 
-    $scope.getMiddleSection = () => {
-        $scope.middle = homeService.getMiddleSection();
+    $scope.backspace = function(){
+      arr = $scope.display.split('');
+      arr.pop();
+      $scope.display = arr.join('');
+      if ($scope.display == ''){
+        $scope.display = '0';
+      }
     }
 
-    $scope.getBottomSection = () => {
-        $scope.bottom = homeService.getBottomSection();
+    $scope.addToDisplay = function(str){
+      if ($scope.display == '0'){
+        $scope.display = str;
+      }else{
+        $scope.display += str;
+      }
     }
 
-    $scope.getTechInfo = () => {
-        $scope.techInfo = homeService.getTechInfo().then(function(response){
-            $scope.techInfo = response.data;
-        });
-    }
-
-    $scope.getHomePageIntro();
-    $scope.getMiddleSection();
-    $scope.getBottomSection();
-    $scope.getTechInfo();
-
-}]);
-angular.module('tutorialSite').service('homeService', ["$http", function($http){
-
-    var homePageInfo = [
-        {
-            header: 'Welcome To My Tutorials!',
-            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
-                can many times be the ticket to understanding how certain technologies work.
-                Seeing living examples makes it easy to connect the dots and begin to
-                understand how the tech works.`
-        }, 
-        {
-            header: 'Where do I start?',
-            content: `Right here!  This page is meant as a quick introduction to the different
-                    technologies that can be learned on this website. Make sure to tell your
-                    friends so they can come learn too!`
-        }, 
-        {
-            header: 'How Much Experience Do I Need?',
-            content: `These tutorials are meant to be an easy introduction to the animations
-                that can be performed with many different web development languages. A basic 
-                understanding of HTML, CSS, and Javascript should be enough to get you 
-                started on any of these tutorials!`
+    $scope.positiveNegative = function(){
+      if (!($scope.display == '0')){
+        arr = $scope.display.split('');
+        if(arr[0] == '-'){
+          arr.shift();
+        }else{
+          arr.unshift('-');
         }
-    ];
+        $scope.display = arr.join('');
+      }
+    }
 
-  this.getHomePageIntro = () => {
-      return homePageInfo[0];
-  };
+    $scope.equals = function(){
+      $scope.display = eval($scope.display);
+    }
 
-  this.getMiddleSection = () => {
-      return homePageInfo[1];
-  }
+  }]);
 
-  this.getBottomSection = () => {
-      return homePageInfo[2];
-  }
+angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
 
-  this.getTechInfo = () => {
-      return $http.get('/api/techinfo');
-  }
+    let box1 = document.getElementById('js_box1');
+    let box2 = document.getElementById('js_box2');
+    let box3 = document.getElementById('js_box3');
+    let box4 = document.getElementById('js_box4');
+    let input = document.getElementById('js_input');
+    let submitBtn = document.getElementById('js_submit');
 
-}]);
+    box1.addEventListener('click', function (){
+        if (box1.style.background == 'red'){
+            box1.style.background = 'blue';
+        }else{
+            box1.style.background = 'red';
+        }
+    });
+
+    box2.addEventListener('mouseover', function(){
+        box2.style.position = 'absolute';
+        box2.style.left = '50%';
+    });
+
+    box3.addEventListener('mouseover', function(){
+        box3.style.position = 'absolute';
+        if (box3.style.left == '50%'){
+            box3.style.left = '10px';
+        }else{
+            box3.style.left = '50%';
+        }
+    });
+
+    submitBtn.addEventListener('click', function(){
+        box4.innerText = input.value;
+    });
+
+//This scrolls the page when the pulsing scroll
+//arrow is pressed
+    $scope.scrollPage = () => {
+
+        //Check height of screen, adjust scroll for desktop/mobile headers.
+        //If screen is at least 700 pixels wide, scroll for desktopHeader,
+        //else scroll for Mobile header.
+        let scrollMinusDesktopHeader = $(window).height()-68;
+        let scrollMinusMobileHeader = $(window).height()-60;
+        let mq = window.matchMedia( "(min-width: 700px)" );
+
+        if (mq.matches){
+            $("html, body").animate({scrollTop: scrollMinusDesktopHeader}, 800);
+        }else{
+            $("html, body").animate({scrollTop: scrollMinusMobileHeader}, 800);
+        }
+        //***800 is the number of milliseconds it takes to carry out the animation
+    }
+
+}])
+
+
+
+
+
+
