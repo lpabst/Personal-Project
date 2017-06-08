@@ -265,15 +265,16 @@ angular.module("tutorialSite")
 
     //Audio Controls
     var playlist=[
-        './img/audio/tiptoe.mp3',
-        './img/audio/bats.mp3',
-        './img/audio/troll_hunt.mp3',
-        './img/audio/in_doubt.mp3',
-        './img/audio/spy_story.mp3'
+        './img/showcase/connect4/audio/tiptoe.mp3',
+        './img/showcase/connect4/audio/bats.mp3',
+        './img/showcase/connect4/audio/troll_hunt.mp3',
+        './img/showcase/connect4/audio/in_doubt.mp3',
+        './img/showcase/connect4/audio/spy_story.mp3'
     ];
     
     var nextSong = 1;
     var audio = document.getElementById('audio');
+    audio.pause();
 
     audio.addEventListener('ended', function(){
         audio.src = playlist[nextSong];
@@ -287,11 +288,10 @@ angular.module("tutorialSite")
     })
 
     function pauseAudio(){
-        if (this.scrollY > 100){
-            audio.pause();
-            console.log('hi');
-        }else{
+        if (this.scrollY > 480 && this.scrollY < 1310){
             audio.play();
+        }else{
+            audio.pause();
         }
     }
 
