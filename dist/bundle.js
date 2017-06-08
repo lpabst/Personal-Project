@@ -129,7 +129,7 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
                 'top': '0',
                 'border-radius': '0'
             });
-            $('.desktop_nav').css('right', '6.8%');
+            $('.desktop_nav').css('right', '7.2%');
             learnHeader.css('top', '68px');
         }else{
             dHeader.css({
@@ -138,7 +138,7 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
                 'top': '20px',
                 'border-radius': '6px'
             });
-            $('.desktop_nav').css('right', '5%');
+            $('.desktop_nav').css('right', '50px');
             learnHeader.css('top', 'calc(3% + 68px)');
         }
     }

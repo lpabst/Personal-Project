@@ -19,20 +19,20 @@ $headerBackground: #fff;
     }
 
     .desktop_nav{
-        width: 40%;
+        width: 50%;
         position: absolute;
-        right: 5%;
+        right: 50px;
         line-height: 68px;
+        display: flex;
+        justify-content: space-between;
 
         @media(min-width: 1000px){
-            width: 35%;
+            width: 450px;
         }
 
         li{
-            width: 30%;
-            margin: 0 1% 0 1%;
+            padding: 0px 10px 0px 10px;
             text-align: center;
-            display: inline-block;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
@@ -56,10 +56,9 @@ $headerBackground: #fff;
 }
 
 .learn_subheader{
-    width: 94%;
+    width: 100%;
     height: 60px;
     position: fixed;
-    left: 3%;
     top: 88px;
     z-index: 155;
     transition: all 1s;
@@ -69,12 +68,16 @@ $headerBackground: #fff;
         width: 20%;
         height: 200px;
         position: absolute;
-        right: calc(26% - 10vw);
+        right: calc(26% + 5vw);
         background: white;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
+        @media(min-width: 1000px){
+            right: 275px;
+        }
 
         a{
             text-decoration: none;
@@ -85,10 +88,6 @@ $headerBackground: #fff;
         a:hover{
             text-decoration: underline;
             color: #333;
-        }
-
-        @media(min-width: 1000px){
-            right: calc(23% - 10vw);
         }
     }
 
@@ -153,7 +152,7 @@ $headerBackground: #fff;
         .mobile_nav{
             width: 100%;
             position: absolute;
-            top: 70px;
+            top: 50px;
             text-align: center;
             line-height: 50px;
             cursor: pointer;

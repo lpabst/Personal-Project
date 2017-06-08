@@ -26,6 +26,9 @@
                     <li ng-click='hideMobileMenu()'>HOME</li>
                 </a>
                 <li ng-click='showLearnSubMenu()'>LEARN</li>
+                <a ui-sref='showcase'>
+                    <li ng-click='hideMobileMenu()'>SHOWCASE</li>
+                </a>
                 <a ui-sref='contact'>
                     <li ng-click='hideMobileMenu()'>CONTACT</li>
                 </a>
@@ -50,6 +53,9 @@
                 <li>HOME</li>
             </a>
             <li ng-click='showLearnSubheader = !showLearnSubheader'>LEARN</li>
+            <a ui-sref='showcase' ng-click='hideLearnSubheader()'>
+                <li>SHOWCASE</li>
+            </a>
             <a ui-sref='contact' ng-click='hideLearnSubheader()'>
                 <li>CONTACT</li>
             </a>
