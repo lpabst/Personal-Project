@@ -9,7 +9,7 @@ $headerBackground: #fff;
     left: 3%;
     top: 20px;
     border-radius: 6px;
-    z-index: 50;
+    z-index: 150;
     background: $headerBackground;
     display: none;
     transition: all 0.5s;
@@ -101,7 +101,7 @@ $headerBackground: #fff;
     width: 100%;
     height: 60px;
     position: fixed;
-    z-index: 50;
+    z-index: 150;
     background: $headerBackground;
     @media(min-width: 700px){
         display: none;
@@ -117,7 +117,7 @@ $headerBackground: #fff;
         top: 7px;
         left: 9px;
         cursor: pointer;
-        z-index: 105;
+        z-index: 155;
 
         .line{
             width: 22px;
@@ -140,7 +140,7 @@ $headerBackground: #fff;
         top: 7px;
         left: 9px;
         cursor: pointer;
-        z-index: 105;
+        z-index: 155;
     }
 
     .mobileMenu{
@@ -148,7 +148,7 @@ $headerBackground: #fff;
         height: 260px;
         background: #eee;
         position: absolute;
-        z-index: 100;
+        z-index: 151;
 
         .mobile_nav{
             width: 100%;

@@ -5,6 +5,7 @@
     height: 620px;
     position: relative;
     background: #ddd;
+    z-index: 3;
 
     .calculator{
         width: 300px;
@@ -13,6 +14,7 @@
         left: calc(50% - 150px);
         top: 130px;
         background: #444;
+        z-index: 4;
 
         @media(max-width: 800px){
             transform: scale(0.8);
@@ -86,6 +88,7 @@
         overflow: hidden;
         left: calc(50% + 150px);
         top: 130px;
+        z-index: 4;
 
         @media(max-width: 800px){
             transform: scale(0.8);
@@ -109,6 +112,7 @@
         overflow: hidden;
         left: calc(50% - 150px);
         top: 580px;
+        z-index: 4;
 
         @media(max-width: 800px){
             transform: scale(0.8);
@@ -154,6 +158,7 @@
         height: 200px;
         background: #bdff58;
         border-radius: 2px;
+        z-index: 100;
         position: absolute;
         left: calc(50% - 150px);
         top: 180px;
@@ -244,7 +249,7 @@
         position: absolute;
         left: 10%;
         top: 20vh;
-        z-index: 100;
+        z-index: 102;
 
         @media(min-width:700px){
             width: 60%;
@@ -285,7 +290,7 @@
         position: absolute;
         left: calc(50% - 140px);
         top: 190px;
-        z-index: 100;
+        z-index: 102;
 
         @media(min-width:700px){
             left: calc(50% - 230px);
@@ -319,6 +324,7 @@
         position: absolute;
         left: calc(50% - 150px);
         top: 400px;
+        z-index: 100;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -465,6 +471,7 @@
        position: absolute;
        top: 0px;
        left: 0px;
+       z-index: 1;
 
        @media(min-width: 1000px){
            width: 100px;
