@@ -279,74 +279,6 @@ angular.module('tutorialSite').controller('greensockCtrl', ["$scope", function($
     }
     
 }]);
-angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
-
-    $scope.getHomePageIntro = () =>  {
-        $scope.intro = homeService.getHomePageIntro();
-    }
-
-    $scope.getMiddleSection = () => {
-        $scope.middle = homeService.getMiddleSection();
-    }
-
-    $scope.getBottomSection = () => {
-        $scope.bottom = homeService.getBottomSection();
-    }
-
-    $scope.getTechInfo = () => {
-        $scope.techInfo = homeService.getTechInfo().then(function(response){
-            $scope.techInfo = response.data;
-        });
-    }
-
-    $scope.getHomePageIntro();
-    $scope.getMiddleSection();
-    $scope.getBottomSection();
-    $scope.getTechInfo();
-
-}]);
-angular.module('tutorialSite').service('homeService', ["$http", function($http){
-
-    var homePageInfo = [
-        {
-            header: 'Welcome To My Tutorials!',
-            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
-                can many times be the ticket to understanding how certain technologies work.
-                Seeing living examples makes it easy to connect the dots and begin to
-                understand how the tech works.`
-        }, 
-        {
-            header: 'Where do I start?',
-            content: `Right here!  This page is meant as a quick introduction to the different
-                    technologies that can be learned on this website. Make sure to tell your
-                    friends so they can come learn too!`
-        }, 
-        {
-            header: 'How Much Experience Do I Need?',
-            content: `These tutorials are meant to be an easy introduction to the animations
-                that can be performed with many different web development languages. A basic 
-                understanding of HTML, CSS, and Javascript should be enough to get you 
-                started on any of these tutorials!`
-        }
-    ];
-
-  this.getHomePageIntro = () => {
-      return homePageInfo[0];
-  };
-
-  this.getMiddleSection = () => {
-      return homePageInfo[1];
-  }
-
-  this.getBottomSection = () => {
-      return homePageInfo[2];
-  }
-
-  this.getTechInfo = () => {
-      return $http.get('/api/techinfo');
-  }
-
-}]);
 angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($scope){
 
     let box1 = $('#jquery_box1');
@@ -428,6 +360,74 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
         }
         //***800 is the number of milliseconds it takes to carry out the animation
     }
+
+}]);
+angular.module('tutorialSite').controller('homeCtrl', ["$scope", "homeService", function($scope, homeService){
+
+    $scope.getHomePageIntro = () =>  {
+        $scope.intro = homeService.getHomePageIntro();
+    }
+
+    $scope.getMiddleSection = () => {
+        $scope.middle = homeService.getMiddleSection();
+    }
+
+    $scope.getBottomSection = () => {
+        $scope.bottom = homeService.getBottomSection();
+    }
+
+    $scope.getTechInfo = () => {
+        $scope.techInfo = homeService.getTechInfo().then(function(response){
+            $scope.techInfo = response.data;
+        });
+    }
+
+    $scope.getHomePageIntro();
+    $scope.getMiddleSection();
+    $scope.getBottomSection();
+    $scope.getTechInfo();
+
+}]);
+angular.module('tutorialSite').service('homeService', ["$http", function($http){
+
+    var homePageInfo = [
+        {
+            header: 'Welcome To My Tutorials!',
+            content: `Tutorials are a great way to learn!  Seeing how someone else solves a problem
+                can many times be the ticket to understanding how certain technologies work.
+                Seeing living examples makes it easy to connect the dots and begin to
+                understand how the tech works.`
+        }, 
+        {
+            header: 'Where do I start?',
+            content: `Right here!  This page is meant as a quick introduction to the different
+                    technologies that can be learned on this website. Make sure to tell your
+                    friends so they can come learn too!`
+        }, 
+        {
+            header: 'How Much Experience Do I Need?',
+            content: `These tutorials are meant to be an easy introduction to the animations
+                that can be performed with many different web development languages. A basic 
+                understanding of HTML, CSS, and Javascript should be enough to get you 
+                started on any of these tutorials!`
+        }
+    ];
+
+  this.getHomePageIntro = () => {
+      return homePageInfo[0];
+  };
+
+  this.getMiddleSection = () => {
+      return homePageInfo[1];
+  }
+
+  this.getBottomSection = () => {
+      return homePageInfo[2];
+  }
+
+  this.getTechInfo = () => {
+      return $http.get('/api/techinfo');
+  }
 
 }]);
 angular.module("tutorialSite")
