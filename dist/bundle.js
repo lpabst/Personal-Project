@@ -46,40 +46,6 @@ angular.module('tutorialSite', ['ui.router'])
     $urlRouterProvider.otherwise('/');
 
 }]);
-angular.module('tutorialSite')
-.directive('growShrink', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            var normalSize = true;
-
-            elem.click(function(){
-                if (normalSize){
-                    elem.css('width', '+=200');
-                    normalSize = false;
-                }else{
-                    elem.css('width', '-=200');
-                    normalSize = true;
-                }
-            })
-        }
-    }
-
-});
-angular.module('tutorialSite')
-.directive('highlightText', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            elem.click(function(){
-                elem.toggleClass('highlighted');
-            })
-        }
-    }
-
-});
 angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope){
 
     $scope.mobileMenu = false;
@@ -146,6 +112,40 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
     window.addEventListener("scroll", changeHeaderCss, false);
 
 }]);
+angular.module('tutorialSite')
+.directive('growShrink', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            var normalSize = true;
+
+            elem.click(function(){
+                if (normalSize){
+                    elem.css('width', '+=200');
+                    normalSize = false;
+                }else{
+                    elem.css('width', '-=200');
+                    normalSize = true;
+                }
+            })
+        }
+    }
+
+});
+angular.module('tutorialSite')
+.directive('highlightText', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            elem.click(function(){
+                elem.toggleClass('highlighted');
+            })
+        }
+    }
+
+});
 angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularService", function($scope, angularService){
 
     $scope.showLeftBox = true;
@@ -696,7 +696,7 @@ angular.module("tutorialSite")
     }
 
     //Audio Controls
-    var playlist=[
+    var playlist=[                                          //an array of all the audio src urls
         './img/showcase/connect4/audio/tiptoe.mp3',
         './img/showcase/connect4/audio/bats.mp3',
         './img/showcase/connect4/audio/troll_hunt.mp3',
@@ -706,71 +706,74 @@ angular.module("tutorialSite")
     
     var nextSong = 1;
     var audio = document.getElementById('audio');
-    audio.pause();
+    audio.pause();                                          //music is paused by default
 
-    audio.addEventListener('ended', function(){
-        audio.src = playlist[nextSong];
-        audio.load();
-        audio.play();
-        if (nextSong >= playlist.length-1){
-            nextSong = 0;
-        }else{
-            nextSong++
+    audio.addEventListener('ended', function(){             //grabs a new song when current song ends
+        audio.src = playlist[nextSong];                     //updates the audio tag's src with the next song in the playlist
+        audio.load();                                       //loads the song
+        audio.play();                                       //plays the song
+        if (nextSong >= playlist.length-1){                 //if we are playing the last song in the list, 
+            nextSong = 0;                                   //starts the list over.
+        }else{                                              //otherwise,
+            nextSong++                                      //moves on to the next song in the list.
         }
     })
 //  && elem.closest('[ui-view]').data('$uiView').state == 'showcase'
-    function pauseAudio(){
-        if (this.scrollY > 400 && this.scrollY < 1310 && $state.current.name == 'showcase'){
-            audio.play();
-        }else{
-            audio.pause();
+    function playAudio(){                                   //unpauses the music when connect4 is showing
+        if (this.scrollY > 400                              //once we are basically past the calculator portion of the page
+        && this.scrollY < 1310                              //and until we leave the connect4 portion of the page
+        && $state.current.name == 'showcase'){              //and ONLY on the showcase view
+            audio.play();                                   //play the music.
+        }else{                                              //otherwise,
+            audio.pause();                                  //pause it again
         }
     }
 
-    window.addEventListener("scroll", pauseAudio, false);
+    window.addEventListener("scroll", playAudio, false);    //keeps track of where the user has scrolled to, and plays the
+                                                            //music at the right time by firing the playAudio function
 
 // **********CONNECT 4 FUNCTIONS******************************************
 
-    var doors = [];
-
+    var doors = [];                             //-playGame function sets two goats a one car randomly
+                                                //into this array
     $scope.goatsWon = 0;
 
     var timesSwitched = 0;
-    var switchedAndWon = 0;
+    var switchedAndWon = 0;                     //user switched doors and got the car
     var timesStayed = 0;
-    var stayedAndWon = 0;
+    var stayedAndWon = 0;                       //user stayed with original door and got the car
 
-    $scope.check1;
+    $scope.check1;                              //checkmarks on doors only show when these are true
     $scope.check2;
     $scope.check3;
-    $scope.prize1 = '';
-    $scope.prize2 = '';
-    $scope.prize3 = '';
-    $scope.showHostExplanationBox = false;
+    $scope.prize1 = '';                         //-lets view know what to display behind doors 1,
+    $scope.prize2 = '';                         //2,
+    $scope.prize3 = '';                         //& 3
+    $scope.showHostExplanationBox = false;      //-this box comes out after user picks a door, starts hidden
     
-    var finalSelection;
-    var originalChoice;
-    var finalChoice;
+    var finalSelection;                         //-checks whether host has opened door and it's the user's final decision
+    var originalChoice;                         //-if originalChoice == finalChoice, user stayed with their original door
+    var finalChoice;                            //otherwise, they switched after the host opened a door
 
-    var $door = $('.door');
-    var $instructions = $('#instructions');
-    var $prize = $('.prize');
+    var $door = $('.door');                     //all doors
+    var $instructions = $('#instructions');     //instructions at the bottom of the page
+    var $prize = $('.prize');                   //all prizes
 
 //Door logic
     $scope.playGame = function(){
         //reset doors and door logic
-        doors = ['goat', 'goat', 'goat'];
-        var doorWithCar = Math.floor(Math.random()*3);
-        doors[doorWithCar] = 'car';
-        $scope.prize1 = doors[0];
-        $scope.prize2 = doors[1];
-        $scope.prize3 = doors[2];
+        doors = ['goat', 'goat', 'goat'];                                   //reset doors
+        var doorWithCar = Math.floor(Math.random()*3);                      //-pick random number 0-2
+        doors[doorWithCar] = 'car';                                         //-use that random number to place a car
+        $scope.prize1 = doors[0];                                           //-assign array value to $scope objects
+        $scope.prize2 = doors[1];                                           //so that we know what to display behind
+        $scope.prize3 = doors[2];                                           //each door
         //reset animations
-        $door.css('transform', 'rotateY(0deg)');
-        $instructions.text('Pick a door');
-        $instructions.css('border', 'none');
-        $prize.css({'font-size': '1px', 'left': '10px'});
-        setTimeout(function(){$prize.css('font-size', '25px')}, 2000);
+        $door.css('transform', 'rotateY(0deg)');                            //-close all of the doors
+        $instructions.text('Pick a door');                                  //reset instructions
+        $instructions.css('border', 'none');                                //remove instructions border
+        $prize.css({'font-size': '1px', 'left': '10px'});                   //make prizes small while the doors close
+        setTimeout(function(){$prize.css('font-size', '25px')}, 2000);      //once doors, are closed, make them big again
         $scope.hideAllCheckMarks();
     }
 
@@ -787,33 +790,34 @@ angular.module("tutorialSite")
         }else if(doors[num-1] != 'car' && finalChoice == originalChoice){
             $scope.goatsWon++;
             timesStayed++;       }
-        $scope.carsWon = stayedAndWon + switchedAndWon;
-        $scope.switchSuccess = (switchedAndWon / timesSwitched)*100;
-        $scope.staySuccess = (stayedAndWon / timesStayed)*100;
+        $scope.carsWon = stayedAndWon + switchedAndWon;                     //total cars won
+        $scope.switchSuccess = (switchedAndWon / timesSwitched)*100;        //percent of winning the car when switching doors after host opens a door
+        $scope.staySuccess = (stayedAndWon / timesStayed)*100;              //percent of winning the car when sticking with original door after host opens a door
     }
 
 //Visual effects
     $scope.pickDoor = function(num){
-        let id = '#'+num;
-        let prize = '#p'+num;
-        if (finalSelection){
-            if (num != $scope.doorOpenedByHost){$scope.showHostExplanationBox = false;
-                $scope.hideAllCheckMarks();
-                finalChoice = num;
-                $scope.updateStats(num);
-                $(id).css('transform', 'rotateY(-65deg)');
-                $(prize).css('left', '75px');
-                $instructions.text('Play Again?');
-                $instructions.css('border', '2px solid black');
+        let id = '#'+num;                                           //gets the door id based on the users choice
+        let prize = '#p'+num;                                       //gets the prize id based on the users choice
+        if (finalSelection){                                        //if host has already opened a door
+            if (num != $scope.doorOpenedByHost){                    //doesn't let the user select the door the host opened
+                $scope.showHostExplanationBox = false;              //if explanation box is showing, hide it
+                $scope.hideAllCheckMarks();                         
+                finalChoice = num;                                     
+                $scope.updateStats(num);                            //updates stats based on the door user picked
+                $(id).css('transform', 'rotateY(-65deg)');          //opens the door user selected
+                $(prize).css('left', '75px');                       //prize comes out from behind the door
+                $instructions.text('Play Again?');                  //updates instructions to let user play again
+                $instructions.css('border', '2px solid black');     //border makes the instructions seem more clickable
             }
-        }else{
-            $scope.checkMark(num); 
-            originalChoice = num;
-            $scope.hostOpensDoor(num);
+        }else{                                     //if host hasn't opened a door yet, and user is picking for the first time
+            $scope.checkMark(num);                 //add checkmark to the door user picks
+            originalChoice = num;                  
+            $scope.hostOpensDoor(num);             //triggers the function where host opens a door
         }
     }
 
-    $scope.checkMark = function(num){
+    $scope.checkMark = function(num){               //puts checkmark on the door user picks at first
         if (num === 1){
             $scope.check1 = true;
         }else if (num === 2){
@@ -821,37 +825,37 @@ angular.module("tutorialSite")
         }else if (num === 3){
             $scope.check3 = true;
         }        
-        finalSelection = true;
+        finalSelection = true;                      //user has picked a door. next user action will be their final Selection
     }
 
-    $scope.hostOpensDoor = function(userChoice){
-        $scope.showHostExplanationBox = true;
-        $scope.userChoice = userChoice;
+    $scope.hostOpensDoor = function(userChoice){    //everything in between user's two choices
+        $scope.showHostExplanationBox = true;       //displays explanation box
+        $scope.userChoice = userChoice;             //sets scope variable so view can display it during the explanation box
 
-        var hostOptions = [];
-        for (var i = 1; i <= 3; i ++){
-          if (i != userChoice){
-            hostOptions.push(i);
+        var hostOptions = [];                       //declare empty array
+        for (var i = 1; i <= 3; i ++){              //go through numbers 1-3
+          if (i != userChoice){                     //only push the two numbers that the user didn't select for their door
+            hostOptions.push(i);                    //(i.e. the host will never open the same door the user picks first)
           }
         }
 
-        var rand, doorOpened, hostChoice;
+        var rand, doorOpened, hostChoice;           //declare variables
 
-        for (var i = 0; i < 5; i){
-          rand = Math.floor(Math.random()*2);
-          doorOpened = hostOptions[rand];
-          hostChoice = doors[doorOpened-1];
-          if (hostChoice != 'car'){
-            i = 10;
-          }
+        for (var i = 0; i < 5; i){                  //loop runs until we reach a desired outcome
+          rand = Math.floor(Math.random()*2);       //generates random number 0 or 1
+          doorOpened = hostOptions[rand];           //what door number did we pick?
+          hostChoice = doors[doorOpened-1];         //what is behind that door?
+          if (hostChoice != 'car'){                 //if it's not the car, great!
+            i = 10;                                 //end the loop
+          }                                         //if it is the car, the loop runs again and picks a new random door
         }
 
-        $scope.doorOpenedByHost = doorOpened;
-
-        let id = '#' + $scope.doorOpenedByHost;
-        let prize = '#p' + $scope.doorOpenedByHost;
-        $(id).css('transform', 'rotateY(-65deg)');
-        $(prize).css('left', '75px');
+        $scope.doorOpenedByHost = doorOpened;           //whatever door ends up being the one the host opens
+                                                        //is set to a scope variable
+        let id = '#' + $scope.doorOpenedByHost;         //constructs door id based which door the host is opening
+        let prize = '#p' + $scope.doorOpenedByHost;     //constructs prize id based on which door the host is opening
+        $(id).css('transform', 'rotateY(-65deg)');      //opens the door
+        $(prize).css('left', '75px');                   //reveals what's behind that door
     }
 
     $scope.hideHostExplanationBox = function(){
@@ -862,12 +866,12 @@ angular.module("tutorialSite")
         $scope.check1 = false;
         $scope.check2 = false;
         $scope.check3 = false;
-        finalSelection = false;
-    }
+        finalSelection = false;                 //if we are hiding the checkmarks, that means the user 
+    }                                           //needs to make a first selection again
 
 //Initiate first iteration of the game
-    $scope.playGame();
-
+    $scope.playGame();                          //this is down here so that it has access to everything above it
+                                                //i.e. at this point, all of the other functions are visible to the controller
   }]);
 
 angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
