@@ -46,40 +46,6 @@ angular.module('tutorialSite', ['ui.router'])
     $urlRouterProvider.otherwise('/');
 
 }]);
-angular.module('tutorialSite')
-.directive('growShrink', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            var normalSize = true;
-
-            elem.click(function(){
-                if (normalSize){
-                    elem.css('width', '+=200');
-                    normalSize = false;
-                }else{
-                    elem.css('width', '-=200');
-                    normalSize = true;
-                }
-            })
-        }
-    }
-
-});
-angular.module('tutorialSite')
-.directive('highlightText', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            elem.click(function(){
-                elem.toggleClass('highlighted');
-            })
-        }
-    }
-
-});
 angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope){
 
     $scope.mobileMenu = false;
@@ -146,6 +112,40 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
     window.addEventListener("scroll", changeHeaderCss, false);
 
 }]);
+angular.module('tutorialSite')
+.directive('growShrink', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            var normalSize = true;
+
+            elem.click(function(){
+                if (normalSize){
+                    elem.css('width', '+=200');
+                    normalSize = false;
+                }else{
+                    elem.css('width', '-=200');
+                    normalSize = true;
+                }
+            })
+        }
+    }
+
+});
+angular.module('tutorialSite')
+.directive('highlightText', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            elem.click(function(){
+                elem.toggleClass('highlighted');
+            })
+        }
+    }
+
+});
 angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularService", function($scope, angularService){
 
     $scope.showLeftBox = true;
@@ -431,7 +431,7 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
 
 }]);
 angular.module("tutorialSite")
-  .controller("showcaseCtrl", ["$scope", "$state", function($scope, $state) {
+  .controller("showcaseCtrl", ["$scope", "$state", "showcaseService", function($scope, $state, showcaseService) {
 
 // **********CALCULATOR FUNCTIONS***********************************
     $scope.display = '0';
@@ -734,14 +734,14 @@ angular.module("tutorialSite")
 
 // **********CONNECT 4 FUNCTIONS******************************************
 
-    var doors = [];                             //-playGame function sets two goats a one car randomly
+    var doors = [];                             //-playGame function sets two goats and one car randomly
                                                 //into this array
-    $scope.goatsWon = 0;
+    $scope.goatsWon;
 
-    var timesSwitched = 0;
-    var switchedAndWon = 0;                     //user switched doors and got the car
-    var timesStayed = 0;
-    var stayedAndWon = 0;                       //user stayed with original door and got the car
+    var timesSwitched;
+    var switchedAndWon;                     //user switched doors and got the car
+    var timesStayed;
+    var stayedAndWon;                       //user stayed with original door and got the car
 
     $scope.check1;                              //checkmarks on doors only show when these are true
     $scope.check2;
@@ -789,10 +789,11 @@ angular.module("tutorialSite")
             timesSwitched++;
         }else if(doors[num-1] != 'car' && finalChoice == originalChoice){
             $scope.goatsWon++;
-            timesStayed++;       }
-        $scope.carsWon = stayedAndWon + switchedAndWon;                     //total cars won
-        $scope.switchSuccess = (switchedAndWon / timesSwitched)*100;        //percent of winning the car when switching doors after host opens a door
-        $scope.staySuccess = (stayedAndWon / timesStayed)*100;              //percent of winning the car when sticking with original door after host opens a door
+            timesStayed++;       
+        }
+        $scope.carsWon = stayedAndWon + switchedAndWon;                                 //total cars won
+        $scope.switchSuccess = Math.floor((switchedAndWon / timesSwitched)*100);        //percent of winning the car when switching doors after host opens a door
+        $scope.staySuccess = Math.floor((stayedAndWon / timesStayed)*100);              //percent of winning the car when sticking with original door after host opens a door
     }
 
 //Visual effects
@@ -803,8 +804,10 @@ angular.module("tutorialSite")
             if (num != $scope.doorOpenedByHost){                    //doesn't let the user select the door the host opened
                 $scope.showHostExplanationBox = false;              //if explanation box is showing, hide it
                 $scope.hideAllCheckMarks();                         
-                finalChoice = num;                                     
-                $scope.updateStats(num);                            //updates stats based on the door user picked
+                finalChoice = num;    
+                console.log(stayedAndWon, switchedAndWon);                                
+                $scope.updateStats(num);      
+                console.log(stayedAndWon, switchedAndWon);                       //updates stats based on the door user picked
                 $(id).css('transform', 'rotateY(-65deg)');          //opens the door user selected
                 $(prize).css('left', '75px');                       //prize comes out from behind the door
                 $instructions.text('Play Again?');                  //updates instructions to let user play again
@@ -869,11 +872,65 @@ angular.module("tutorialSite")
         finalSelection = false;                 //if we are hiding the checkmarks, that means the user 
     }                                           //needs to make a first selection again
 
+//Gameshow Stats functions
+    $scope.saveStats = function(){
+        var stats = {
+            goatsWon: $scope.goatsWon, 
+            timesSwitched: timesSwitched,
+            switchedAndWon: switchedAndWon,
+            timesStayed: timesStayed,
+            stayedAndWon: stayedAndWon
+        }
+        showcaseService.saveData(stats);
+    }
+
+    $scope.getStats = function(){
+        showcaseService.getStats().then(function(response){
+            var statsArr = response.data;
+            console.log(statsArr);
+            for (var i in statsArr){
+                if (statsArr[i].id === 2){
+                    $scope.goatsWon = parseInt(statsArr[i].statvalue, 10);
+                }else if (statsArr[i].id === 5){
+                    timesStayed = parseInt(statsArr[i].statvalue, 10);
+                }else if (statsArr[i].id === 6){
+                    stayedAndWon = parseInt(statsArr[i].statvalue, 10);
+                }else if (statsArr[i].id === 7){
+                    timesSwitched = parseInt(statsArr[i].statvalue, 10);
+                }else if (statsArr[i].id === 8){
+                    switchedAndWon = parseInt(statsArr[i].statvalue, 10);
+                }
+            }
+            $scope.carsWon = stayedAndWon + switchedAndWon;
+            $scope.switchSuccess = Math.floor((switchedAndWon / timesSwitched)*100);
+            $scope.staySuccess = Math.floor((stayedAndWon / timesStayed)*100);
+        })
+    }
+
+    $scope.getStats();
+
 //Initiate first iteration of the game
     $scope.playGame();                          //this is down here so that it has access to everything above it
                                                 //i.e. at this point, all of the other functions are visible to the controller
   }]);
 
+angular.module('tutorialSite').service('showcaseService', ["$http", function($http){
+
+    this.saveData = function(stats){
+        return $http.put('/api/updateStats', {
+            "goatsWon": stats.goatsWon,
+            "timesSwitched": stats.timesSwitched,
+            "switchedAndWon": stats.switchedAndWon,
+            "timesStayed": stats.timesStayed,
+            "stayedAndWon": stats.stayedAndWon
+        });
+    }
+
+    this.getStats = function(){
+        return $http.get('/api/getStats');
+    }
+
+}]);
 angular.module('tutorialSite').controller('vanillaJSCtrl', ["$scope", function($scope){
 
     let box1 = document.getElementById('js_box1');
