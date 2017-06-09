@@ -302,6 +302,7 @@ angular.module("tutorialSite")
 
 // **********CONNECT 4 FUNCTIONS******************************************
 
+    var gameover = false;                       //when true, clicking on doors does nothing
     var doors = [];                             //-playGame function sets two goats and one car randomly
                                                 //into this array
     $scope.goatsWon;
@@ -330,6 +331,8 @@ angular.module("tutorialSite")
 //Door logic
     $scope.playGame = function(){
         //reset doors and door logic
+        gameover = false;                                                   //allows user to select doors again
+        finalSelection = false;                                             //let's program know user will make first choice at this point
         doors = ['goat', 'goat', 'goat'];                                   //reset doors
         var doorWithCar = Math.floor(Math.random()*3);                      //-pick random number 0-2
         doors[doorWithCar] = 'car';                                         //-use that random number to place a car
@@ -368,18 +371,19 @@ angular.module("tutorialSite")
     $scope.pickDoor = function(num){
         let id = '#'+num;                                           //gets the door id based on the users choice
         let prize = '#p'+num;                                       //gets the prize id based on the users choice
-        if (finalSelection){                                        //if host has already opened a door
+        if (gameover){
+
+        }else if (finalSelection){                                  //if host has already opened a door
             if (num != $scope.doorOpenedByHost){                    //doesn't let the user select the door the host opened
                 $scope.showHostExplanationBox = false;              //if explanation box is showing, hide it
                 $scope.hideAllCheckMarks();                         
-                finalChoice = num;    
-                console.log(stayedAndWon, switchedAndWon);                                
-                $scope.updateStats(num);      
-                console.log(stayedAndWon, switchedAndWon);                       //updates stats based on the door user picked
+                finalChoice = num;                                 
+                $scope.updateStats(num);                            //updates stats based on the door user picked
                 $(id).css('transform', 'rotateY(-65deg)');          //opens the door user selected
                 $(prize).css('left', '75px');                       //prize comes out from behind the door
                 $instructions.text('Play Again?');                  //updates instructions to let user play again
                 $instructions.css('border', '2px solid black');     //border makes the instructions seem more clickable
+                gameover = true;
             }
         }else{                                     //if host hasn't opened a door yet, and user is picking for the first time
             $scope.checkMark(num);                 //add checkmark to the door user picks
@@ -436,8 +440,7 @@ angular.module("tutorialSite")
     $scope.hideAllCheckMarks = function(){
         $scope.check1 = false;
         $scope.check2 = false;
-        $scope.check3 = false;
-        finalSelection = false;                 //if we are hiding the checkmarks, that means the user 
+        $scope.check3 = false;               //if we are hiding the checkmarks, that means the user 
     }                                           //needs to make a first selection again
 
 //Gameshow Stats functions
@@ -461,7 +464,6 @@ angular.module("tutorialSite")
     $scope.getStats = function(){
         showcaseService.getStats().then(function(response){
             var statsArr = response.data;
-            console.log(statsArr);
             for (var i in statsArr){
                 if (statsArr[i].id === 2){
                     $scope.goatsWon = parseInt(statsArr[i].statvalue, 10);
