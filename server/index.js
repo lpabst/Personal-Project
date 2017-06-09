@@ -29,4 +29,4 @@ app.get('/api/getStats', statsCtrl.getGameshowStats)
 
 app.put('/api/updateStats', statsCtrl.updateStats);
 
-app.listen(3000, console.log('3000 yo'));
+app.listen(config.port, console.log('3000 yo'));
