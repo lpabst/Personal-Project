@@ -46,6 +46,40 @@ angular.module('tutorialSite', ['ui.router'])
     $urlRouterProvider.otherwise('/');
 
 }]);
+angular.module('tutorialSite')
+.directive('growShrink', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            var normalSize = true;
+
+            elem.click(function(){
+                if (normalSize){
+                    elem.css('width', '+=200');
+                    normalSize = false;
+                }else{
+                    elem.css('width', '-=200');
+                    normalSize = true;
+                }
+            })
+        }
+    }
+
+});
+angular.module('tutorialSite')
+.directive('highlightText', function(){
+
+    return {
+        restrict: 'A',
+        link: function(scope, elem, atts){
+            elem.click(function(){
+                elem.toggleClass('highlighted');
+            })
+        }
+    }
+
+});
 angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope){
 
     $scope.mobileMenu = false;
@@ -112,40 +146,6 @@ angular.module('tutorialSite').controller('mainCtrl', ["$scope", function($scope
     window.addEventListener("scroll", changeHeaderCss, false);
 
 }]);
-angular.module('tutorialSite')
-.directive('growShrink', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            var normalSize = true;
-
-            elem.click(function(){
-                if (normalSize){
-                    elem.css('width', '+=200');
-                    normalSize = false;
-                }else{
-                    elem.css('width', '-=200');
-                    normalSize = true;
-                }
-            })
-        }
-    }
-
-});
-angular.module('tutorialSite')
-.directive('highlightText', function(){
-
-    return {
-        restrict: 'A',
-        link: function(scope, elem, atts){
-            elem.click(function(){
-                elem.toggleClass('highlighted');
-            })
-        }
-    }
-
-});
 angular.module('tutorialSite').controller('angularCtrl', ["$scope", "angularService", function($scope, angularService){
 
     $scope.showLeftBox = true;
@@ -881,7 +881,13 @@ angular.module("tutorialSite")
             timesStayed: timesStayed,
             stayedAndWon: stayedAndWon
         }
-        showcaseService.saveData(stats);
+        showcaseService.saveStats(stats);
+    }
+
+    $scope.resetStats = () => {
+        showcaseService.resetStats().then(function(){
+            $scope.getStats();
+        });
     }
 
     $scope.getStats = function(){
@@ -916,7 +922,7 @@ angular.module("tutorialSite")
 
 angular.module('tutorialSite').service('showcaseService', ["$http", function($http){
 
-    this.saveData = function(stats){
+    this.saveStats = function(stats){
         return $http.put('/api/updateStats', {
             "goatsWon": stats.goatsWon,
             "timesSwitched": stats.timesSwitched,
@@ -924,6 +930,16 @@ angular.module('tutorialSite').service('showcaseService', ["$http", function($ht
             "timesStayed": stats.timesStayed,
             "stayedAndWon": stats.stayedAndWon
         });
+    }
+
+    this.resetStats = function(){
+        return $http.put('/api/updateStats', {
+            "goatsWon": 0,
+            "timesSwitched": 0,
+            "switchedAndWon": 0,
+            "timesStayed": 0,
+            "stayedAndWon": 0
+        })
     }
 
     this.getStats = function(){

@@ -449,7 +449,13 @@ angular.module("tutorialSite")
             timesStayed: timesStayed,
             stayedAndWon: stayedAndWon
         }
-        showcaseService.saveData(stats);
+        showcaseService.saveStats(stats);
+    }
+
+    $scope.resetStats = () => {
+        showcaseService.resetStats().then(function(){
+            $scope.getStats();
+        });
     }
 
     $scope.getStats = function(){

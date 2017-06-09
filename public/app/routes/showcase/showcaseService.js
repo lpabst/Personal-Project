@@ -1,6 +1,6 @@
 angular.module('tutorialSite').service('showcaseService', function($http){
 
-    this.saveData = function(stats){
+    this.saveStats = function(stats){
         return $http.put('/api/updateStats', {
             "goatsWon": stats.goatsWon,
             "timesSwitched": stats.timesSwitched,
@@ -8,6 +8,16 @@ angular.module('tutorialSite').service('showcaseService', function($http){
             "timesStayed": stats.timesStayed,
             "stayedAndWon": stats.stayedAndWon
         });
+    }
+
+    this.resetStats = function(){
+        return $http.put('/api/updateStats', {
+            "goatsWon": 0,
+            "timesSwitched": 0,
+            "switchedAndWon": 0,
+            "timesStayed": 0,
+            "stayedAndWon": 0
+        })
     }
 
     this.getStats = function(){
