@@ -24,4 +24,9 @@ angular.module('tutorialSite').service('showcaseService', function($http){
         return $http.get('/api/getStats');
     }
 
+//AI Fuctionality
+    this.getComputerMove = function(){
+        
+    }
+
 });

@@ -430,6 +430,13 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
     }
 
 }]);
+angular.module('tutorialSite').service('showcaseService', function(){
+
+    this.getComputerMove = function(){
+        
+    }
+
+});
 angular.module("tutorialSite")
   .controller("showcaseCtrl", ["$scope", "$state", "showcaseService", function($scope, $state, showcaseService) {
 
@@ -453,7 +460,9 @@ angular.module("tutorialSite")
       if ($scope.display == '0'){
         $scope.display = str;
       }else{
-        $scope.display += str;
+          if ($scope.display.length < 12){
+            $scope.display += str;
+          }
       }
     }
 
@@ -470,7 +479,7 @@ angular.module("tutorialSite")
     }
 
     $scope.equals = function(){
-      $scope.display = eval($scope.display);
+      $scope.display = String(eval($scope.display));
     }
 
 
@@ -487,9 +496,11 @@ angular.module("tutorialSite")
     var color = '#7f3';
     var id = '';
     var functionToExecute = clearBoard;
+    var connect4Gameover = false;
     
     $scope.playerOneName = 'Player 1';
     $scope.playerTwoName = 'Player 2';
+    $scope.player2IsComputer = true;
     $scope.showAreYouSureBox = false;
     $scope.showWinnerBox = false;
     $scope.score = {
@@ -499,8 +510,17 @@ angular.module("tutorialSite")
 
     var $column = $('.column');
     var $circle = $('.circle');
+    var $player2 = $('#player2_select');
 
 //Controls Fuctions
+
+    $scope.player2Select = function(){
+        if ($player2.val() == 'human'){
+            $scope.player2IsComputer = false;
+        }else{
+            $scope.player2IsComputer = true;
+        }
+    }
 
     $scope.getScore = function(){
         return $scope.score;
@@ -550,16 +570,18 @@ angular.module("tutorialSite")
     $column.mouseenter(highlightLocation);
 
     function highlightLocation(){
-        var columnIndex = $(this).attr('id').split('').pop();   //gets column index from the 'id' attribute
-        for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
-            if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
-                var id = '#c'+columnIndex+'r'+j;                //constructs the proper id selector using the current array index 
-                if (color == '#7f3'){                       
-                    return $(id).css('background', '#af7');     //highlights the id-selected div light green;
-                }else{
-                    return $(id).css('background', '#940');     //highlights the id-selected div light orange;
+        if (!connect4Gameover){
+            var columnIndex = $(this).attr('id').split('').pop();   //gets column index from the 'id' attribute
+            for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
+                if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
+                    var id = '#c'+columnIndex+'r'+j;                //constructs the proper id selector using the current array index 
+                    if (color == '#7f3'){                       
+                        return $(id).css('background', '#af7');     //highlights the id-selected div light green;
+                    }else{
+                        return $(id).css('background', '#940');     //highlights the id-selected div light orange;
+                    }
+                    
                 }
-                
             }
         }
     }
@@ -586,16 +608,22 @@ angular.module("tutorialSite")
         }
     }
 
-//Changes the color of appropriate circle 
-//when column is clicked
+    //Changes the color of appropriate circle 
+    //when column is clicked
     $column.click(function(){
-        var columnIndex = $(this).attr('id').split('').pop();   //gets column index from the 'id' attribute
-        for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
-            if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
-                board[columnIndex][j] = color;                  //updates the array according to who made the move
-                var id = '#c'+columnIndex+'r'+j;                //constructs the appropriate id-selector
-                $(id).css('background', color);                 //updates the id-selected div according to who made the move
-                return colorChange();                           //changes who's turn it is
+        if (!connect4Gameover){
+            var columnIndex = $(this).attr('id').split('').pop();   //gets column index from the 'id' attribute
+            for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
+                if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
+                    board[columnIndex][j] = color;                  //updates the array according to who made the move
+                    var id = '#c'+columnIndex+'r'+j;                //constructs the appropriate id-selector
+                    $(id).css('background', color);                 //updates the id-selected div according to who made the move
+                    if ($scope.player2IsComputer){
+                        aiService.getComputerMove();
+                    }else{
+                        return colorChange();                           //changes who's turn it is
+                    }
+                }
             }
         }
     })
@@ -610,86 +638,90 @@ angular.module("tutorialSite")
             $scope.winner = $scope.playerTwoName;
         }
         $scope.showWinnerBox = true;
+        connect4Gameover = true;
     }
 
     $scope.newGame = function(){
         $scope.showWinnerBox = false;
+        connect4Gameover = false;
         clearBoard();
     }
 
     $scope.checkForWinner = function(){
-        //vertical winner
-        for (var i = 0; i < board.length; i ++){
-            for (var j = 0; j <= 2; j ++){
-                if (board[i][j] == '#7f3'
-                && board[i][j+1] == '#7f3'
-                && board[i][j+2] == '#7f3'
-                && board[i][j+3] == '#7f3'){
-                    $scope.showWinner('Player 1');
-                    return $scope.score.player1 += 1;
-                }else if (board[i][j] =='#f80'
-                && board[i][j+1] =='#f80'
-                && board[i][j+2] =='#f80'
-                && board[i][j+3] =='#f80'){
-                    $scope.showWinner('Player 2');
-                    return $scope.score.player2 += 1;
+        if (!connect4Gameover){
+            //vertical winner
+            for (var i = 0; i < board.length; i ++){
+                for (var j = 0; j <= 2; j ++){
+                    if (board[i][j] == '#7f3'
+                    && board[i][j+1] == '#7f3'
+                    && board[i][j+2] == '#7f3'
+                    && board[i][j+3] == '#7f3'){
+                        $scope.showWinner('Player 1');
+                        return $scope.score.player1 += 1;
+                    }else if (board[i][j] =='#f80'
+                    && board[i][j+1] =='#f80'
+                    && board[i][j+2] =='#f80'
+                    && board[i][j+3] =='#f80'){
+                        $scope.showWinner('Player 2');
+                        return $scope.score.player2 += 1;
+                    }
                 }
             }
-        }
 
-        //horizontal winner
-        for (var i = 0; i < board.length-3; i ++){
-            for (var j = 0; j < 6; j ++){
-                if (board[i][j] == '#7f3'
-                && board[i+1][j] == '#7f3'
-                && board[i+2][j] == '#7f3'
-                && board[i+3][j] == '#7f3'){
-                    $scope.showWinner('Player 1');
-                    return $scope.score.player1 += 1;
-                }else if (board[i][j] =='#f80'
-                && board[i+1][j] =='#f80'
-                && board[i+2][j] =='#f80'
-                && board[i+3][j] =='#f80'){
-                    $scope.showWinner('Player 2');
-                    return $scope.score.player2 += 1;
+            //horizontal winner
+            for (var i = 0; i < board.length-3; i ++){
+                for (var j = 0; j < 6; j ++){
+                    if (board[i][j] == '#7f3'
+                    && board[i+1][j] == '#7f3'
+                    && board[i+2][j] == '#7f3'
+                    && board[i+3][j] == '#7f3'){
+                        $scope.showWinner('Player 1');
+                        return $scope.score.player1 += 1;
+                    }else if (board[i][j] =='#f80'
+                    && board[i+1][j] =='#f80'
+                    && board[i+2][j] =='#f80'
+                    && board[i+3][j] =='#f80'){
+                        $scope.showWinner('Player 2');
+                        return $scope.score.player2 += 1;
+                    }
                 }
             }
-        }
 
-        //bottom left to upper right winner
-        for (var i = 0; i < board.length-3; i ++){
-            for (var j = 0; j <=2; j ++){
-                if (board[i][j] == '#7f3'
-                && board[i+1][j+1] == '#7f3'
-                && board[i+2][j+2] == '#7f3'
-                && board[i+3][j+3] == '#7f3'){
-                    $scope.showWinner('Player 1');
-                    return $scope.score.player1 += 1;
-                }else if (board[i][j] =='#f80'
-                && board[i+1][j+1] =='#f80'
-                && board[i+2][j+2] =='#f80'
-                && board[i+3][j+3] =='#f80'){
-                    $scope.showWinner('Player 2');
-                    return $scope.score.player2 += 1;
+            //bottom left to upper right winner
+            for (var i = 0; i < board.length-3; i ++){
+                for (var j = 0; j <=2; j ++){
+                    if (board[i][j] == '#7f3'
+                    && board[i+1][j+1] == '#7f3'
+                    && board[i+2][j+2] == '#7f3'
+                    && board[i+3][j+3] == '#7f3'){
+                        $scope.showWinner('Player 1');
+                        return $scope.score.player1 += 1;
+                    }else if (board[i][j] =='#f80'
+                    && board[i+1][j+1] =='#f80'
+                    && board[i+2][j+2] =='#f80'
+                    && board[i+3][j+3] =='#f80'){
+                        $scope.showWinner('Player 2');
+                        return $scope.score.player2 += 1;
+                    }
                 }
             }
-        }
 
-        //upper left to bottom right winner
-        for (var i = 0; i < board.length-3; i ++){
-            for (var j = board[i].length-1; j >= 3; j --){
-                if (board[i][j] == '#7f3'
-                && board[i+1][j-1] == '#7f3'
-                && board[i+2][j-2] == '#7f3'
-                && board[i+3][j-3] == '#7f3'){
-                    $scope.showWinner('Player 1');
-                    return $scope.score.player1 += 1;
-                }else if (board[i][j] =='#f80'
-                && board[i+1][j-1] =='#f80'
-                && board[i+2][j-2] =='#f80'
-                && board[i+3][j-3] =='#f80'){
-                    $scope.showWinner('Player 2');
-                    return $scope.score.player2 += 1;
+            //upper left to bottom right winner
+            for (var i = 0; i < board.length-3; i ++){
+                for (var j = board[i].length-1; j >= 3; j --){
+                    if (board[i][j] == '#7f3'
+                    && board[i+1][j-1] == '#7f3'
+                    && board[i+2][j-2] == '#7f3'
+                    && board[i+3][j-3] == '#7f3'){
+                        $scope.showWinner('Player 1');
+                        return $scope.score.player1 += 1;
+                    }else if (board[i][j] =='#f80'
+                    && board[i+1][j-1] =='#f80'
+                    && board[i+2][j-2] =='#f80'
+                    && board[i+3][j-3] =='#f80'){
+                        $scope.showWinner('Player 2');
+                        return $scope.score.player2 += 1;
+                    }
                 }
             }
         }
@@ -732,7 +764,7 @@ angular.module("tutorialSite")
     window.addEventListener("scroll", playAudio, false);    //keeps track of where the user has scrolled to, and plays the
                                                             //music at the right time by firing the playAudio function
 
-// **********CONNECT 4 FUNCTIONS******************************************
+// **********GAMESHOW FUNCTIONS******************************************
 
     var gameover = false;                       //when true, clicking on doors does nothing
     var doors = [];                             //-playGame function sets two goats and one car randomly

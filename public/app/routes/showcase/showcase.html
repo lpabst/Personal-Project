@@ -56,13 +56,17 @@
         horizontally, or diagonally</h1>
 
     <div class='controls'>
-        <button class='new_game' ng-click='areYouSure(1, "clear the board?")'>New Game</button>
-        <button class='reset_score' ng-click='areYouSure(2, "reset the score?")'>Reset Score</button>
+        <button class='new_game' ng-click='areYouSure(1, "clear the connect4 board?")'>New Game</button>
+        <button class='reset_score' ng-click='areYouSure(2, "reset the connect4 score?")'>Reset Score</button>
         <div class='player_names'>
             <p>PLAYER 1 (green)</p>
             <p>Name:</p>
             <input type='text' ng-model='playerOneName'>
             <p>PLAYER 2 (orange)</p>
+            <select name='player_type' id='player2_select' ng-click='player2Select()'>
+                <option value='human'>Human</option>
+                <option value='computer' selected>Computer</option>
+            </select>
             <p>Name:</p>
             <input type='text' ng-model='playerTwoName'>
         </div>

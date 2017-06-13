@@ -1278,7 +1278,7 @@ table {
     font-weight: bold;
     color: #f60;
     text-shadow: 1px 1px black;
-    position: absolute;
+    position: fixed;
     left: 10%;
     top: 20vh;
     z-index: 102; }
