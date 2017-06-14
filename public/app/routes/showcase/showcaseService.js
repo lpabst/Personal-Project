@@ -24,18 +24,21 @@ angular.module('tutorialSite').service('showcaseService', function($http){
         return $http.get('/api/getStats');
     }
 
+/*********BLOCKS MY VERTICAL WIN, BUT THAT'S IT *******/
 //Connect4 AI Fuctionality
-    this.getComputerMove = function(){
-        if (checkFourOffense()){                        //check if we have a winning move
-            return checkFourOffense();
-        }else if (checkFourDefense()){                  //check if we can block a winning move
-            return checkFourDefense();
+    this.getComputerMove = function(board){
+        if (checkFourOffense(board)){                        //check if we have a winning move
+            console.log('offense');
+            return checkFourOffense(board);
+        }else if (checkFourDefense(board)){                  //check if we can block a winning move
+            console.log('defense');
+            return checkFourDefense(board);
         }else{
             return Math.floor(Math.random()*7);         //last resort, return a random move
         }
     }
 
-    function checkFourOffense(){
+    function checkFourOffense(board){
         //vertical
         for (var i = 0; i < board.length; i ++){
             for (var j = 0; j <= 2; j ++){
@@ -169,7 +172,7 @@ angular.module('tutorialSite').service('showcaseService', function($http){
         return null;
     }
 
-    function checkFourDefense(){
+    function checkFourDefense(board){
         //vertical
         for (var i = 0; i < board.length; i ++){
             for (var j = 0; j <= 2; j ++){

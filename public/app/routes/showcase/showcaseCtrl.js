@@ -178,7 +178,7 @@ angular.module("tutorialSite")
             if ($scope.player2IsComputer && !connect4Gameover){             //If we're playing against a computer and the game hasn't ended
                 var computerIsChoosing = true;                              //variable for the while loop
                 while(computerIsChoosing){
-                    var computersChoice = showcaseService.getComputerMove();    //get move from service
+                    var computersChoice = showcaseService.getComputerMove(board);    //get move from service
                     if (columnIsNotFull(computersChoice)){                      //If that column isn't full,
                         computerIsChoosing = false;                             //end the while loop. Otherwise, choose again
                     }
