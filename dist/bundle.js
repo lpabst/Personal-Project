@@ -606,20 +606,20 @@ angular.module("tutorialSite")
     $column.click(function(){
         var columnIndex = $(this).attr('id').split('').pop();           //gets column index from the 'id' attribute
         if (!connect4Gameover){
-            placePiece(columnIndex);                                    //let's the placePiece function know which column to move on  
+            placePieceInThisColumn(columnIndex);                                    //let's the placePiece function know which column to move on  
             if ($scope.player2IsComputer){                              //If we're playing against a computer
-                var computerMove = showcaseService.getComputerMove();   //get computer's move from service
+                var computersChoice = showcaseService.getComputerMove();   //get computer's move from service
                 setTimeout(function(){                                  //wait half a second to place the computer piece
-                    placePiece(computerMove)                            //let placePiece function know what column
+                    placePieceInThisColumn(computersChoice)                            //let placePiece function know what column
                 }, 500);                                                //the computer chose
-                return;
+                return $scope.checkForWinner();  //**********NEED TO HAVE THIS IN THE DIGEST CYCLE********
             }else{
                 return;
             }
         }
     })
 
-    function placePiece(columnIndex){
+    function placePieceInThisColumn(columnIndex){
         for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
             if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
                 board[columnIndex][j] = color;                  //updates the array according to who made the move
