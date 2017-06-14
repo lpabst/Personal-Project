@@ -430,13 +430,6 @@ angular.module('tutorialSite').controller('jqueryCtrl', ["$scope", function($sco
     }
 
 }]);
-angular.module('tutorialSite').service('showcaseService', function(){
-
-    this.getComputerMove = function(){
-        
-    }
-
-});
 angular.module("tutorialSite")
   .controller("showcaseCtrl", ["$scope", "$state", "showcaseService", function($scope, $state, showcaseService) {
 
@@ -611,22 +604,31 @@ angular.module("tutorialSite")
     //Changes the color of appropriate circle 
     //when column is clicked
     $column.click(function(){
+        var columnIndex = $(this).attr('id').split('').pop();           //gets column index from the 'id' attribute
         if (!connect4Gameover){
-            var columnIndex = $(this).attr('id').split('').pop();   //gets column index from the 'id' attribute
-            for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
-                if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
-                    board[columnIndex][j] = color;                  //updates the array according to who made the move
-                    var id = '#c'+columnIndex+'r'+j;                //constructs the appropriate id-selector
-                    $(id).css('background', color);                 //updates the id-selected div according to who made the move
-                    if ($scope.player2IsComputer){
-                        aiService.getComputerMove();
-                    }else{
-                        return colorChange();                           //changes who's turn it is
-                    }
-                }
+            placePiece(columnIndex);                                    //let's the placePiece function know which column to move on  
+            if ($scope.player2IsComputer){                              //If we're playing against a computer
+                var computerMove = showcaseService.getComputerMove();   //get computer's move from service
+                setTimeout(function(){                                  //wait half a second to place the computer piece
+                    placePiece(computerMove)                            //let placePiece function know what column
+                }, 500);                                                //the computer chose
+                return;
+            }else{
+                return;
             }
         }
     })
+
+    function placePiece(columnIndex){
+        for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
+            if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
+                board[columnIndex][j] = color;                  //updates the array according to who made the move
+                var id = '#c'+columnIndex+'r'+j;                //constructs the appropriate id-selector
+                $(id).css('background', color); 
+                return colorChange();    
+            }
+        }
+    }
 
 //Game Over / Winner functions
     $scope.showWinner = function(str){
@@ -978,6 +980,12 @@ angular.module('tutorialSite').service('showcaseService', ["$http", function($ht
 
     this.getStats = function(){
         return $http.get('/api/getStats');
+    }
+
+//Connect4 AI Fuctionality
+    this.getComputerMove = function(){
+        var randomColumn = Math.floor(Math.random()*7);
+        return randomColumn;
     }
 
 }]);

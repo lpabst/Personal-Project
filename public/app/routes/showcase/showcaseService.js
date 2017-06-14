@@ -24,9 +24,10 @@ angular.module('tutorialSite').service('showcaseService', function($http){
         return $http.get('/api/getStats');
     }
 
-//AI Fuctionality
+//Connect4 AI Fuctionality
     this.getComputerMove = function(){
-        
+        var randomColumn = Math.floor(Math.random()*7);
+        return randomColumn;
     }
 
 });
