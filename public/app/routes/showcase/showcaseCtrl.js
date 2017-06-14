@@ -169,31 +169,51 @@ angular.module("tutorialSite")
         }
     }
 
-    //Changes the color of appropriate circle 
-    //when column is clicked
-    $column.click(function(){
-        var columnIndex = $(this).attr('id').split('').pop();           //gets column index from the 'id' attribute
-        if (!connect4Gameover){
-            placePieceInThisColumn(columnIndex);                                    //let's the placePiece function know which column to move on  
-            if ($scope.player2IsComputer){                              //If we're playing against a computer
-                var computersChoice = showcaseService.getComputerMove();   //get computer's move from service
-                setTimeout(function(){                                  //wait half a second to place the computer piece
-                    placePieceInThisColumn(computersChoice)                            //let placePiece function know what column
-                }, 500);                                                //the computer chose
-                return $scope.checkForWinner();  //**********NEED TO HAVE THIS IN THE DIGEST CYCLE********
+    //Determines the next steps depending on 
+    //if the user is playing the computer or not
+    $scope.clickOnColumn = function(columnIndex){
+        if (!connect4Gameover && columnIsNotFull(columnIndex)){             //Makes sure the game isn't over the column isn't full
+            placePieceInThisColumn(columnIndex);                            //places the user's piece
+
+            if ($scope.player2IsComputer && !connect4Gameover){             //If we're playing against a computer and the game hasn't ended
+                var computerIsChoosing = true;                              //variable for the while loop
+                while(computerIsChoosing){
+                    var computersChoice = showcaseService.getComputerMove();    //get move from service
+                    if (columnIsNotFull(computersChoice)){                      //If that column isn't full,
+                        computerIsChoosing = false;                             //end the while loop. Otherwise, choose again
+                    }
+                }    
+                setTimeout(function(){                                      //wait half a second to place the computer piece
+                    placePieceInThisColumn(computersChoice)                 //let placePiece function know what column
+                    $scope.checkForWinner();
+                }, 400);                                                    //the computer chose
+                return;  //**********NEED TO HAVE TRIGGER AFTER THE ARRAY HAS UPDATED********
             }else{
                 return;
             }
         }
-    })
+    }
 
+    //Makes sure the selected column is not full
+    function columnIsNotFull(columnIndex){
+        for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
+            if (board[columnIndex][j] == '#111'){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Changes the color of appropriate circle 
+    //when column is clicked
     function placePieceInThisColumn(columnIndex){
         for (var j = 0; j < board[columnIndex].length; j++){    //loops through the selected column in the array
             if (board[columnIndex][j] == '#111'){              //finds the first circle that is #111
                 board[columnIndex][j] = color;                  //updates the array according to who made the move
                 var id = '#c'+columnIndex+'r'+j;                //constructs the appropriate id-selector
                 $(id).css('background', color); 
-                return colorChange();    
+                colorChange();   
+                return $scope.checkForWinner(); 
             }
         }
     }
