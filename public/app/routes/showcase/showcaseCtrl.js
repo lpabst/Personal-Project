@@ -185,9 +185,9 @@ angular.module("tutorialSite")
                 }    
                 setTimeout(function(){                                      //wait half a second to place the computer piece
                     placePieceInThisColumn(computersChoice)                 //let placePiece function know what column
-                    $scope.checkForWinner();
+                    $scope.checkForWinner();       //**********NEED TO HAVE TRIGGER AFTER THE ARRAY HAS UPDATED********
                 }, 400);                                                    //the computer chose
-                return;  //**********NEED TO HAVE TRIGGER AFTER THE ARRAY HAS UPDATED********
+                return;  
             }else{
                 return;
             }
