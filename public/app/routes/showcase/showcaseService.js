@@ -26,17 +26,33 @@ angular.module('tutorialSite').service('showcaseService', function($http){
 
 /*********BLOCKS MY VERTICAL WIN, BUT THAT'S IT *******/
 //Connect4 AI Fuctionality
+
+    // var testBoard = [
+    //     ['#7f3', '#7f3', '#7f3', '#111', '#111', '#111', ], //column0
+    //     ['#7f3', '#7f3', '#7f3', '#111', '#111', '#111', ], //column1
+    //     ['#111', '#111', '#111', '#111', '#111', '#111', ], //column2
+    //     ['#111', '#111', '#111', '#111', '#111', '#111', ], //column3
+    //     ['#111', '#111', '#111', '#111', '#111', '#111', ], //column4
+    //     ['#111', '#111', '#111', '#111', '#111', '#111', ], //column5
+    //     ['#111', '#111', '#111', '#111', '#111', '#111', ]  //column6
+    // ];
+
     this.getComputerMove = function(board){
-        if (checkFourOffense(board)){                        //check if we have a winning move
-            console.log('offense');
+        if (checkFourOffense(board) < 10){                        //check if we have a winning move
             return checkFourOffense(board);
-        }else if (checkFourDefense(board)){                  //check if we can block a winning move
-            console.log('defense');
+        }else if (checkFourDefense(board) < 10){                  //check if we can block a winning move
             return checkFourDefense(board);
         }else{
             return Math.floor(Math.random()*7);         //last resort, return a random move
         }
     }
+
+//Used for testing
+    // this.getComputerMove();
+    // this.getComputerMove();
+    // this.getComputerMove();
+    // this.getComputerMove();
+    // this.getComputerMove();
 
     function checkFourOffense(board){
         //vertical
@@ -169,7 +185,7 @@ angular.module('tutorialSite').service('showcaseService', function($http){
         }
 
         //if we didn't find an answer, return a falsy value;
-        return null;
+        return 10;
     }
 
     function checkFourDefense(board){
@@ -194,8 +210,8 @@ angular.module('tutorialSite').service('showcaseService', function($http){
                 && board[i+3][j] == '#7f3'){
                     if (j == 0){                            //if we're on the bottom row
                         return i;                           //go in that column
-                    }else if (board[i][j-1] != '#111'){     //otherwise, if the spot beneath 'empty'
-                        return i;                           //is taken, go in that column
+                    }else if (board[i][j-1] != '#111'){     //otherwise, check the spot beneath 'empty'
+                        return i;                           //is taken, then go in that column
                     }
                 }else if (board[i][j] == '#7f3'         //orange empty orange orange
                 && board[i+1][j] == '#111'
@@ -303,7 +319,7 @@ angular.module('tutorialSite').service('showcaseService', function($http){
         }
 
         //if we didn't find an answer, return a falsy value;
-        return null;
+        return 10;
     }
 
 

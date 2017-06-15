@@ -97,6 +97,7 @@ angular.module("tutorialSite")
         }
         $circle.css('background', '#111');
         $scope.showAreYouSureBox = false;
+        color = '#7f3';
     }
 
     var resetScore = function(){
